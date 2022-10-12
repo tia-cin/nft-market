@@ -6,8 +6,8 @@ export const CircleButton: React.FC<{
   imgUrl: any;
   right: number;
   top: number;
-}> = ({ imgUrl, right, top }) => {
-  const handlePress = () => {};
+  handlePress: () => void;
+}> = ({ imgUrl, right, top, handlePress }) => {
   return (
     <TouchableOpacity
       style={{
@@ -33,10 +33,24 @@ export const CircleButton: React.FC<{
   );
 };
 
-export const RectButton = () => {
+export const RectButton: React.FC<{
+  minWidth: number;
+  fontSize: number;
+  handlePress: () => void;
+}> = ({ minWidth, fontSize, handlePress }) => {
   return (
-    <View>
-      <Text>RectButton</Text>
-    </View>
+    <TouchableOpacity
+      style={{
+        backgroundColor: COLORS.primary,
+        borderRadius: SIZES.extraLarge,
+        minWidth,
+        padding: SIZES.small,
+      }}
+      onPress={handlePress}
+    >
+      <Text style={{ fontSize, color: COLORS.white, textAlign: "center" }}>
+        Place a bid
+      </Text>
+    </TouchableOpacity>
   );
 };
