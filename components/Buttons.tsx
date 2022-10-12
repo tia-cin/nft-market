@@ -32,7 +32,7 @@ export const CircleButton: React.FC<{
 };
 
 export const RectButton: React.FC<{
-  props: any;
+  props?: any;
   handlePress: () => void;
 }> = ({ props, handlePress }) => {
   return (

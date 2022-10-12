@@ -4,18 +4,12 @@ import { useIsFocused } from "@react-navigation/core";
 
 const FocusStatusBar: React.FC<{
   background: string;
-  barStyle: any;
-  translucent: boolean;
-}> = ({ background, barStyle, translucent }) => {
+  props?: any;
+}> = ({ background, props }) => {
   const isFocus = useIsFocused();
 
   return isFocus ? (
-    <StatusBar
-      barStyle={barStyle}
-      translucent={translucent}
-      animated={true}
-      backgroundColor={background}
-    />
+    <StatusBar {...props} animated={true} backgroundColor={background} />
   ) : null;
 };
 

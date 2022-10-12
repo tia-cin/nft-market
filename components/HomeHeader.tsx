@@ -2,7 +2,9 @@ import { View, Text, Image, TextInput } from "react-native";
 import React from "react";
 import { COLORS, SIZES, assets } from "../constants";
 
-const HomeHeader: React.FC<{ onSearch: () => void }> = ({ onSearch }) => {
+const HomeHeader: React.FC<{ onSearch: (input: string) => void }> = ({
+  onSearch,
+}) => {
   return (
     <View
       style={{

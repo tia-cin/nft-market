@@ -23,9 +23,11 @@ const Details = ({ route, navigation }: any) => {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <FocusStatusBar
-        barStyle="dark-content"
+        props={{
+          barStyle: "dark-content",
+          translucent: "transparent",
+        }}
         background="transparent"
-        translucent={true}
       />
       <View
         style={{
