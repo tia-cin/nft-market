@@ -2,15 +2,20 @@ import { StatusBar } from "react-native";
 import React from "react";
 import { useIsFocused } from "@react-navigation/core";
 
-interface FocusStatusBarProps {
+const FocusStatusBar: React.FC<{
   background: string;
-}
-
-const FocusStatusBar: React.FC<FocusStatusBarProps> = ({ background }) => {
+  barStyle: any;
+  translucent: boolean;
+}> = ({ background, barStyle, translucent }) => {
   const isFocus = useIsFocused();
 
   return isFocus ? (
-    <StatusBar animated={true} backgroundColor={background} />
+    <StatusBar
+      barStyle={barStyle}
+      translucent={translucent}
+      animated={true}
+      backgroundColor={background}
+    />
   ) : null;
 };
 

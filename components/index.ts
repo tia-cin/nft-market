@@ -10,6 +10,7 @@ import {
   NFTTitle,
   ImageCmp,
 } from "./SubInfo";
+import { DetailsBid, DetailsDesc, DetailsHeader } from "./Details";
 
 export {
   HomeHeader,
@@ -23,4 +24,7 @@ export {
   People,
   NFTTitle,
   ImageCmp,
+  DetailsBid,
+  DetailsDesc,
+  DetailsHeader,
 };

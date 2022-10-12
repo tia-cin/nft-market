@@ -41,8 +41,10 @@ const NFTCard: React.FC<NFTCardProps> = ({ data }) => {
         />
         <CircleButton
           imgUrl={assets.heart}
-          right={10}
-          top={10}
+          props={{
+            right: 10,
+            top: 10,
+          }}
           handlePress={() => {}}
         />
       </View>
@@ -64,8 +66,7 @@ const NFTCard: React.FC<NFTCardProps> = ({ data }) => {
         >
           <EthPrice price={data.price} />
           <RectButton
-            minWidth={120}
-            fontSize={SIZES.font}
+            props={{ minWidth: 120, fontSize: SIZES.font }}
             handlePress={() => navigation.navigate("Details", { data })}
           />
         </View>

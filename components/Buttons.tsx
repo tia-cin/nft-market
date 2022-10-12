@@ -4,10 +4,9 @@ import { COLORS, SHADOWS, SIZES } from "../constants";
 
 export const CircleButton: React.FC<{
   imgUrl: any;
-  right: number;
-  top: number;
-  handlePress: () => void;
-}> = ({ imgUrl, right, top, handlePress }) => {
+  props: any;
+  handlePress: () => any;
+}> = ({ imgUrl, props, handlePress }) => {
   return (
     <TouchableOpacity
       style={{
@@ -19,8 +18,7 @@ export const CircleButton: React.FC<{
         alignItems: "center",
         justifyContent: "center",
         ...SHADOWS.light,
-        top,
-        right,
+        ...props,
       }}
       onPress={handlePress}
     >
@@ -34,21 +32,20 @@ export const CircleButton: React.FC<{
 };
 
 export const RectButton: React.FC<{
-  minWidth: number;
-  fontSize: number;
+  props: any;
   handlePress: () => void;
-}> = ({ minWidth, fontSize, handlePress }) => {
+}> = ({ props, handlePress }) => {
   return (
     <TouchableOpacity
       style={{
         backgroundColor: COLORS.primary,
         borderRadius: SIZES.extraLarge,
-        minWidth,
         padding: SIZES.small,
+        ...props,
       }}
       onPress={handlePress}
     >
-      <Text style={{ fontSize, color: COLORS.white, textAlign: "center" }}>
+      <Text style={{ color: COLORS.white, textAlign: "center" }}>
         Place a bid
       </Text>
     </TouchableOpacity>
