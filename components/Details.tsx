@@ -5,7 +5,8 @@ import { assets, COLORS, SIZES } from "../constants";
 
 export const DetailsDesc: React.FC<{ data: any }> = ({ data }) => {
   const [text, setText] = useState<string>(data.description.slice(0, 100));
-  const [readMore, setReadMore] = useState(false);
+  const [readMore, setReadMore] = useState<boolean>(false);
+
   return (
     <>
       <View
@@ -37,6 +38,24 @@ export const DetailsDesc: React.FC<{ data: any }> = ({ data }) => {
             }}
           >
             {text}
+
+            <Text
+              style={{
+                fontSize: SIZES.font,
+                color: COLORS.primary,
+              }}
+              onPress={() => {
+                if (!readMore) {
+                  setText(data.description);
+                  setReadMore(true);
+                } else {
+                  setText(data.description.slice(0, 100));
+                  setReadMore(false);
+                }
+              }}
+            >
+              {readMore ? " Show Less" : " Read More"}
+            </Text>
           </Text>
         </View>
       </View>
@@ -46,8 +65,36 @@ export const DetailsDesc: React.FC<{ data: any }> = ({ data }) => {
 
 export const DetailsBid: React.FC<{ bid: any }> = ({ bid }) => {
   return (
-    <View>
-      <Text>Details</Text>
+    <View
+      style={{
+        width: "100%",
+        flexDirection: "row",
+        justifyContent: "space-between",
+        alignItems: "center",
+        marginVertical: SIZES.base,
+        paddingHorizontal: SIZES.base * 2,
+      }}
+    >
+      <Image
+        source={bid.image}
+        resizeMode="contain"
+        style={{ width: 48, height: 48 }}
+      />
+      <View>
+        <Text style={{ fontSize: SIZES.small, color: COLORS.primary }}>
+          Bid placed by {bid.name}
+        </Text>
+        <Text
+          style={{
+            fontSize: SIZES.small - 2,
+            color: COLORS.secondary,
+            marginTop: 3,
+          }}
+        >
+          {bid.date}
+        </Text>
+      </View>
+      <EthPrice price={bid.price} />
     </View>
   );
 };
