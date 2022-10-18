@@ -1,5 +1,5 @@
 import HomeHeader from "./HomeHeader";
-import FocusStatusBar from "./FocusStatusBar";
+import { FocusStatusBar, BottomBar } from "./Bars";
 import NFTCard from "./NFTCard";
 import { CircleButton, RectButton, IconButton } from "./Buttons";
 import {
@@ -31,4 +31,5 @@ export {
   IconButton,
   Inputs,
   IconInput,
+  BottomBar,
 };

@@ -1,7 +1,7 @@
 import { View, Text, SafeAreaView, FlatList } from "react-native";
 import React, { useState } from "react";
 import { COLORS, NFTData } from "../constants";
-import { NFTCard, HomeHeader, FocusStatusBar } from "../components";
+import { NFTCard, HomeHeader, FocusStatusBar, BottomBar } from "../components";
 
 const Home = () => {
   const [search, setSearch] = useState<any>(NFTData);
@@ -45,6 +45,7 @@ const Home = () => {
           <View style={{ flex: 1, backgroundColor: COLORS.white }} />
         </View>
       </View>
+      {/* <BottomBar /> */}
     </SafeAreaView>
   );
 };

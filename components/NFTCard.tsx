@@ -43,7 +43,7 @@ const NFTCard: React.FC<NFTCardProps> = ({ data }) => {
           imgUrl={assets.heart}
           props={{
             right: 10,
-            top: 10,
+            top: -240,
           }}
           handlePress={() => {}}
         />
