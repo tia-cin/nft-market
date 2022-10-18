@@ -5,7 +5,7 @@ import { COLORS, SHADOWS, SIZES } from "../constants";
 export const CircleButton: React.FC<{
   imgUrl: any;
   props: any;
-  handlePress: () => any;
+  handlePress?: () => any;
 }> = ({ imgUrl, props, handlePress }) => {
   return (
     <TouchableOpacity
@@ -33,8 +33,9 @@ export const CircleButton: React.FC<{
 
 export const RectButton: React.FC<{
   props?: any;
-  handlePress: () => void;
-}> = ({ props, handlePress }) => {
+  handlePress?: () => void;
+  text: string;
+}> = ({ props, handlePress, text }) => {
   return (
     <TouchableOpacity
       style={{
@@ -45,9 +46,19 @@ export const RectButton: React.FC<{
       }}
       onPress={handlePress}
     >
-      <Text style={{ color: COLORS.white, textAlign: "center" }}>
-        Place a bid
-      </Text>
+      <Text style={{ color: COLORS.white, textAlign: "center" }}>{text}</Text>
+    </TouchableOpacity>
+  );
+};
+
+export const IconButton: React.FC<{ text: string; icon: any }> = ({
+  text,
+  icon,
+}) => {
+  return (
+    <TouchableOpacity>
+      <Image source={icon} />
+      <Text>{text}</Text>
     </TouchableOpacity>
   );
 };

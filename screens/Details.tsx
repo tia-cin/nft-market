@@ -44,6 +44,7 @@ const Details = ({ route, navigation }: any) => {
         <RectButton
           props={{ minWidth: 170, fontSize: SIZES.large, ...SHADOWS.dark }}
           handlePress={() => {}}
+          text="Place a bid"
         />
       </View>
       <FlatList

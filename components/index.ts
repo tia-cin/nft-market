@@ -1,7 +1,7 @@
 import HomeHeader from "./HomeHeader";
 import FocusStatusBar from "./FocusStatusBar";
 import NFTCard from "./NFTCard";
-import { CircleButton, RectButton } from "./Buttons";
+import { CircleButton, RectButton, IconButton } from "./Buttons";
 import {
   SubInfo,
   EndDate,
@@ -27,4 +27,5 @@ export {
   DetailsBid,
   DetailsDesc,
   DetailsHeader,
+  IconButton,
 };
