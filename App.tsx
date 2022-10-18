@@ -1,6 +1,6 @@
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
-import { Home, Details, Landing, Auth, Register } from "./screens";
+import { Home, Details, Landing, Auth } from "./screens";
 
 const Stack = createStackNavigator();
 
@@ -18,7 +18,6 @@ const App = () => {
       >
         <Stack.Screen name="Landing" component={Landing} />
         <Stack.Screen name="Auth" component={Auth} />
-        <Stack.Screen name="Register" component={Register} />
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Details" component={Details} />
       </Stack.Navigator>

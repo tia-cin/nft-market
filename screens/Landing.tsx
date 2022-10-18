@@ -40,21 +40,13 @@ const Landing = () => {
         </View>
         <View>
           <RectButton
-            text="Sign In"
+            text="Start"
             props={{
               backgroundColor: COLORS.primary,
               width: 350,
               marginBottom: SIZES.font,
             }}
             handlePress={() => navigation.navigate("Auth")}
-          />
-          <RectButton
-            text="Sign Up"
-            props={{
-              backgroundColor: COLORS.gray,
-              width: 350,
-            }}
-            handlePress={() => navigation.navigate("Register")}
           />
         </View>
       </ImageBackground>
