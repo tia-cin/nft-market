@@ -1,5 +1,13 @@
 import assets from "./assets";
 
+const userNFT = [
+  assets.nft08,
+  assets.nft09,
+  assets.nft10,
+  assets.nft11,
+  assets.nft12,
+];
+
 const NFTData = [
   {
     id: "NFT-01",
@@ -191,4 +199,4 @@ const NFTData = [
   },
 ];
 
-export { NFTData };
+export { NFTData, userNFT };

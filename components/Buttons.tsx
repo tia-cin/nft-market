@@ -8,26 +8,28 @@ export const CircleButton: React.FC<{
   handlePress?: () => any;
 }> = ({ imgUrl, props, handlePress }) => {
   return (
-    <TouchableOpacity
-      style={{
-        width: 40,
-        height: 40,
-        backgroundColor: COLORS.white,
-        position: "absolute",
-        borderRadius: SIZES.extraLarge,
-        alignItems: "center",
-        justifyContent: "center",
-        ...SHADOWS.light,
-        ...props,
-      }}
-      onPress={handlePress}
-    >
-      <Image
-        source={imgUrl}
-        resizeMode="contain"
-        style={{ width: 24, height: 24 }}
-      />
-    </TouchableOpacity>
+    <View>
+      <TouchableOpacity
+        style={{
+          width: 40,
+          height: 40,
+          backgroundColor: COLORS.white,
+          position: "absolute",
+          borderRadius: SIZES.extraLarge,
+          alignItems: "center",
+          justifyContent: "center",
+          ...SHADOWS.light,
+          ...props,
+        }}
+        onPress={handlePress}
+      >
+        <Image
+          source={imgUrl}
+          resizeMode="contain"
+          style={{ width: 24, height: 24 }}
+        />
+      </TouchableOpacity>
+    </View>
   );
 };
 
