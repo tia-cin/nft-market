@@ -1,7 +1,7 @@
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import React from "react";
 import { COLORS, SIZES, assets } from "../constants";
-import { IconInput } from "./Inputs";
+import { IconInput } from "./";
 import { useNavigation } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
 

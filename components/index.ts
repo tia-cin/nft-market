@@ -30,4 +30,5 @@ export {
   DetailsHeader,
   IconButton,
   Inputs,
+  IconInput,
 };

@@ -9,6 +9,9 @@ import options from "../assets/icons/options.png";
 import heartIcon from "../assets/icons/heart-icon.png";
 import multimedia from "../assets/icons/multimedia.png";
 import user from "../assets/icons/user.png";
+import home from "../assets/icons/home.png";
+import plus from "../assets/icons/plus.png";
+import boxes from "../assets/icons/boxes.png";
 
 import logo from "../assets/images/logo.png";
 import nft01 from "../assets/images/nft01.png";
@@ -38,6 +41,12 @@ export default {
   google,
   facebook,
   options,
+  multimedia,
+  heartIcon,
+  user,
+  boxes,
+  home,
+  plus,
 
   logo,
   nft01,

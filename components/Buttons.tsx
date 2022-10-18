@@ -4,7 +4,7 @@ import { COLORS, SHADOWS, SIZES } from "../constants";
 
 export const CircleButton: React.FC<{
   imgUrl: any;
-  props: any;
+  props?: any;
   handlePress?: () => any;
 }> = ({ imgUrl, props, handlePress }) => {
   return (
