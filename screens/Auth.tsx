@@ -13,7 +13,7 @@ import { StackNavigationProp } from "@react-navigation/stack";
 const Auth = () => {
   const navigation =
     useNavigation<
-      StackNavigationProp<{ Auth: any; Register: any; Landing: any }>
+      StackNavigationProp<{ Auth: any; Register: any; Landing: any; Home: any }>
     >();
   const [username, setUsername] = React.useState<string>("Username");
   const [password, setPassword] = React.useState<string>("Password");
@@ -77,7 +77,10 @@ const Auth = () => {
                 </Text>
               </TouchableWithoutFeedback>
             )}
-            <RectButton text={createUser ? "Sign Up" : "Sign In"} />
+            <RectButton
+              text={createUser ? "Sign Up" : "Sign In"}
+              handlePress={() => navigation.navigate("Home")}
+            />
           </View>
           <View
             style={{

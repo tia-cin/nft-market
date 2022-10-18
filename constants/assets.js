@@ -5,6 +5,10 @@ import left from "../assets/icons/left.png";
 import search from "../assets/icons/search.png";
 import google from "../assets/icons/google-icon.png";
 import facebook from "../assets/icons/facebook-icon.png";
+import options from "../assets/icons/options.png";
+import heartIcon from "../assets/icons/heart-icon.png";
+import multimedia from "../assets/icons/multimedia.png";
+import user from "../assets/icons/user.png";
 
 import logo from "../assets/images/logo.png";
 import nft01 from "../assets/images/nft01.png";
@@ -14,6 +18,11 @@ import nft04 from "../assets/images/nft04.jpeg";
 import nft05 from "../assets/images/nft05.jpeg";
 import nft06 from "../assets/images/nft06.jpeg";
 import nft07 from "../assets/images/nft07.jpeg";
+import nft08 from "../assets/images/nft08.jpeg";
+import nft09 from "../assets/images/nft09.jpeg";
+import nft10 from "../assets/images/nft10.jpeg";
+import nft11 from "../assets/images/nft11.jpeg";
+import nft12 from "../assets/images/nft12.jpeg";
 
 import person01 from "../assets/images/person01.png";
 import person02 from "../assets/images/person02.png";
@@ -28,6 +37,7 @@ export default {
   search,
   google,
   facebook,
+  options,
 
   logo,
   nft01,
@@ -37,6 +47,11 @@ export default {
   nft05,
   nft06,
   nft07,
+  nft08,
+  nft09,
+  nft10,
+  nft11,
+  nft12,
 
   person01,
   person02,
