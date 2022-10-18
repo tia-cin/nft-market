@@ -11,6 +11,7 @@ import {
   ImageCmp,
 } from "./SubInfo";
 import { DetailsBid, DetailsDesc, DetailsHeader } from "./Details";
+import { Inputs, IconInput } from "./Inputs";
 
 export {
   HomeHeader,
@@ -28,4 +29,5 @@ export {
   DetailsDesc,
   DetailsHeader,
   IconButton,
+  Inputs,
 };

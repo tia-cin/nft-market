@@ -51,14 +51,26 @@ export const RectButton: React.FC<{
   );
 };
 
-export const IconButton: React.FC<{ text: string; icon: any }> = ({
+export const IconButton: React.FC<{ text: string; icon: any; props?: any }> = ({
   text,
   icon,
+  props,
 }) => {
   return (
-    <TouchableOpacity>
-      <Image source={icon} />
-      <Text>{text}</Text>
+    <TouchableOpacity
+      style={{
+        flexDirection: "row",
+        alignItems: "center",
+        padding: SIZES.small,
+        borderRadius: SIZES.extraLarge,
+        ...props,
+      }}
+    >
+      <Image
+        source={icon}
+        style={{ width: 40, height: 40, marginRight: SIZES.font }}
+      />
+      <Text style={{ textAlign: "center" }}>{text}</Text>
     </TouchableOpacity>
   );
 };
