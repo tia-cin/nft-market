@@ -4,10 +4,9 @@ import { COLORS, SIZES, assets } from "../constants";
 import { IconInput } from "./";
 import { useNavigation } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
+import { HomeHeaderProps } from "../types";
 
-const HomeHeader: React.FC<{ onSearch: (input: string) => void }> = ({
-  onSearch,
-}) => {
+const HomeHeader: React.FC<HomeHeaderProps> = ({ onSearch }) => {
   const navigation = useNavigation<StackNavigationProp<{ User: any }>>();
 
   return (

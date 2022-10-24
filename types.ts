@@ -25,3 +25,48 @@ export type NavigateProps = {
   };
   User: undefined;
 };
+
+export interface NFTTitleProps {
+  title: string;
+  subtitle: string;
+  titleSize: number;
+  subtitleSize: number;
+}
+
+export interface EthPriceProps {
+  price: number;
+}
+
+export interface ImageCmpProps {
+  imgUrl: any;
+  index: number;
+}
+
+export interface InputsProps {
+  value: string;
+  onChange: (input: string) => void;
+}
+
+export interface IconInputProps {
+  onChange: (input: string) => void;
+}
+
+export interface HomeHeaderProps {
+  onSearch: (input: string) => void;
+}
+
+export interface DetailsDescProps {
+  data: NFTDataType;
+}
+
+export interface RectButtonProps {
+  props?: any;
+  handlePress?: () => void;
+  text: string;
+}
+
+export interface CircleButtonProps {
+  imgUrl: any;
+  props?: any;
+  handlePress?: () => any;
+}

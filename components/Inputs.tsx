@@ -1,11 +1,9 @@
-import { View, Text, TextInput, Image } from "react-native";
+import { View, TextInput, Image } from "react-native";
 import React from "react";
 import { SIZES, COLORS, assets } from "../constants";
+import { IconInputProps, InputsProps } from "../types";
 
-export const Inputs: React.FC<{
-  value: string;
-  onChange: (input: string) => void;
-}> = ({ value, onChange }) => {
+export const Inputs: React.FC<InputsProps> = ({ value, onChange }) => {
   return (
     <View
       style={{
@@ -23,9 +21,7 @@ export const Inputs: React.FC<{
   );
 };
 
-export const IconInput: React.FC<{ onChange: (input: string) => void }> = ({
-  onChange,
-}) => {
+export const IconInput: React.FC<IconInputProps> = ({ onChange }) => {
   return (
     <View
       style={{

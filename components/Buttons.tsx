@@ -1,12 +1,13 @@
 import { View, Text, TouchableOpacity, Image } from "react-native";
 import React from "react";
 import { COLORS, SHADOWS, SIZES } from "../constants";
+import { CircleButtonProps, RectButtonProps } from "../types";
 
-export const CircleButton: React.FC<{
-  imgUrl: any;
-  props?: any;
-  handlePress?: () => any;
-}> = ({ imgUrl, props, handlePress }) => {
+export const CircleButton: React.FC<CircleButtonProps> = ({
+  imgUrl,
+  props,
+  handlePress,
+}) => {
   return (
     <View>
       <TouchableOpacity
@@ -33,11 +34,11 @@ export const CircleButton: React.FC<{
   );
 };
 
-export const RectButton: React.FC<{
-  props?: any;
-  handlePress?: () => void;
-  text: string;
-}> = ({ props, handlePress, text }) => {
+export const RectButton: React.FC<RectButtonProps> = ({
+  props,
+  handlePress,
+  text,
+}) => {
   return (
     <TouchableOpacity
       style={{

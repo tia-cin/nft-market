@@ -1,13 +1,14 @@
 import { View, Text, Image } from "react-native";
 import React from "react";
 import { assets, COLORS, SHADOWS, SIZES } from "../constants";
+import { EthPriceProps, ImageCmpProps, NFTTitleProps } from "../types";
 
-export const NFTTitle: React.FC<{
-  title: string;
-  subtitle: string;
-  titleSize: number;
-  subtitleSize: number;
-}> = ({ title, subtitle, titleSize, subtitleSize }) => {
+export const NFTTitle: React.FC<NFTTitleProps> = ({
+  title,
+  subtitle,
+  titleSize,
+  subtitleSize,
+}) => {
   return (
     <View>
       <Text style={{ fontSize: titleSize, color: COLORS.primary }}>
@@ -20,7 +21,7 @@ export const NFTTitle: React.FC<{
   );
 };
 
-export const EthPrice: React.FC<{ price: number }> = ({ price }) => {
+export const EthPrice: React.FC<EthPriceProps> = ({ price }) => {
   return (
     <View style={{ flexDirection: "row", alignItems: "center" }}>
       <Image
@@ -35,10 +36,7 @@ export const EthPrice: React.FC<{ price: number }> = ({ price }) => {
   );
 };
 
-export const ImageCmp: React.FC<{ imgUrl: any; index: number }> = ({
-  imgUrl,
-  index,
-}) => {
+export const ImageCmp: React.FC<ImageCmpProps> = ({ imgUrl, index }) => {
   return (
     <Image
       source={imgUrl}

@@ -2,9 +2,9 @@ import { View, Text, Image, StatusBar } from "react-native";
 import React, { useState } from "react";
 import { CircleButton, EthPrice, NFTTitle } from "../components";
 import { assets, COLORS, SIZES } from "../constants";
-import { BidType, NFTDataType } from "../types";
+import { BidType, DetailsDescProps, NFTDataType } from "../types";
 
-export const DetailsDesc: React.FC<{ data: NFTDataType }> = ({ data }) => {
+export const DetailsDesc: React.FC<DetailsDescProps> = ({ data }) => {
   const [text, setText] = useState<string>(data.description.slice(0, 100));
   const [readMore, setReadMore] = useState<boolean>(false);
 
