@@ -9,12 +9,10 @@ import { assets, COLORS, SIZES } from "../constants";
 import { RectButton, IconButton, Inputs, CircleButton } from "../components";
 import { useNavigation } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
+import { NavigateProps } from "../types";
 
 const Auth = () => {
-  const navigation =
-    useNavigation<
-      StackNavigationProp<{ Auth: any; Register: any; Landing: any; Home: any }>
-    >();
+  const navigation = useNavigation<StackNavigationProp<NavigateProps>>();
   const [username, setUsername] = React.useState<string>("Username");
   const [password, setPassword] = React.useState<string>("Password");
   const [email, setEmail] = React.useState<string>("Email");

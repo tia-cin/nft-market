@@ -15,3 +15,13 @@ export interface BidType {
   image: any;
   date: string;
 }
+
+export type NavigateProps = {
+  Landing: undefined;
+  Auth: undefined;
+  Home: undefined;
+  Details: {
+    data: NFTDataType;
+  };
+  User: undefined;
+};

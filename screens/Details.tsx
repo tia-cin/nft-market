@@ -9,9 +9,13 @@ import {
   DetailsBid,
   DetailsHeader,
 } from "../components";
-import { NFTDataType } from "../types";
+import { NavigateProps, NFTDataType } from "../types";
+import { NativeStackScreenProps } from "@react-navigation/native-stack";
 
-const Details = ({ data, navigation }: NFTDataType | any) => {
+type Props = NativeStackScreenProps<NavigateProps, "Details">;
+
+const Details = ({ route, navigation }: Props) => {
+  const data: NFTDataType = route.params.data;
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <FocusStatusBar

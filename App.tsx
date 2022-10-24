@@ -1,8 +1,9 @@
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
 import { Home, Details, Landing, Auth, User } from "./screens";
+import { NavigateProps } from "./types";
 
-const Stack = createStackNavigator();
+const Stack = createStackNavigator<NavigateProps>();
 
 const theme = {
   ...DefaultTheme,
