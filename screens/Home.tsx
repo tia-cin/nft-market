@@ -1,10 +1,14 @@
 import { View, Text, SafeAreaView, FlatList } from "react-native";
 import React, { useState } from "react";
 import { COLORS, NFTData } from "../constants";
-import { NFTCard, HomeHeader, FocusStatusBar, BottomBar } from "../components";
-import { NFTDataType } from "../types";
+import { useNavigation } from "@react-navigation/native";
+import { StackNavigationProp } from "@react-navigation/stack";
+import { NFTCard, HomeHeader, FocusStatusBar } from "../components";
+import { NFTDataType, NavigateProps } from "../types";
 
 const Home = () => {
+  const navigation = useNavigation<StackNavigationProp<NavigateProps>>();
+
   const [search, setSearch] = useState<Array<NFTDataType>>(NFTData);
 
   const onSearch = (input: string) => {
@@ -27,7 +31,9 @@ const Home = () => {
         <View style={{ zIndex: 0 }}>
           <FlatList
             data={search}
-            renderItem={({ item }) => <NFTCard data={item} />}
+            renderItem={({ item }) => (
+              <NFTCard navigation={navigation} data={item} />
+            )}
             keyExtractor={(item) => item.id}
             showsVerticalScrollIndicator={false}
             ListHeaderComponent={<HomeHeader onSearch={onSearch} />}

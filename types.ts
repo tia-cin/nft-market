@@ -1,3 +1,4 @@
+// DATA
 export interface NFTDataType {
   id: string;
   name: string;
@@ -16,6 +17,7 @@ export interface BidType {
   date: string;
 }
 
+// NAVIGATION
 export type NavigateProps = {
   Landing: undefined;
   Auth: undefined;
@@ -26,6 +28,7 @@ export type NavigateProps = {
   User: undefined;
 };
 
+// COMPONENTS
 export interface NFTTitleProps {
   title: string;
   subtitle: string;

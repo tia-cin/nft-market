@@ -14,7 +14,7 @@ import { NativeStackScreenProps } from "@react-navigation/native-stack";
 
 type Props = NativeStackScreenProps<NavigateProps, "Details">;
 
-const Details: React.FC<Props> = ({ route, navigation }) => {
+const Details: React.FC<Props> = ({ route, navigation }: Props) => {
   const data: NFTDataType = route.params.data;
   return (
     <SafeAreaView style={{ flex: 1 }}>

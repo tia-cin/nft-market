@@ -1,6 +1,4 @@
 import { View, Image } from "react-native";
-import { useNavigation } from "@react-navigation/native";
-import { StackNavigationProp } from "@react-navigation/stack";
 import React from "react";
 import { COLORS, SIZES, SHADOWS, assets } from "../constants";
 import {
@@ -12,9 +10,10 @@ import {
 } from "../components";
 import { NFTDataType } from "../types";
 
-const NFTCard: React.FC<{ data: NFTDataType }> = ({ data }) => {
-  const navigation =
-    useNavigation<StackNavigationProp<{ Details: { data: NFTDataType } }>>();
+const NFTCard: React.FC<{ data: NFTDataType; navigation: any }> = ({
+  data,
+  navigation,
+}) => {
   return (
     <View
       style={{
