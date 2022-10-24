@@ -19,14 +19,6 @@ export const SIZES = {
   extraLarge: 24,
 };
 
-export const FONTS = {
-  bold: "InterBold",
-  semiBold: "InterSemiBold",
-  medium: "InterMedium",
-  regular: "InterRegular",
-  light: "InterLight",
-};
-
 export const SHADOWS = {
   light: {
     shadowColor: COLORS.gray,

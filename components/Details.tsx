@@ -2,8 +2,9 @@ import { View, Text, Image, StatusBar } from "react-native";
 import React, { useState } from "react";
 import { CircleButton, EthPrice, NFTTitle } from "../components";
 import { assets, COLORS, SIZES } from "../constants";
+import { BidType, NFTDataType } from "../types";
 
-export const DetailsDesc: React.FC<{ data: any }> = ({ data }) => {
+export const DetailsDesc: React.FC<{ data: NFTDataType }> = ({ data }) => {
   const [text, setText] = useState<string>(data.description.slice(0, 100));
   const [readMore, setReadMore] = useState<boolean>(false);
 
@@ -63,7 +64,7 @@ export const DetailsDesc: React.FC<{ data: any }> = ({ data }) => {
   );
 };
 
-export const DetailsBid: React.FC<{ bid: any }> = ({ bid }) => {
+export const DetailsBid: React.FC<{ bid: BidType }> = ({ bid }) => {
   return (
     <View
       style={{
@@ -100,7 +101,7 @@ export const DetailsBid: React.FC<{ bid: any }> = ({ bid }) => {
 };
 
 export const DetailsHeader: React.FC<{
-  data: any;
+  data: NFTDataType;
   navigation: any;
 }> = ({ data, navigation }) => {
   return (

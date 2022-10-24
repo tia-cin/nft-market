@@ -2,14 +2,15 @@ import { View, Text, SafeAreaView, FlatList } from "react-native";
 import React, { useState } from "react";
 import { COLORS, NFTData } from "../constants";
 import { NFTCard, HomeHeader, FocusStatusBar, BottomBar } from "../components";
+import { NFTDataType } from "../types";
 
 const Home = () => {
-  const [search, setSearch] = useState<any>(NFTData);
+  const [search, setSearch] = useState<Array<NFTDataType>>(NFTData);
 
   const onSearch = (input: string) => {
     if (!input.length) return setSearch(NFTData);
 
-    const filtered = NFTData.filter((item) =>
+    const filtered = NFTData.filter((item: NFTDataType) =>
       item.name.toLocaleLowerCase().includes(input.toLocaleLowerCase())
     );
     if (filtered.length) {
@@ -18,6 +19,7 @@ const Home = () => {
       setSearch(NFTData);
     }
   };
+
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <FocusStatusBar background={COLORS.primary} />

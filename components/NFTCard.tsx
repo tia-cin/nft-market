@@ -10,14 +10,11 @@ import {
   RectButton,
   EthPrice,
 } from "../components";
+import { NFTDataType } from "../types";
 
-interface NFTCardProps {
-  data: any;
-}
-
-const NFTCard: React.FC<NFTCardProps> = ({ data }) => {
+const NFTCard: React.FC<{ data: NFTDataType }> = ({ data }) => {
   const navigation =
-    useNavigation<StackNavigationProp<{ Details: { data: any } }>>();
+    useNavigation<StackNavigationProp<{ Details: { data: NFTDataType } }>>();
   return (
     <View
       style={{

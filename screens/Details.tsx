@@ -1,15 +1,7 @@
-import {
-  View,
-  Text,
-  SafeAreaView,
-  Image,
-  StatusBar,
-  FlatList,
-} from "react-native";
+import { View, Text, SafeAreaView, FlatList } from "react-native";
 import React from "react";
-import { COLORS, SHADOWS, SIZES, assets } from "../constants";
+import { COLORS, SHADOWS, SIZES } from "../constants";
 import {
-  CircleButton,
   RectButton,
   SubInfo,
   FocusStatusBar,
@@ -17,9 +9,9 @@ import {
   DetailsBid,
   DetailsHeader,
 } from "../components";
+import { NFTDataType } from "../types";
 
-const Details = ({ route, navigation }: any) => {
-  const { data } = route.params;
+const Details = ({ data, navigation }: NFTDataType | any) => {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <FocusStatusBar
@@ -59,7 +51,7 @@ const Details = ({ route, navigation }: any) => {
             <SubInfo />
             <View style={{ padding: SIZES.font }}>
               <DetailsDesc data={data} />
-              {data.bids.length > 0 && (
+              {data.bids.length > 1 && (
                 <Text style={{ fontSize: SIZES.font, color: COLORS.primary }}>
                   Current Bids
                 </Text>
