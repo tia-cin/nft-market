@@ -14,7 +14,7 @@ import { NativeStackScreenProps } from "@react-navigation/native-stack";
 
 type Props = NativeStackScreenProps<NavigateProps, "Details">;
 
-const Details = ({ route, navigation }: Props) => {
+const Details: React.FC<Props> = ({ route, navigation }) => {
   const data: NFTDataType = route.params.data;
   return (
     <SafeAreaView style={{ flex: 1 }}>
@@ -39,7 +39,6 @@ const Details = ({ route, navigation }: Props) => {
       >
         <RectButton
           props={{ minWidth: 170, fontSize: SIZES.large, ...SHADOWS.dark }}
-          handlePress={() => {}}
           text="Place a bid"
         />
       </View>

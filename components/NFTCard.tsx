@@ -64,7 +64,7 @@ const NFTCard: React.FC<{ data: NFTDataType }> = ({ data }) => {
           <EthPrice price={data.price} />
           <RectButton
             props={{ minWidth: 120, fontSize: SIZES.font }}
-            handlePress={() => navigation.navigate("Details", { data })}
+            handlePress={() => navigation.push("Details", { data })}
             text="Place a bid"
           />
         </View>
