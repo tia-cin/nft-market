@@ -3,11 +3,12 @@ import React from "react";
 import { useIsFocused } from "@react-navigation/core";
 import { CircleButton } from "./Buttons";
 import { assets, SHADOWS, SIZES } from "../constants";
+import { FocusStatusBarProps } from "../types";
 
-export const FocusStatusBar: React.FC<{
-  background: string;
-  props?: any;
-}> = ({ background, props }) => {
+export const FocusStatusBar: React.FC<FocusStatusBarProps> = ({
+  background,
+  props,
+}) => {
   const isFocus = useIsFocused();
 
   return isFocus ? (

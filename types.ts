@@ -74,3 +74,8 @@ export interface CircleButtonProps {
   props?: any;
   handlePress?: () => any;
 }
+
+export interface FocusStatusBarProps {
+  background: string;
+  props?: any;
+}

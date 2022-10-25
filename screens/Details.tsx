@@ -10,15 +10,17 @@ import {
 } from "../components";
 import { COLORS, SIZES, SHADOWS } from "../constants";
 
-const Details = ({ route, navigation }) => {
+const Details = ({ route, navigation }: any) => {
   const { data } = route.params;
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <FocusStatusBar
-        barStyle="dark-content"
-        backgroundColor="transparent"
-        translucent={true}
+        props={{
+          translucent: true,
+          barStyle: "dark-content",
+        }}
+        background="transparent"
       />
 
       <View
