@@ -109,22 +109,21 @@ export const DetailsHeader: React.FC<{
       <Image
         source={data.image}
         resizeMode="cover"
-        style={{ width: "100%", height: "100%" }}
+        style={{ width: "100%", height: "100%", zIndex: 0 }}
       />
       <CircleButton
         imgUrl={assets.left}
         handlePress={() => navigation.goBack()}
         props={{
           left: 15,
-          top: StatusBar.currentHeight && StatusBar.currentHeight + 10,
+          top: StatusBar.currentHeight && StatusBar.currentHeight - 373,
         }}
       />
       <CircleButton
         imgUrl={assets.heart}
-        handlePress={() => navigation.goBack()}
         props={{
           right: 15,
-          top: StatusBar.currentHeight && StatusBar.currentHeight + 10,
+          top: StatusBar.currentHeight && StatusBar.currentHeight - 373,
         }}
       />
     </View>

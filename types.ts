@@ -23,7 +23,8 @@ export type NavigateProps = {
   Auth: undefined;
   Home: undefined;
   Details: {
-    data: NFTDataType;
+    data: NFTDataType | any;
+    navigate: any;
   };
   User: undefined;
 };
