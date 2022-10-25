@@ -1,6 +1,6 @@
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
-import { Home, Details, Landing, Auth, User } from "./screens";
+import { Home, Landing, Auth, User, Details } from "./screens";
 import { NavigateProps } from "./types";
 
 const Stack = createStackNavigator<NavigateProps>();
