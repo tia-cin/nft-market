@@ -12,10 +12,12 @@ const User = () => {
           flex: 0.5,
           margin: SIZES.medium,
           flexDirection: "row",
+          width: "80%",
           justifyContent: "space-between",
         }}
       >
         <CircleButton imgUrl={assets.left} />
+        <CircleButton imgUrl={assets.options} />
       </View>
       <View style={{ flex: 2, alignItems: "center" }}>
         <View>
