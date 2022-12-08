@@ -1,11 +1,41 @@
 import assets from "./assets";
 
 const userNFT = [
-  assets.nft08,
-  assets.nft09,
-  assets.nft10,
-  assets.nft11,
-  assets.nft12,
+  {
+    image: assets.nft08,
+    name: "Roman Coin",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    price: 2.54,
+  },
+  {
+    image: assets.nft09,
+    name: "Space Diamond",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    price: 5.52,
+  },
+  {
+    image: assets.nft10,
+    name: "Testing Game #2",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    price: 2.37,
+  },
+  {
+    image: assets.nft11,
+    name: "Abstracto #208",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    price: 1.74,
+  },
+  {
+    image: assets.nft12,
+    name: "Rabit",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    price: 8.49,
+  },
 ];
 
 const NFTData = [

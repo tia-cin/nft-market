@@ -1,7 +1,7 @@
 import { View, Text, Image, FlatList } from "react-native";
 import React from "react";
-import { assets, COLORS, SIZES } from "../constants";
-import { CircleButton } from "../components";
+import { assets, COLORS, SHADOWS, SIZES } from "../constants";
+import { CircleButton, EthPrice } from "../components";
 import { userNFT } from "../constants/dummy";
 
 const User = () => {
@@ -93,7 +93,6 @@ const User = () => {
             <CircleButton imgUrl={assets.heartIcon} />
           </View>
         </View>
-        <View></View>
       </View>
       <View
         style={{
@@ -104,15 +103,22 @@ const User = () => {
         <FlatList
           data={userNFT}
           renderItem={({ item }) => (
-            <Image
-              source={item}
-              style={{
-                width: 350,
-                height: 350,
-                borderRadius: SIZES.extraLarge,
-                marginVertical: SIZES.font,
-              }}
-            />
+            <View style={{ flexDirection: 'row', alignItems: 'center', backgroundColor: COLORS.gray, borderRadius: SIZES.base, marginVertical: SIZES.base, padding: SIZES.base - 2}}>
+              <Image
+                source={item.image}
+                style={{
+                  width: 120,
+                  height: 120,
+                  borderRadius: SIZES.extraLarge,
+                  marginVertical: SIZES.font,
+                }}
+              />
+              <View style={{marginHorizontal: SIZES.large, width: 200}}>
+                  <Text style={{color: COLORS.white, fontSize: SIZES.large}}>{item.name}</Text>
+                  <Text style={{color: COLORS.white, fontSize: SIZES.small}}>{item.description}</Text> 
+
+              </View>
+            </View>
           )}
         />
       </View>
