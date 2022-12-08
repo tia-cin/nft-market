@@ -8,6 +8,7 @@ import { StackNavigationProp } from "@react-navigation/stack";
 const Landing = () => {
   const navigation =
     useNavigation<StackNavigationProp<{ Auth: any; Register: any }>>();
+  
   return (
     <SafeAreaView
       style={{
@@ -40,13 +41,23 @@ const Landing = () => {
         </View>
         <View>
           <RectButton
-            text="Start"
+            text="Sign In"
             props={{
               backgroundColor: COLORS.primary,
               width: 350,
               marginBottom: SIZES.font,
             }}
-            handlePress={() => navigation.navigate("Auth")}
+            handlePress={() => navigation.navigate("Auth", { logIn: false })}
+          />
+          <RectButton
+            text="Log In"
+            props={{
+              backgroundColor: COLORS.primary,
+              width: 350,
+              marginBottom: SIZES.font,
+              fontWeight: SIZES.extraLarge
+            }}
+            handlePress={() => navigation.navigate("Auth", { logIn: true })}
           />
         </View>
       </ImageBackground>

@@ -11,12 +11,13 @@ import { useNavigation } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { NavigateProps } from "../types";
 
-const Auth = () => {
-  const navigation = useNavigation<StackNavigationProp<NavigateProps>>();
+const Auth = ({ route, navigation }: any) => {
+  const { logIn } = route.params;
+  const navigate = useNavigation<StackNavigationProp<NavigateProps>>();
   const [username, setUsername] = React.useState<string>("Username");
   const [password, setPassword] = React.useState<string>("Password");
   const [email, setEmail] = React.useState<string>("Email");
-  const [createUser, setCreateUser] = React.useState<boolean>(false);
+  const [createUser, setCreateUser] = React.useState<boolean>(logIn);
 
   return (
     <View style={{ flex: 1 }}>
@@ -24,7 +25,7 @@ const Auth = () => {
         <View style={{ flex: 1 }}>
           <CircleButton
             imgUrl={assets.left}
-            handlePress={() => navigation.goBack()}
+            handlePress={() => navigate.goBack()}
             props={{
               left: 15,
               marginVertical: SIZES.extraLarge,
@@ -39,7 +40,7 @@ const Auth = () => {
               fontWeight: "bold",
             }}
           >
-            {createUser ? "Sign Up" : "Sign In"}
+            {createUser ? "Sign In" : "Log In"}
           </Text>
         </View>
         <View
@@ -94,6 +95,11 @@ const Auth = () => {
               icon={assets.google}
               props={{ backgroundColor: COLORS.light }}
             />
+            <IconButton
+              text="Continue with Facebook"
+              icon={assets.facebook}
+              props={{ backgroundColor: COLORS.light }}
+            />
             <View
               style={{
                 flexDirection: "row",
@@ -105,7 +111,7 @@ const Auth = () => {
                 onPress={() => setCreateUser((prev) => !prev)}
               >
                 <Text style={{ fontWeight: "bold" }}>
-                  {createUser ? "Sign In" : "Sign Up"}
+                  {createUser ? "Sign In" : "Register"}
                 </Text>
               </TouchableWithoutFeedback>
             </View>
