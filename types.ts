@@ -27,6 +27,9 @@ export type NavigateProps = {
     navigate: any;
   };
   User: undefined;
+  CreateNFT: undefined,
+  ShopCart: undefined,
+  Configuration: undefined
 };
 
 // COMPONENTS
