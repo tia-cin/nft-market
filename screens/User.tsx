@@ -3,8 +3,12 @@ import React from "react";
 import { assets, COLORS, SHADOWS, SIZES } from "../constants";
 import { CircleButton, EthPrice } from "../components";
 import { userNFT } from "../constants/dummy";
+import { useNavigation } from "@react-navigation/native";
+import { StackNavigationProp } from "@react-navigation/stack";
+import { NavigateProps } from "../types";
 
 const User = () => {
+  const navigation = useNavigation<StackNavigationProp<NavigateProps>>()
   return (
     <View style={{ flex: 1, backgroundColor: COLORS.primary }}>
       <View
@@ -17,7 +21,7 @@ const User = () => {
         }}
       >
         <CircleButton imgUrl={assets.left} />
-        <CircleButton imgUrl={assets.options} />
+        <CircleButton imgUrl={assets.options} handlePress={() => navigation.navigate("Configuration")}/>
       </View>
       <View style={{ flex: 2, alignItems: "center" }}>
         <View>
