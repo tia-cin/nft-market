@@ -1,7 +1,7 @@
 import { View, Text, Image, FlatList } from "react-native";
 import React from "react";
 import { assets, COLORS, SHADOWS, SIZES } from "../constants";
-import { CircleButton, EthPrice } from "../components";
+import { CircleButton, NFTCard } from "../components";
 import { userNFT } from "../constants/dummy";
 import { useNavigation } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
@@ -94,7 +94,7 @@ const User = () => {
             }}
           >
             <CircleButton imgUrl={assets.multimedia} />
-            <CircleButton imgUrl={assets.heartIcon} />
+            <CircleButton imgUrl={assets.heart} />
           </View>
         </View>
       </View>
@@ -105,24 +105,10 @@ const User = () => {
         }}
       >
         <FlatList
+        style={{width: 400}}
           data={userNFT}
           renderItem={({ item }) => (
-            <View style={{ flexDirection: 'row', alignItems: 'center', backgroundColor: COLORS.gray, borderRadius: SIZES.base, marginVertical: SIZES.base, padding: SIZES.base - 2}}>
-              <Image
-                source={item.image}
-                style={{
-                  width: 120,
-                  height: 120,
-                  borderRadius: SIZES.extraLarge,
-                  marginVertical: SIZES.font,
-                }}
-              />
-              <View style={{marginHorizontal: SIZES.large, width: 200}}>
-                  <Text style={{color: COLORS.white, fontSize: SIZES.large}}>{item.name}</Text>
-                  <Text style={{color: COLORS.white, fontSize: SIZES.small}}>{item.description}</Text> 
-
-              </View>
-            </View>
+            <NFTCard data={item}/>
           )}
         />
       </View>

@@ -7,6 +7,24 @@ const userNFT = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     price: 2.54,
+    id: "NFT-32",
+    creator: "Loren Abul",
+    bids: [
+      {
+        id: "BID-11",
+        name: "Jessica Tan",
+        price: 4.25,
+        image: assets.person02,
+        date: "December 12, 2019 at 12:10 PM",
+      },
+      {
+        id: "BID-12",
+        name: "Jennifer Sia",
+        price: 4.5,
+        image: assets.person03,
+        date: "December 27, 2019 at 1:50 PM",
+      },
+    ],
   },
   {
     image: assets.nft09,
@@ -14,6 +32,24 @@ const userNFT = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     price: 5.52,
+    id: "NFT-28",
+    creator: "Loren Abul",
+    bids: [
+      {
+        id: "BID-11",
+        name: "Jessica Tan",
+        price: 4.25,
+        image: assets.person02,
+        date: "December 12, 2019 at 12:10 PM",
+      },
+      {
+        id: "BID-12",
+        name: "Jennifer Sia",
+        price: 4.5,
+        image: assets.person03,
+        date: "December 27, 2019 at 1:50 PM",
+      },
+    ],
   },
   {
     image: assets.nft10,
@@ -21,6 +57,24 @@ const userNFT = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     price: 2.37,
+    id: "NFT-11",
+    creator: "Loren Abul",
+    bids: [
+      {
+        id: "BID-11",
+        name: "Jessica Tan",
+        price: 4.25,
+        image: assets.person02,
+        date: "December 12, 2019 at 12:10 PM",
+      },
+      {
+        id: "BID-12",
+        name: "Jennifer Sia",
+        price: 4.5,
+        image: assets.person03,
+        date: "December 27, 2019 at 1:50 PM",
+      },
+    ],
   },
   {
     image: assets.nft11,
@@ -28,6 +82,24 @@ const userNFT = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     price: 1.74,
+    id: "NFT-09",
+    creator: "Owen Amil",
+    bids: [
+      {
+        id: "BID-11",
+        name: "Jessica Tan",
+        price: 4.25,
+        image: assets.person02,
+        date: "December 12, 2019 at 12:10 PM",
+      },
+      {
+        id: "BID-12",
+        name: "Jennifer Sia",
+        price: 4.5,
+        image: assets.person03,
+        date: "December 27, 2019 at 1:50 PM",
+      },
+    ],
   },
   {
     image: assets.nft12,
@@ -35,6 +107,24 @@ const userNFT = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     price: 8.49,
+    id: "NFT-08",
+    creator: "Loren Abul",
+    bids: [
+      {
+        id: "BID-11",
+        name: "Jessica Tan",
+        price: 4.25,
+        image: assets.person02,
+        date: "December 12, 2019 at 12:10 PM",
+      },
+      {
+        id: "BID-12",
+        name: "Jennifer Sia",
+        price: 4.5,
+        image: assets.person03,
+        date: "December 27, 2019 at 1:50 PM",
+      },
+    ],
   },
 ];
 

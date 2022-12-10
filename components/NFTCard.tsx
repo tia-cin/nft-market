@@ -10,7 +10,7 @@ import {
 } from "../components";
 import { NFTDataType } from "../types";
 
-const NFTCard: React.FC<{ data: NFTDataType; navigation: any }> = ({
+const NFTCard: React.FC<{ data: NFTDataType; navigation?: any }> = ({
   data,
   navigation,
 }) => {
@@ -72,4 +72,4 @@ const NFTCard: React.FC<{ data: NFTDataType; navigation: any }> = ({
   );
 };
 
-export default NFTCard;
+export default NFTCard
