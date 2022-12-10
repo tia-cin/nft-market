@@ -14,6 +14,7 @@ const NFTCard: React.FC<{ data: NFTDataType; navigation?: any }> = ({
   data,
   navigation,
 }) => {
+  const [liked, setLiked] = React.useState<boolean>(data.like)
   return (
     <View
       style={{
@@ -36,12 +37,12 @@ const NFTCard: React.FC<{ data: NFTDataType; navigation?: any }> = ({
           }}
         />
         <CircleButton
-          imgUrl={assets.heart}
+          imgUrl={liked ? assets.heart : assets.heartIcon}
           props={{
             right: 10,
             top: -240,
           }}
-          handlePress={() => {}}
+          handlePress={() => setLiked(!liked)}
         />
       </View>
       <SubInfo />

@@ -8,7 +8,9 @@ import { StackNavigationProp } from "@react-navigation/stack";
 import { NavigateProps } from "../types";
 
 const User = () => {
-  const navigation = useNavigation<StackNavigationProp<NavigateProps>>()
+  const navigation = useNavigation<StackNavigationProp<NavigateProps>>();
+  const [show, setShow] = React.useState<boolean>(false);
+
   return (
     <View style={{ flex: 1, backgroundColor: COLORS.primary }}>
       <View
@@ -21,7 +23,10 @@ const User = () => {
         }}
       >
         <CircleButton imgUrl={assets.left} />
-        <CircleButton imgUrl={assets.options} handlePress={() => navigation.navigate("Configuration")}/>
+        <CircleButton
+          imgUrl={assets.options}
+          handlePress={() => navigation.navigate("Configuration")}
+        />
       </View>
       <View style={{ flex: 2, alignItems: "center" }}>
         <View>
@@ -93,8 +98,8 @@ const User = () => {
               flexDirection: "row",
             }}
           >
-            <CircleButton imgUrl={assets.multimedia} />
-            <CircleButton imgUrl={assets.heart} />
+            <CircleButton imgUrl={assets.nft} handlePress={() => setShow(false)}/>
+            <CircleButton imgUrl={assets.heart} handlePress={() => setShow(true)}/>
           </View>
         </View>
       </View>
@@ -104,13 +109,19 @@ const User = () => {
           alignItems: "center",
         }}
       >
-        <FlatList
-        style={{width: 400}}
-          data={userNFT}
-          renderItem={({ item }) => (
-            <NFTCard data={item}/>
-          )}
-        />
+        {show ? (
+          <FlatList
+            style={{ width: 400 }}
+            data={userNFT.filter((nft) => nft.like)}
+            renderItem={({ item }) => <NFTCard data={item} />}
+          />
+        ) : (
+          <FlatList
+            style={{ width: 400 }}
+            data={userNFT}
+            renderItem={({ item }) => <NFTCard data={item} />}
+          />
+        )}
       </View>
     </View>
   );

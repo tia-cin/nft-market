@@ -7,6 +7,7 @@ export interface NFTDataType {
   description: string;
   image: any;
   bids: BidType[];
+  like: boolean
 }
 
 export interface BidType {

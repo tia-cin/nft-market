@@ -2,6 +2,7 @@ import assets from "./assets";
 
 const userNFT = [
   {
+    like: true,
     image: assets.nft08,
     name: "Roman Coin",
     description:
@@ -27,6 +28,7 @@ const userNFT = [
     ],
   },
   {
+    like: false,
     image: assets.nft09,
     name: "Space Diamond",
     description:
@@ -52,6 +54,7 @@ const userNFT = [
     ],
   },
   {
+    like: false,
     image: assets.nft10,
     name: "Testing Game #2",
     description:
@@ -77,6 +80,7 @@ const userNFT = [
     ],
   },
   {
+    like: true,
     image: assets.nft11,
     name: "Abstracto #208",
     description:
@@ -102,6 +106,7 @@ const userNFT = [
     ],
   },
   {
+    like: true,
     image: assets.nft12,
     name: "Rabit",
     description:
@@ -130,6 +135,7 @@ const userNFT = [
 
 const NFTData = [
   {
+    like: false,
     id: "NFT-01",
     name: "Abstracto #312",
     creator: "Putri Intan",
@@ -162,6 +168,7 @@ const NFTData = [
     ],
   },
   {
+    like: true,
     id: "NFT-02",
     name: "Green Coins",
     creator: "Siti Nurhaliza",
@@ -180,6 +187,7 @@ const NFTData = [
     ],
   },
   {
+    like: true,
     id: "NFT-03",
     name: "NFT coins race",
     creator: "Elisabeth aho",
@@ -205,6 +213,7 @@ const NFTData = [
     ],
   },
   {
+    like: true,
     id: "NFT-04",
     name: "Nifty NFT",
     creator: "Putri Intan",
@@ -244,6 +253,7 @@ const NFTData = [
     ],
   },
   {
+    like: false,
     id: "NFT-05",
     name: "Colorful circles",
     creator: "David doe",
@@ -262,6 +272,7 @@ const NFTData = [
     ],
   },
   {
+    like: false,
     id: "NFT-06",
     name: "Black box model",
     creator: "Leo Messi",
@@ -308,6 +319,7 @@ const NFTData = [
     ],
   },
   {
+    like: false,
     id: "NFT-07",
     name: "Abstracto soulful art",
     creator: "Victor de la Cruz",
