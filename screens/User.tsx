@@ -1,7 +1,7 @@
-import { View, Text, Image, FlatList } from "react-native";
+import { View, Text, Image, FlatList, TouchableOpacity } from "react-native";
 import React from "react";
 import { assets, COLORS, SHADOWS, SIZES } from "../constants";
-import { CircleButton, NFTCard } from "../components";
+import { CircleButton, NFTCard, RectButton } from "../components";
 import { NFTData, userNFT } from "../constants/dummy";
 import { useNavigation } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
@@ -23,10 +23,21 @@ const User = () => {
         }}
       >
         <CircleButton imgUrl={assets.left} />
-        <CircleButton
-          imgUrl={assets.options}
-          handlePress={() => navigation.navigate("Configuration")}
-        />
+        <TouchableOpacity
+          style={{ right: SIZES.large * 2 }}
+          onPress={() => navigation.navigate("CreateNFT")}
+        >
+          <Text
+            style={{
+              backgroundColor: COLORS.white,
+              padding: SIZES.small - 4,
+              borderRadius: SIZES.small,
+              position: "absolute",
+            }}
+          >
+            Create NFT
+          </Text>
+        </TouchableOpacity>
       </View>
       <View style={{ flex: 2, alignItems: "center" }}>
         <View>
@@ -98,8 +109,14 @@ const User = () => {
               flexDirection: "row",
             }}
           >
-            <CircleButton imgUrl={assets.nft} handlePress={() => setShow(false)}/>
-            <CircleButton imgUrl={assets.heart} handlePress={() => setShow(true)}/>
+            <CircleButton
+              imgUrl={assets.nft}
+              handlePress={() => setShow(false)}
+            />
+            <CircleButton
+              imgUrl={assets.heart}
+              handlePress={() => setShow(true)}
+            />
           </View>
         </View>
       </View>

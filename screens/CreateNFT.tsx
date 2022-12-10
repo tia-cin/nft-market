@@ -1,9 +1,8 @@
-import React from 'react'
+import React from "react";
+import { Text } from "react-native";
 
 function CreateNFT() {
-  return (
-    <div>CreateNFT</div>
-  )
+  return <Text>CreateNFT</Text>;
 }
 
-export default CreateNFT
+export default CreateNFT;

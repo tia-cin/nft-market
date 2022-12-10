@@ -30,7 +30,6 @@ export type NavigateProps = {
   User: undefined;
   CreateNFT: undefined,
   ShopCart: undefined,
-  Configuration: undefined
 };
 
 // COMPONENTS
