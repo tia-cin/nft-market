@@ -4,16 +4,9 @@ import { FocusStatusBar, Inputs } from "../components";
 import { COLORS, SIZES } from "../constants";
 
 const CreateNFT = () => {
-  const [formInputs, setFormInputs] = React.useState({
-    id: "ID",
-    name: "Name",
-    creator: "Full Name",
-    price: "Price",
-    description: "Description",
-    image: "Image",
-    bids: [],
-    like: false,
-  });
+  const [nftName, setNftName] = React.useState<string>("Name");
+  const [nftPrice, setNftPrice] = React.useState<string>("Price");
+  const [nftDesc, setNftDesc] = React.useState<string>("Description");
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.primary }}>
       <FocusStatusBar background={COLORS.primary} />
@@ -39,11 +32,9 @@ const CreateNFT = () => {
         products attractive to the audience
       </Text>
       <View style={{ flex: 1, justifyContent: "space-evenly" }}>
-        <Inputs value={formInputs.id} numeric onChange={() => {}} />
-        <Inputs value={formInputs.name} onChange={() => {}} />
-        <Inputs value={formInputs.price} numeric onChange={() => {}} />
-        <Inputs value={formInputs.description} onChange={() => {}} />
-        <Inputs value={formInputs.image} onChange={() => {}} />
+        <Inputs value={nftName} onChange={setNftName} />
+        <Inputs value={nftPrice} numeric onChange={setNftPrice} />
+        <Inputs value={nftDesc} onChange={setNftDesc} />
       </View>
       <View style={{ flex: 1 }}></View>
     </SafeAreaView>
