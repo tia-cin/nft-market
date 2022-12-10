@@ -9,7 +9,7 @@ const userNFT = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     price: 2.54,
     id: "NFT-32",
-    creator: "Loren Abul",
+    creator: "Full Name",
     bids: [
       {
         id: "BID-11",
@@ -35,7 +35,7 @@ const userNFT = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     price: 5.52,
     id: "NFT-28",
-    creator: "Loren Abul",
+    creator: "Full Name",
     bids: [
       {
         id: "BID-11",
@@ -61,7 +61,7 @@ const userNFT = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     price: 2.37,
     id: "NFT-11",
-    creator: "Loren Abul",
+    creator: "Full Name",
     bids: [
       {
         id: "BID-11",
@@ -87,7 +87,7 @@ const userNFT = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     price: 1.74,
     id: "NFT-09",
-    creator: "Owen Amil",
+    creator: "Full Name",
     bids: [
       {
         id: "BID-11",
@@ -113,7 +113,7 @@ const userNFT = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     price: 8.49,
     id: "NFT-08",
-    creator: "Loren Abul",
+    creator: "Full Name",
     bids: [
       {
         id: "BID-11",

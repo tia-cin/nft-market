@@ -2,7 +2,7 @@ import { View, Text, Image, FlatList } from "react-native";
 import React from "react";
 import { assets, COLORS, SHADOWS, SIZES } from "../constants";
 import { CircleButton, NFTCard } from "../components";
-import { userNFT } from "../constants/dummy";
+import { NFTData, userNFT } from "../constants/dummy";
 import { useNavigation } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { NavigateProps } from "../types";
@@ -112,7 +112,7 @@ const User = () => {
         {show ? (
           <FlatList
             style={{ width: 400 }}
-            data={userNFT.filter((nft) => nft.like)}
+            data={[...NFTData, ...userNFT].filter((nft) => nft.like)}
             renderItem={({ item }) => <NFTCard data={item} />}
           />
         ) : (
