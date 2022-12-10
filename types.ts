@@ -51,6 +51,7 @@ export interface ImageCmpProps {
 
 export interface InputsProps {
   value: string;
+  numeric?: boolean;
   onChange: (input: string) => void;
 }
 

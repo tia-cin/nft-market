@@ -3,7 +3,7 @@ import React from "react";
 import { SIZES, COLORS, assets } from "../constants";
 import { IconInputProps, InputsProps } from "../types";
 
-export const Inputs: React.FC<InputsProps> = ({ value, onChange }) => {
+export const Inputs: React.FC<InputsProps> = ({ value, numeric, onChange }) => {
   return (
     <View
       style={{
@@ -16,7 +16,15 @@ export const Inputs: React.FC<InputsProps> = ({ value, onChange }) => {
         paddingVertical: SIZES.small - 2,
       }}
     >
-      <TextInput value={value} onChangeText={onChange} />
+      {numeric ? (
+        <TextInput
+          value={value}
+          onChangeText={onChange}
+          keyboardType="numeric"
+        />
+      ) : (
+        <TextInput value={value} onChangeText={onChange} />
+      )}
     </View>
   );
 };

@@ -1,7 +1,12 @@
 import { View, Text, Image, FlatList, TouchableOpacity } from "react-native";
 import React from "react";
 import { assets, COLORS, SHADOWS, SIZES } from "../constants";
-import { CircleButton, NFTCard, RectButton } from "../components";
+import {
+  CircleButton,
+  FocusStatusBar,
+  NFTCard,
+  RectButton,
+} from "../components";
 import { NFTData, userNFT } from "../constants/dummy";
 import { useNavigation } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
@@ -13,6 +18,7 @@ const User = () => {
 
   return (
     <View style={{ flex: 1, backgroundColor: COLORS.primary }}>
+      <FocusStatusBar background={COLORS.primary} />
       <View
         style={{
           flex: 0.5,
