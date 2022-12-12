@@ -10,8 +10,11 @@ import { RectButton, IconButton, Inputs, CircleButton } from "../components";
 import { useNavigation } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { NavigateProps } from "../types";
+import { useDispatch } from "react-redux";
+import { getUserAction } from "../redux/Actions";
 
 const Auth = ({ route, navigation }: any) => {
+  const dispatch = useDispatch();
   const { logIn } = route.params;
   const navigate = useNavigation<StackNavigationProp<NavigateProps>>();
   const [username, setUsername] = React.useState<string>("Username");
@@ -78,7 +81,20 @@ const Auth = ({ route, navigation }: any) => {
             )}
             <RectButton
               text={createUser ? "Sign Up" : "Sign In"}
-              handlePress={() => navigation.navigate("Home")}
+              handlePress={() => {
+                dispatch<any>(
+                  getUserAction({
+                    username,
+                    email,
+                    biography: "",
+                    createdNFTs: [],
+                    likedNFTs: [],
+                    picture: "",
+                    shopCart: [],
+                  })
+                );
+                navigation.navigate("Home");
+              }}
             />
           </View>
           <View
