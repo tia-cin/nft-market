@@ -3,7 +3,7 @@ import React from "react";
 import { SIZES, COLORS, assets } from "../constants";
 import { IconInputProps, InputsProps } from "../types";
 
-export const Inputs: React.FC<InputsProps> = ({ value, numeric, onChange }) => {
+export const Inputs: React.FC<InputsProps> = ({ value, onChange }) => {
   return (
     <View
       style={{

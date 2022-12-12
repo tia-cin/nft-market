@@ -1,7 +1,8 @@
 import React from "react";
-import { Text, View, SafeAreaView } from "react-native";
+import { Text, View, SafeAreaView, Alert } from "react-native";
 import { FocusStatusBar, Inputs, RectButton } from "../components";
 import { COLORS, NFTData, SIZES } from "../constants";
+import { DocumentDirectoryPath, writeFile } from "react-native-fs";
 
 const CreateNFT = () => {
   const [nftName, setNftName] = React.useState<string>("Name");
@@ -9,7 +10,16 @@ const CreateNFT = () => {
   const [nftDesc, setNftDesc] = React.useState<string>("Description");
   const [nftFile, setNftFile] = React.useState<string>("NFT");
 
-  const saveFile = async () => {};
+  // const saveFile = async () => {
+  //   const path = `${DocumentDirectoryPath}/${Date.now()}.txt`;
+
+  //   try {
+  //     await writeFile(path, nftFile, "utf8");
+  //     Alert.alert("File Saved", null, [{ text: "Ok" }]);
+  //   } catch (error) {
+  //     console.log("error", error);
+  //   }
+  // };
 
   return (
     <SafeAreaView
@@ -47,11 +57,12 @@ const CreateNFT = () => {
         <Inputs value={nftName} onChange={setNftName} />
         <Inputs value={nftPrice} onChange={setNftPrice} />
         <Inputs value={nftDesc} onChange={setNftDesc} />
-        <Inputs value={nftFile} onChange={saveFile} />
+        <Inputs value={nftFile} onChange={setNftFile} />
         <RectButton
           text="Submit"
           props={{ backgroundColor: COLORS.secondary }}
-          handlePress={() =>
+          handlePress={() => {
+            // saveFile();
             NFTData.push({
               id: "NFT-20",
               name: nftName,
@@ -61,8 +72,8 @@ const CreateNFT = () => {
               image: "",
               bids: [],
               like: false,
-            })
-          }
+            });
+          }}
         />
       </View>
       <View style={{ flex: 1 }}></View>
