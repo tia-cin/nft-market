@@ -45,7 +45,7 @@ const CreateNFT = () => {
       </View>
       <View style={{ flex: 1, justifyContent: "space-evenly" }}>
         <Inputs value={nftName} onChange={setNftName} />
-        <Inputs value={nftPrice} numeric onChange={setNftPrice} />
+        <Inputs value={nftPrice} onChange={setNftPrice} />
         <Inputs value={nftDesc} onChange={setNftDesc} />
         <Inputs value={nftFile} onChange={saveFile} />
         <RectButton

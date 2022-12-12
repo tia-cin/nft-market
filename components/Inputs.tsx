@@ -16,15 +16,7 @@ export const Inputs: React.FC<InputsProps> = ({ value, numeric, onChange }) => {
         paddingVertical: SIZES.small - 2,
       }}
     >
-      {numeric ? (
-        <TextInput
-          value={value}
-          onChangeText={onChange}
-          keyboardType="numeric"
-        />
-      ) : (
-        <TextInput value={value} onChangeText={onChange} />
-      )}
+      <TextInput value={value} onChangeText={onChange} />
     </View>
   );
 };
