@@ -6,16 +6,16 @@ export const ADD_SHOP_CART = 'ADD_SHOP_CART'
 
 // REDUX
 interface UserType {
-  shopCart: NFTDataType[] | null,
+    shopCart: NFTDataType[],
     picture: string,
     username: string,
     email: string,
     biography: string,
-    createdNFTs: NFTDataType[] | null,
-    likedNFTs: NFTDataType[] | null
+    createdNFTs: NFTDataType[],
+    likedNFTs: NFTDataType[]
 }
 export interface StateType {
-  user: UserType| null,
+  user: UserType,
   currentNFTs: NFTDataType[]
 }
 
@@ -24,18 +24,22 @@ interface getCurrentNFTsAction {
   type: typeof GET_CURRENT_NFTS,
   payload: NFTDataType[]
 }
+
 interface getUserAction {
   type: typeof GET_USER,
   payload: UserType
 }
+
 interface createNFTAction {
   type: typeof CREATE_NFT,
   payload: NFTDataType
 }
+
 interface likeNFTAction {
   type: typeof LIKE_NFT,
   payload: NFTDataType
 }
+
 interface addShopCartAction {
   type: typeof ADD_SHOP_CART,
   payload: NFTDataType
