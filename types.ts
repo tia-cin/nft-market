@@ -1,16 +1,47 @@
+export const GET_CURRENT_NFTS = 'GET_CURRENT_NFTS';
+export const GET_USER = 'GET_USER'
+export const CREATE_NFT = 'CREATE_NFT'
+export const LIKE_NFT = 'LIKE_NFT'
+export const ADD_SHOP_CART = 'ADD_SHOP_CART'
+
 // REDUX
-export interface StateType {
-  user: {
-    shopCart: NFTDataType[] | null,
+interface UserType {
+  shopCart: NFTDataType[] | null,
     picture: string,
     username: string,
     email: string,
     biography: string,
     createdNFTs: NFTDataType[] | null,
     likedNFTs: NFTDataType[] | null
-  } | null,
+}
+export interface StateType {
+  user: UserType| null,
   currentNFTs: NFTDataType[]
 }
+
+// ACTIONS
+interface getCurrentNFTsAction {
+  type: typeof GET_CURRENT_NFTS,
+  payload: NFTDataType[]
+}
+interface getUserAction {
+  type: typeof GET_USER,
+  payload: UserType
+}
+interface createNFTAction {
+  type: typeof CREATE_NFT,
+  payload: NFTDataType
+}
+interface likeNFTAction {
+  type: typeof LIKE_NFT,
+  payload: NFTDataType
+}
+interface addShopCartAction {
+  type: typeof ADD_SHOP_CART,
+  payload: NFTDataType
+}
+
+export type ActionTypes = getCurrentNFTsAction | getUserAction | createNFTAction | likeNFTAction | addShopCartAction
 // DATA
 export interface NFTDataType {
   id: string;
