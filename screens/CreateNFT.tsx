@@ -7,6 +7,10 @@ const CreateNFT = () => {
   const [nftName, setNftName] = React.useState<string>("Name");
   const [nftPrice, setNftPrice] = React.useState<string>("Price");
   const [nftDesc, setNftDesc] = React.useState<string>("Description");
+  const [nftFile, setNftFile] = React.useState<string>("NFT");
+
+  const saveFile = async () => {};
+
   return (
     <SafeAreaView
       style={{
@@ -43,7 +47,7 @@ const CreateNFT = () => {
         <Inputs value={nftName} onChange={setNftName} />
         <Inputs value={nftPrice} numeric onChange={setNftPrice} />
         <Inputs value={nftDesc} onChange={setNftDesc} />
-        {/* Add Image Input */}
+        <Inputs value={nftFile} onChange={saveFile} />
         <RectButton
           text="Submit"
           props={{ backgroundColor: COLORS.secondary }}
