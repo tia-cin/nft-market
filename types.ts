@@ -1,3 +1,16 @@
+// REDUX
+export interface StateType {
+  user: {
+    shopCart: NFTDataType[] | null,
+    picture: string,
+    username: string,
+    email: string,
+    biography: string,
+    createdNFTs: NFTDataType[] | null,
+    likedNFTs: NFTDataType[] | null
+  } | null,
+  currentNFTs: NFTDataType[]
+}
 // DATA
 export interface NFTDataType {
   id: string;
