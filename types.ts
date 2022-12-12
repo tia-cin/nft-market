@@ -5,7 +5,7 @@ export const LIKE_NFT = 'LIKE_NFT'
 export const ADD_SHOP_CART = 'ADD_SHOP_CART'
 
 // REDUX
-interface UserType {
+export interface UserType {
     shopCart: NFTDataType[],
     picture: string,
     username: string,
