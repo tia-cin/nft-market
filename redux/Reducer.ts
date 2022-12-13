@@ -14,7 +14,7 @@ const initialState: StateType = {
     currentNFTs: []    
 }
 
-export const reducer = (state = initialState, {type, payload}: ActionTypes ): StateType => {
+export const reducer = (state = initialState, { type, payload }: ActionTypes ): StateType => {
     switch(type) {
         case GET_CURRENT_NFTS: 
             return {
@@ -32,6 +32,9 @@ export const reducer = (state = initialState, {type, payload}: ActionTypes ): St
                 currentNFTs: [...state.currentNFTs, payload]
             }
         case LIKE_NFT: 
+            return {
+                ...state
+            }
         case ADD_SHOP_CART: 
             return {
                 ...state,

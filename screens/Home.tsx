@@ -10,8 +10,8 @@ import { getCurrentNFTs } from "../redux/Actions";
 import { RootState } from "../redux/Store";
 
 const Home = () => {
-  const dispatch = useDispatch();
   const { currentNFTs } = useSelector((state: RootState) => state);
+  const dispatch = useDispatch();
   const navigation = useNavigation<StackNavigationProp<NavigateProps>>();
   const [search, setSearch] = useState<Array<NFTDataType>>(currentNFTs);
 
