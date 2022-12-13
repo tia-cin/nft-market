@@ -80,6 +80,12 @@ export type NavigateProps = {
   ShopCart: undefined,
 };
 
+export type UserNavigationTypes = {
+  UserNFTs: undefined,
+  LikedNFTs: undefined,
+  ShopCart: undefined
+}
+
 // COMPONENTS
 export interface NFTTitleProps {
   title: string;

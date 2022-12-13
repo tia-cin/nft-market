@@ -1,19 +1,14 @@
-import { View, Text, SafeAreaView, FlatList } from "react-native";
+import { View, SafeAreaView, FlatList } from "react-native";
 import React, { useState } from "react";
 import { COLORS, NFTData } from "../constants";
 import { useNavigation } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { NFTCard, HomeHeader, FocusStatusBar } from "../components";
 import { NFTDataType, NavigateProps } from "../types";
-import { useDispatch, useSelector } from "react-redux/es/exports";
-import { getCurrentNFTs } from "../redux/Actions";
-import { RootState } from "../redux/Store";
 
 const Home = () => {
-  const { currentNFTs } = useSelector((state: RootState) => state);
-  const dispatch = useDispatch();
   const navigation = useNavigation<StackNavigationProp<NavigateProps>>();
-  const [search, setSearch] = useState<Array<NFTDataType>>(currentNFTs);
+  const [search, setSearch] = useState<Array<NFTDataType>>(NFTData);
 
   const onSearch = (input: string) => {
     if (!input.length) return setSearch(NFTData);
@@ -27,10 +22,6 @@ const Home = () => {
       setSearch(NFTData);
     }
   };
-
-  React.useEffect(() => {
-    dispatch<any>(getCurrentNFTs());
-  });
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
@@ -61,7 +52,6 @@ const Home = () => {
           <View style={{ flex: 1, backgroundColor: COLORS.white }} />
         </View>
       </View>
-      {/* <BottomBar /> */}
     </SafeAreaView>
   );
 };

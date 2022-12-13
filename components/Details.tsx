@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { CircleButton, EthPrice, NFTTitle } from "../components";
 import { assets, COLORS, SIZES } from "../constants";
 import { BidType, DetailsDescProps, NFTDataType } from "../types";
+import { addShopCartAction } from "../redux/Actions";
 
 export const DetailsDesc: React.FC<DetailsDescProps> = ({ data }) => {
   const [text, setText] = useState<string>(data.description.slice(0, 100));
@@ -129,7 +130,7 @@ export const DetailsHeader: React.FC<{
       <CircleButton
         imgUrl={assets.addtocart}
         props={{
-          right: 15,
+          right: 65,
           top: StatusBar.currentHeight && StatusBar.currentHeight - 373,
         }}
       />

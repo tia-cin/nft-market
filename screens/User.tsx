@@ -1,16 +1,20 @@
 import { View, Text, Image, FlatList, TouchableOpacity } from "react-native";
 import React from "react";
-import { assets, COLORS, SHADOWS, SIZES } from "../constants";
-import {
-  CircleButton,
-  FocusStatusBar,
-  NFTCard,
-  RectButton,
-} from "../components";
+import { assets, COLORS, SIZES } from "../constants";
+import { CircleButton, FocusStatusBar, NFTCard } from "../components";
 import { NFTData, userNFT } from "../constants/dummy";
 import { useNavigation } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
-import { NavigateProps } from "../types";
+import { NavigateProps, UserNavigationTypes } from "../types";
+import { createStackNavigator } from "@react-navigation/stack";
+import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
+
+const Stack = createStackNavigator<UserNavigationTypes>();
+
+const theme = {
+  ...DefaultTheme,
+  colors: { ...DefaultTheme.colors, background: "transparent" },
+};
 
 const User = () => {
   const navigation = useNavigation<StackNavigationProp<NavigateProps>>();
@@ -123,6 +127,7 @@ const User = () => {
               imgUrl={assets.heart}
               handlePress={() => setShow(true)}
             />
+            <CircleButton imgUrl={assets.addtocart} />
           </View>
         </View>
       </View>
@@ -132,19 +137,13 @@ const User = () => {
           alignItems: "center",
         }}
       >
-        {show ? (
-          <FlatList
-            style={{ width: 400 }}
-            data={[...NFTData, ...userNFT].filter((nft) => nft.like)}
-            renderItem={({ item }) => <NFTCard data={item} />}
-          />
-        ) : (
-          <FlatList
-            style={{ width: 400 }}
-            data={userNFT}
-            renderItem={({ item }) => <NFTCard data={item} />}
-          />
-        )}
+        <NavigationContainer>
+          <Stack.Navigator initialRouteName="UserNFTs">
+            <Stack.Screen name="UserNFTs" />
+            <Stack.Screen name="LikedNFTs" />
+            <Stack.Screen name="ShopCart" />
+          </Stack.Navigator>
+        </NavigationContainer>
       </View>
     </View>
   );
