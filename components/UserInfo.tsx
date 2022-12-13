@@ -1,9 +1,13 @@
-import { View, Text, Image } from "react-native";
+import { View, Text, Image, FlatList } from "react-native";
 import React from "react";
 import { assets, COLORS, SIZES } from "../constants";
 import { CircleButton } from "./Buttons";
+import { useNavigation } from "@react-navigation/native";
+import { StackNavigationProp } from "@react-navigation/stack";
+import { UserNavigationTypes } from "../types";
 
-const UserInfo = () => {
+export const UserInfo = () => {
+  const navigation = useNavigation<StackNavigationProp<UserNavigationTypes>>();
   return (
     <View style={{ flex: 2, alignItems: "center" }}>
       <View>
@@ -75,13 +79,20 @@ const UserInfo = () => {
             flexDirection: "row",
           }}
         >
-          <CircleButton imgUrl={assets.nft} />
-          <CircleButton imgUrl={assets.heart} />
-          <CircleButton imgUrl={assets.addtocart} />
+          <CircleButton
+            imgUrl={assets.nft}
+            handlePress={() => navigation.navigate("UserNFTs")}
+          />
+          <CircleButton
+            imgUrl={assets.heart}
+            handlePress={() => navigation.navigate("LikedNFTs")}
+          />
+          <CircleButton
+            imgUrl={assets.addtocart}
+            handlePress={() => navigation.navigate("ShopCart")}
+          />
         </View>
       </View>
     </View>
   );
 };
-
-export default UserInfo;

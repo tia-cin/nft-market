@@ -12,7 +12,7 @@ import {
 } from "./SubInfo";
 import { DetailsBid, DetailsDesc, DetailsHeader } from "./Details";
 import { Inputs, IconInput } from "./Inputs";
-import UserInfo from "./UserInfo";
+import {UserInfo} from "./UserInfo";
 
 export {
   HomeHeader,

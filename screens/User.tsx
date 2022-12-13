@@ -56,7 +56,7 @@ const User = () => {
           alignItems: "center",
         }}
       >
-        <NavigationContainer>
+        <NavigationContainer theme={theme}>
           <Stack.Navigator initialRouteName="UserNFTs">
             <Stack.Screen name="UserNFTs" />
             <Stack.Screen name="LikedNFTs" />
