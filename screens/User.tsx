@@ -58,9 +58,9 @@ const User = () => {
       >
         <NavigationContainer theme={theme}>
           <Stack.Navigator initialRouteName="UserNFTs">
-            <Stack.Screen name="UserNFTs" />
-            <Stack.Screen name="LikedNFTs" />
-            <Stack.Screen name="ShopCart" />
+            <Stack.Screen name="UserNFTs" component={} />
+            <Stack.Screen name="LikedNFTs" component={} />
+            <Stack.Screen name="ShopCart" component={} />
           </Stack.Navigator>
         </NavigationContainer>
       </View>
