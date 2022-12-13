@@ -12,6 +12,7 @@ import user from "../assets/icons/user.png";
 import home from "../assets/icons/home.png";
 import plus from "../assets/icons/plus.png";
 import boxes from "../assets/icons/boxes.png";
+import addtocart from "../assets/icons/addtocart.png";
 
 import logo from "../assets/images/logo.png";
 import nft01 from "../assets/images/nft01.png";
@@ -47,6 +48,7 @@ export default {
   boxes,
   home,
   plus,
+  addtocart,
 
   logo,
   nft01,

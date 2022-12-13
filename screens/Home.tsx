@@ -13,7 +13,6 @@ const Home = () => {
   const dispatch = useDispatch();
   const { currentNFTs } = useSelector((state: RootState) => state);
   const navigation = useNavigation<StackNavigationProp<NavigateProps>>();
-
   const [search, setSearch] = useState<Array<NFTDataType>>(currentNFTs);
 
   const onSearch = (input: string) => {

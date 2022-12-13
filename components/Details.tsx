@@ -126,6 +126,13 @@ export const DetailsHeader: React.FC<{
           top: StatusBar.currentHeight && StatusBar.currentHeight - 373,
         }}
       />
+      <CircleButton
+        imgUrl={assets.addtocart}
+        props={{
+          right: 15,
+          top: StatusBar.currentHeight && StatusBar.currentHeight - 373,
+        }}
+      />
     </View>
   );
 };
