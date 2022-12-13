@@ -58,14 +58,32 @@ const User = () => {
       >
         <NavigationContainer theme={theme}>
           <Stack.Navigator initialRouteName="UserNFTs">
-            <Stack.Screen name="UserNFTs" component={} />
-            <Stack.Screen name="LikedNFTs" component={} />
-            <Stack.Screen name="ShopCart" component={} />
+            <Stack.Screen name="UserNFTs" component={UserNFTs} />
+            <Stack.Screen name="LikedNFTs" component={LikedNFTs} />
+            <Stack.Screen name="ShopCart" component={ShopCart} />
           </Stack.Navigator>
         </NavigationContainer>
       </View>
     </View>
   );
 };
+
+const UserNFTs = () => (
+  <FlatList data={userNFT} renderItem={({ item }) => <NFTCard data={item} />} />
+);
+
+const LikedNFTs = () => (
+  <FlatList
+    data={userNFT.filter((nft) => nft.like)}
+    renderItem={({ item }) => <NFTCard data={item} />}
+  />
+);
+
+const ShopCart = () => (
+  <FlatList
+    data={NFTData.slice(4)}
+    renderItem={({ item }) => <NFTCard data={item} />}
+  />
+);
 
 export default User;
