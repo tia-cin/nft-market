@@ -11,14 +11,8 @@ import { DefaultTheme } from "@react-navigation/native";
 
 const Stack = createStackNavigator<UserNavigationTypes>();
 
-const theme = {
-  ...DefaultTheme,
-  colors: { ...DefaultTheme.colors, background: "transparent" },
-};
-
 const User = () => {
   const navigation = useNavigation<StackNavigationProp<NavigateProps>>();
-  const [show, setShow] = React.useState<boolean>(false);
 
   return (
     <View style={{ flex: 1, backgroundColor: COLORS.primary }}>
