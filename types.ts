@@ -71,14 +71,11 @@ export type NavigateProps = {
     navigate: any;
   };
   User: undefined;
-  CreateNFT: undefined,
+  CreateNFT: undefined;
+  UserNFTs: undefined;
+  LikedNFTs: undefined;
+  Bids: undefined;
 };
-
-export type UserNavigationTypes = {
-  UserNFTs: undefined,
-  LikedNFTs: undefined,
-  Bids: undefined
-}
 
 // COMPONENTS
 export interface NFTTitleProps {

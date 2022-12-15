@@ -11,10 +11,10 @@ import {
 import { userInfo } from "../constants/dummy";
 import { useNavigation } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
-import { NavigateProps, UserNavigationTypes } from "../types";
+import { NavigateProps } from "../types";
 import { createStackNavigator } from "@react-navigation/stack";
 
-const Stack = createStackNavigator<UserNavigationTypes>();
+const Stack = createStackNavigator<NavigateProps>();
 
 const User = () => {
   const navigation = useNavigation<StackNavigationProp<NavigateProps>>();
@@ -57,47 +57,9 @@ const User = () => {
           flex: 2,
           alignItems: "center",
         }}
-      >
-        <Stack.Navigator
-          screenOptions={{ headerShown: false }}
-          initialRouteName="UserNFTs"
-        >
-          <Stack.Screen name="UserNFTs" component={UserNFTs} />
-          <Stack.Screen name="LikedNFTs" component={LikedNFTs} />
-          <Stack.Screen name="Bids" component={Bids} />
-        </Stack.Navigator>
-      </View>
+      ></View>
     </View>
   );
 };
-
-const UserNFTs = () => {
-  const navigation = useNavigation<StackNavigationProp<NavigateProps>>();
-
-  return (
-    <FlatList
-      data={userInfo.createdNFTs}
-      renderItem={({ item }) => <NFTCard navigation={navigation} data={item} />}
-    />
-  );
-};
-
-const LikedNFTs = () => {
-  const navigation = useNavigation<StackNavigationProp<NavigateProps>>();
-
-  return (
-    <FlatList
-      data={userInfo.likedNFTs}
-      renderItem={({ item }) => <NFTCard navigation={navigation} data={item} />}
-    />
-  );
-};
-
-const Bids = () => (
-  <FlatList
-    data={userInfo.bids}
-    renderItem={({ item }) => <DetailsBid bid={item} />}
-  />
-);
 
 export default User;

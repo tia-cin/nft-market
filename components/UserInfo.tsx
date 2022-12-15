@@ -4,10 +4,11 @@ import { assets, COLORS, SIZES } from "../constants";
 import { CircleButton } from "./Buttons";
 import { useNavigation } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
-import { UserNavigationTypes, UserType } from "../types";
+import { UserType } from "../types";
+import { NavigateProps } from "../types";
 
 export const UserInfo: React.FC<{ userInfo: UserType }> = ({ userInfo }) => {
-  const navigation = useNavigation<StackNavigationProp<UserNavigationTypes>>();
+  const navigation = useNavigation<StackNavigationProp<NavigateProps>>();
 
   return (
     <View style={{ flex: 2, alignItems: "center" }}>

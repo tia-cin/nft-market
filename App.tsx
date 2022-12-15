@@ -1,6 +1,16 @@
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
-import { Home, Landing, Auth, User, Details, CreateNFT } from "./screens";
+import {
+  Home,
+  Landing,
+  Auth,
+  User,
+  Details,
+  CreateNFT,
+  Bids,
+  LikedNFTs,
+  UserNFTs,
+} from "./screens";
 import { NavigateProps } from "./types";
 import { Provider } from "react-redux";
 import store from "./redux/Store";
@@ -33,6 +43,9 @@ const AppWrapper = () => (
       <Stack.Screen name="Details" component={Details} />
       <Stack.Screen name="User" component={User} />
       <Stack.Screen name="CreateNFT" component={CreateNFT} />
+      <Stack.Screen name="UserNFTs" component={UserNFTs} />
+      <Stack.Screen name="LikedNFTs" component={LikedNFTs} />
+      <Stack.Screen name="Bids" component={Bids} />
     </Stack.Navigator>
   </NavigationContainer>
 );
