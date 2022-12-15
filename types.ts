@@ -76,6 +76,7 @@ export type NavigateProps = {
 export type UserNavigationTypes = {
   UserNFTs: undefined,
   LikedNFTs: undefined,
+  Bids: undefined
 }
 
 // COMPONENTS

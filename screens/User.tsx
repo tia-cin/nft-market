@@ -56,29 +56,38 @@ const User = () => {
           alignItems: "center",
         }}
       >
-        <NavigationContainer theme={theme}>
-          <Stack.Navigator initialRouteName="UserNFTs">
-            <Stack.Screen name="UserNFTs" component={UserNFTs} />
-            <Stack.Screen name="LikedNFTs" component={LikedNFTs} />
-          </Stack.Navigator>
-        </NavigationContainer>
+        <Stack.Navigator
+          screenOptions={{ headerShown: false }}
+          initialRouteName="UserNFTs"
+        >
+          <Stack.Screen name="UserNFTs" component={UserNFTs} />
+          <Stack.Screen name="LikedNFTs" component={LikedNFTs} />
+        </Stack.Navigator>
       </View>
     </View>
   );
 };
 
-const UserNFTs = () => (
-  <FlatList
-    data={userInfo.createdNFTs}
-    renderItem={({ item }) => <NFTCard data={item} />}
-  />
-);
+const UserNFTs = () => {
+  const navigation = useNavigation<StackNavigationProp<NavigateProps>>();
 
-const LikedNFTs = () => (
-  <FlatList
-    data={userInfo.likedNFTs}
-    renderItem={({ item }) => <NFTCard data={item} />}
-  />
-);
+  return (
+    <FlatList
+      data={userInfo.createdNFTs}
+      renderItem={({ item }) => <NFTCard navigation={navigation} data={item} />}
+    />
+  );
+};
+
+const LikedNFTs = () => {
+  const navigation = useNavigation<StackNavigationProp<NavigateProps>>();
+
+  return (
+    <FlatList
+      data={userInfo.likedNFTs}
+      renderItem={({ item }) => <NFTCard navigation={navigation} data={item} />}
+    />
+  );
+};
 
 export default User;

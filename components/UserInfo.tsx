@@ -55,7 +55,7 @@ export const UserInfo: React.FC<{ userInfo: UserType }> = ({ userInfo }) => {
               color: COLORS.white,
             }}
           >
-            {`@${userInfo.username.split("").join("").toLocaleLowerCase()}`}
+            {`@${userInfo.username.split(" ").join("").toLocaleLowerCase()}`}
           </Text>
         </View>
       </View>
@@ -67,10 +67,7 @@ export const UserInfo: React.FC<{ userInfo: UserType }> = ({ userInfo }) => {
             textAlign: "center",
           }}
         >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat.
+          {userInfo.biography}
         </Text>
         <View
           style={{
@@ -88,6 +85,7 @@ export const UserInfo: React.FC<{ userInfo: UserType }> = ({ userInfo }) => {
             imgUrl={assets.heart}
             handlePress={() => navigation.navigate("LikedNFTs")}
           />
+          <CircleButton imgUrl={assets.eth} />
         </View>
       </View>
     </View>
