@@ -1,7 +1,19 @@
 import assets from "./assets";
 
+const userInfo = {
+  username: "Lizy Terry",
+  picture: assets.user,
+  email: "lizyterry03@mail.com",
+  biography:
+    "Cupidatat ea qui nostrud aliquip magna mollit et quis anim exercitation dolor voluptate sit. Incididunt reprehenderit officia adipisicing incididunt in ad ullamco Lorem minim enim minim sint quis adipisicing. Consequat dolore cupidatat nostrud ullamco eiusmod eu sint enim mollit est duis mollit eiusmod. Sit tempor sint nostrud deserunt sit irure reprehenderit exercitation duis qui anim aliqua ipsum exercitation. Id ex qui ea eu velit velit ad. Cillum deserunt ipsum proident laboris reprehenderit quis sunt.",
+  createdNFTs: userNFT,
+  likedNFTs: NFTData.filter((nft) => nft.like),
+  shopCart: NFTData.filter((nft) => nft.toShopCart),
+};
+
 const userNFT = [
   {
+    toShopCart: false,
     like: true,
     image: assets.nft08,
     name: "Roman Coin",
@@ -28,6 +40,7 @@ const userNFT = [
     ],
   },
   {
+    toShopCart: false,
     like: false,
     image: assets.nft09,
     name: "Space Diamond",
@@ -54,6 +67,7 @@ const userNFT = [
     ],
   },
   {
+    toShopCart: false,
     like: false,
     image: assets.nft10,
     name: "Testing Game #2",
@@ -80,6 +94,7 @@ const userNFT = [
     ],
   },
   {
+    toShopCart: false,
     like: true,
     image: assets.nft11,
     name: "Abstracto #208",
@@ -106,6 +121,7 @@ const userNFT = [
     ],
   },
   {
+    toShopCart: false,
     like: true,
     image: assets.nft12,
     name: "Rabit",
@@ -135,6 +151,7 @@ const userNFT = [
 
 const NFTData = [
   {
+    toShopCart: true,
     like: false,
     id: "NFT-01",
     name: "Abstracto #312",
@@ -168,6 +185,7 @@ const NFTData = [
     ],
   },
   {
+    toShopCart: false,
     like: true,
     id: "NFT-02",
     name: "Green Coins",
@@ -187,6 +205,7 @@ const NFTData = [
     ],
   },
   {
+    toShopCart: true,
     like: true,
     id: "NFT-03",
     name: "NFT coins race",
@@ -213,6 +232,7 @@ const NFTData = [
     ],
   },
   {
+    toShopCart: true,
     like: true,
     id: "NFT-04",
     name: "Nifty NFT",
@@ -253,6 +273,7 @@ const NFTData = [
     ],
   },
   {
+    toShopCart: false,
     like: false,
     id: "NFT-05",
     name: "Colorful circles",
@@ -272,6 +293,7 @@ const NFTData = [
     ],
   },
   {
+    toShopCart: false,
     like: false,
     id: "NFT-06",
     name: "Black box model",
@@ -319,6 +341,7 @@ const NFTData = [
     ],
   },
   {
+    toShopCart: false,
     like: false,
     id: "NFT-07",
     name: "Abstracto soulful art",
@@ -339,4 +362,4 @@ const NFTData = [
   },
 ];
 
-export { NFTData, userNFT };
+export { NFTData, userNFT, userInfo };

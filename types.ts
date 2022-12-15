@@ -55,7 +55,8 @@ export interface NFTDataType {
   description: string;
   image: any;
   bids: BidType[];
-  like: boolean
+  like: boolean;
+  toShopCart: boolean;
 }
 
 export interface BidType {
