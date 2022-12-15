@@ -13,7 +13,6 @@ import { useNavigation } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { NavigateProps, UserNavigationTypes } from "../types";
 import { createStackNavigator } from "@react-navigation/stack";
-import { DefaultTheme } from "@react-navigation/native";
 
 const Stack = createStackNavigator<UserNavigationTypes>();
 
@@ -32,7 +31,10 @@ const User = () => {
           justifyContent: "space-between",
         }}
       >
-        <CircleButton imgUrl={assets.left} />
+        <CircleButton
+          imgUrl={assets.left}
+          handlePress={() => navigation.goBack()}
+        />
         <TouchableOpacity
           style={{ right: SIZES.large * 2 }}
           onPress={() => navigation.navigate("CreateNFT")}
