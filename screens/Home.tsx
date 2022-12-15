@@ -5,23 +5,32 @@ import { useNavigation } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { NFTCard, HomeHeader, FocusStatusBar } from "../components";
 import { NFTDataType, NavigateProps } from "../types";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "../redux/Store";
+import { getCurrentNFTs } from "../redux/Actions";
 
 const Home = () => {
+  const dispatch = useDispatch();
   const navigation = useNavigation<StackNavigationProp<NavigateProps>>();
-  const [search, setSearch] = useState<Array<NFTDataType>>(NFTData);
+  const { currentNFTs } = useSelector((state: RootState) => state);
+  const [search, setSearch] = useState<Array<NFTDataType>>(currentNFTs);
 
   const onSearch = (input: string) => {
-    if (!input.length) return setSearch(NFTData);
+    if (!input.length) return setSearch(currentNFTs);
 
-    const filtered = NFTData.filter((item: NFTDataType) =>
+    const filtered = currentNFTs.filter((item: NFTDataType) =>
       item.name.toLocaleLowerCase().includes(input.toLocaleLowerCase())
     );
     if (filtered.length) {
       setSearch(filtered);
     } else {
-      setSearch(NFTData);
+      setSearch(currentNFTs);
     }
   };
+
+  React.useEffect(() => {
+    dispatch<any>(getCurrentNFTs());
+  }, []);
 
   return (
     <SafeAreaView style={{ flex: 1 }}>

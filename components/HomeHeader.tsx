@@ -51,7 +51,7 @@ const HomeHeader: React.FC<HomeHeaderProps> = ({ onSearch }) => {
       </View>
       <View style={{ marginVertical: SIZES.font }}>
         <Text style={{ fontSize: SIZES.small, color: COLORS.white }}>
-          Hello, User!
+          Hello, there!
         </Text>
         <Text
           style={{
