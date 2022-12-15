@@ -1,4 +1,4 @@
-import { View, Text, SafeAreaView, Image, ImageBackground } from "react-native";
+import { View, Text, SafeAreaView, ImageBackground } from "react-native";
 import React from "react";
 import { COLORS, SIZES, assets } from "../constants";
 import { FocusStatusBar, RectButton } from "../components";
@@ -8,7 +8,7 @@ import { StackNavigationProp } from "@react-navigation/stack";
 const Landing = () => {
   const navigation =
     useNavigation<StackNavigationProp<{ Auth: any; Register: any }>>();
-  
+
   return (
     <SafeAreaView
       style={{
@@ -55,7 +55,7 @@ const Landing = () => {
               backgroundColor: COLORS.primary,
               width: 350,
               marginBottom: SIZES.font,
-              fontWeight: SIZES.extraLarge
+              fontWeight: SIZES.extraLarge,
             }}
             handlePress={() => navigation.navigate("Auth", { logIn: true })}
           />

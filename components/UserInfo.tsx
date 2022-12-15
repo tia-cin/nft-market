@@ -1,4 +1,4 @@
-import { View, Text, Image, FlatList } from "react-native";
+import { View, Text, Image } from "react-native";
 import React from "react";
 import { assets, COLORS, SIZES } from "../constants";
 import { CircleButton } from "./Buttons";

@@ -1,8 +1,7 @@
-import { View, TextInput, Image, Text } from "react-native";
+import { View, TextInput, Image } from "react-native";
 import React from "react";
 import { SIZES, COLORS, assets } from "../constants";
 import { IconInputProps, InputsProps } from "../types";
-import { TouchableOpacity } from "react-native-gesture-handler";
 
 export const Inputs: React.FC<InputsProps> = ({ value, onChange }) => {
   return (

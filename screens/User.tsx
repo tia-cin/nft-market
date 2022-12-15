@@ -1,13 +1,13 @@
-import { View, Text, Image, FlatList, TouchableOpacity } from "react-native";
+import { View, Text, FlatList, TouchableOpacity } from "react-native";
 import React from "react";
 import { assets, COLORS, SIZES } from "../constants";
 import { CircleButton, FocusStatusBar, NFTCard, UserInfo } from "../components";
-import { NFTData, userInfo, userNFT } from "../constants/dummy";
+import { userInfo } from "../constants/dummy";
 import { useNavigation } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { NavigateProps, UserNavigationTypes } from "../types";
 import { createStackNavigator } from "@react-navigation/stack";
-import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
+import { DefaultTheme } from "@react-navigation/native";
 
 const Stack = createStackNavigator<UserNavigationTypes>();
 

@@ -1,6 +1,6 @@
 import { View, SafeAreaView, FlatList } from "react-native";
 import React, { useState } from "react";
-import { COLORS, NFTData } from "../constants";
+import { COLORS } from "../constants";
 import { useNavigation } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { NFTCard, HomeHeader, FocusStatusBar } from "../components";

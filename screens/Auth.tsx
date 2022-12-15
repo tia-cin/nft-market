@@ -12,6 +12,7 @@ import { StackNavigationProp } from "@react-navigation/stack";
 import { NavigateProps } from "../types";
 import { useDispatch } from "react-redux";
 import { getUserAction } from "../redux/Actions";
+import { userInfo } from "../constants/dummy";
 
 const Auth = ({ route, navigation }: any) => {
   const dispatch = useDispatch();
@@ -82,17 +83,7 @@ const Auth = ({ route, navigation }: any) => {
             <RectButton
               text={createUser ? "Sign Up" : "Sign In"}
               handlePress={() => {
-                dispatch<any>(
-                  getUserAction({
-                    username,
-                    email,
-                    biography: "",
-                    createdNFTs: [],
-                    likedNFTs: [],
-                    picture: "",
-                    shopCart: [],
-                  })
-                );
+                dispatch<any>(getUserAction(userInfo));
                 navigation.navigate("Home");
               }}
             />
