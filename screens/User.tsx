@@ -1,7 +1,13 @@
 import { View, Text, FlatList, TouchableOpacity } from "react-native";
 import React from "react";
 import { assets, COLORS, SIZES } from "../constants";
-import { CircleButton, FocusStatusBar, NFTCard, UserInfo } from "../components";
+import {
+  CircleButton,
+  DetailsBid,
+  FocusStatusBar,
+  NFTCard,
+  UserInfo,
+} from "../components";
 import { userInfo } from "../constants/dummy";
 import { useNavigation } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
@@ -56,6 +62,7 @@ const User = () => {
         >
           <Stack.Screen name="UserNFTs" component={UserNFTs} />
           <Stack.Screen name="LikedNFTs" component={LikedNFTs} />
+          <Stack.Screen name="Bids" component={Bids} />
         </Stack.Navigator>
       </View>
     </View>
@@ -83,5 +90,12 @@ const LikedNFTs = () => {
     />
   );
 };
+
+const Bids = () => (
+  <FlatList
+    data={userInfo.bids}
+    renderItem={({ item }) => <DetailsBid bid={item} />}
+  />
+);
 
 export default User;

@@ -11,6 +11,7 @@ export interface UserType {
     biography: string,
     createdNFTs: NFTDataType[],
     likedNFTs: NFTDataType[]
+    bids: BidType[]
 }
 
 export interface StateType {

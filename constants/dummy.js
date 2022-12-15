@@ -347,7 +347,50 @@ const userInfo = {
     "Cupidatat ea qui nostrud aliquip magna mollit et quis anim exercitation dolor voluptate sit. Incididunt reprehenderit officia adipisicing incididunt in ad ullamco Lorem minim enim minim sint quis adipisicing.",
   createdNFTs: userNFT,
   likedNFTs: NFTData.filter((nft) => nft.like),
-  bids: NFTData.filter((nft) => nft.bids),
+  bids: [
+    {
+      id: "BID-11",
+      name: "Lizzy Terry",
+      price: 4.25,
+      image: assets.user,
+      date: "December 12, 2019 at 12:10 PM",
+    },
+    {
+      id: "BID-31",
+      name: "Lizzy Terry",
+      price: 7.25,
+      image: assets.user,
+      date: "December 10, 2019 at 12:15 PM",
+    },
+    {
+      id: "BID-15",
+      name: "Lizzy Terry",
+      price: 2.65,
+      image: assets.user,
+      date: "December 10, 2019 at 12:20 PM",
+    },
+    {
+      id: "BID-19",
+      name: "Lizzy Terry",
+      price: 9.35,
+      image: assets.user,
+      date: "December 10, 2019 at 12:25 PM",
+    },
+    {
+      id: "BID-04",
+      name: "Lizzy Terry",
+      price: 6.2,
+      image: assets.user,
+      date: "December 12, 2019 at 12:10 PM",
+    },
+    {
+      id: "BID-24",
+      name: "Lizzy Terry",
+      price: 3.1,
+      image: assets.user,
+      date: "December 12, 2019 at 12:15 PM",
+    },
+  ],
 };
 
 export { NFTData, userNFT, userInfo };

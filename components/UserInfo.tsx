@@ -85,7 +85,10 @@ export const UserInfo: React.FC<{ userInfo: UserType }> = ({ userInfo }) => {
             imgUrl={assets.heart}
             handlePress={() => navigation.navigate("LikedNFTs")}
           />
-          <CircleButton imgUrl={assets.eth} />
+          <CircleButton
+            imgUrl={assets.eth}
+            handlePress={() => navigation.navigate("Bids")}
+          />
         </View>
       </View>
     </View>
