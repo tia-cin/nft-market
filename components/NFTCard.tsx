@@ -9,12 +9,15 @@ import {
   EthPrice,
 } from "../components";
 import { NFTDataType } from "../types";
+import { useDispatch } from "react-redux";
+import { likeNFTAction } from "../redux/Actions";
 
 const NFTCard: React.FC<{ data: NFTDataType; navigation?: any }> = ({
   data,
   navigation,
 }) => {
-  const [liked, setLiked] = React.useState<boolean>(data.like)
+  const dispatch = useDispatch();
+
   return (
     <View
       style={{
@@ -37,12 +40,14 @@ const NFTCard: React.FC<{ data: NFTDataType; navigation?: any }> = ({
           }}
         />
         <CircleButton
-          imgUrl={liked ? assets.heart : assets.heartIcon}
+          imgUrl={data.like ? assets.heart : assets.heartIcon}
           props={{
             right: 10,
             top: -240,
           }}
-          handlePress={() => setLiked(!liked)}
+          handlePress={() => {
+            dispatch<any>(likeNFTAction(data));
+          }}
         />
       </View>
       <SubInfo />
@@ -65,7 +70,7 @@ const NFTCard: React.FC<{ data: NFTDataType; navigation?: any }> = ({
           <RectButton
             props={{ minWidth: 120, fontSize: SIZES.font }}
             handlePress={() => navigation.navigate("Details", { data })}
-            text="Place a bid"
+            text="Get more detail"
           />
         </View>
       </View>
@@ -73,4 +78,4 @@ const NFTCard: React.FC<{ data: NFTDataType; navigation?: any }> = ({
   );
 };
 
-export default NFTCard
+export default NFTCard;

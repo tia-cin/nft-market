@@ -13,7 +13,7 @@ const Home = () => {
   const dispatch = useDispatch();
   const navigation = useNavigation<StackNavigationProp<NavigateProps>>();
   const { currentNFTs } = useSelector((state: RootState) => state);
-  const [search, setSearch] = useState<Array<NFTDataType>>(currentNFTs);
+  const [search, setSearch] = useState<NFTDataType[]>(currentNFTs);
 
   const onSearch = (input: string) => {
     if (!input.length) return setSearch(currentNFTs);
@@ -21,6 +21,7 @@ const Home = () => {
     const filtered = currentNFTs.filter((item: NFTDataType) =>
       item.name.toLocaleLowerCase().includes(input.toLocaleLowerCase())
     );
+
     if (filtered.length) {
       setSearch(filtered);
     } else {
