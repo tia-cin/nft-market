@@ -2,11 +2,9 @@ export const GET_CURRENT_NFTS = 'GET_CURRENT_NFTS';
 export const GET_USER = 'GET_USER'
 export const CREATE_NFT = 'CREATE_NFT'
 export const LIKE_NFT = 'LIKE_NFT'
-export const ADD_SHOP_CART = 'ADD_SHOP_CART'
 
 // REDUX
 export interface UserType {
-    shopCart: NFTDataType[],
     picture: string,
     username: string,
     email: string,
@@ -14,6 +12,7 @@ export interface UserType {
     createdNFTs: NFTDataType[],
     likedNFTs: NFTDataType[]
 }
+
 export interface StateType {
   user: UserType,
   currentNFTs: NFTDataType[]
@@ -40,12 +39,7 @@ interface likeNFTAction {
   payload: NFTDataType
 }
 
-interface addShopCartAction {
-  type: typeof ADD_SHOP_CART,
-  payload: NFTDataType
-}
-
-export type ActionTypes = getCurrentNFTsAction | getUserAction | createNFTAction | likeNFTAction | addShopCartAction
+export type ActionTypes = getCurrentNFTsAction | getUserAction | createNFTAction | likeNFTAction 
 // DATA
 export interface NFTDataType {
   id: string;
@@ -56,7 +50,6 @@ export interface NFTDataType {
   image: any;
   bids: BidType[];
   like: boolean;
-  toShopCart: boolean;
 }
 
 export interface BidType {

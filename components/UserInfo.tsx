@@ -4,10 +4,11 @@ import { assets, COLORS, SIZES } from "../constants";
 import { CircleButton } from "./Buttons";
 import { useNavigation } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
-import { UserNavigationTypes } from "../types";
+import { UserNavigationTypes, UserType } from "../types";
 
-export const UserInfo = () => {
+export const UserInfo: React.FC<{ userInfo: UserType }> = ({ userInfo }) => {
   const navigation = useNavigation<StackNavigationProp<UserNavigationTypes>>();
+
   return (
     <View style={{ flex: 2, alignItems: "center" }}>
       <View>
@@ -33,7 +34,7 @@ export const UserInfo = () => {
             fontWeight: "bold",
           }}
         >
-          Full Name
+          {userInfo.username}
         </Text>
         <View style={{ flexDirection: "row", alignItems: "center" }}>
           <Text
@@ -43,7 +44,7 @@ export const UserInfo = () => {
               paddingHorizontal: SIZES.base,
             }}
           >
-            user@email.com
+            {userInfo.email}
           </Text>
           <Text
             style={{
@@ -54,7 +55,7 @@ export const UserInfo = () => {
               color: COLORS.white,
             }}
           >
-            @username
+            {`@${userInfo.username.split("").join("").toLocaleLowerCase()}`}
           </Text>
         </View>
       </View>
@@ -86,10 +87,6 @@ export const UserInfo = () => {
           <CircleButton
             imgUrl={assets.heart}
             handlePress={() => navigation.navigate("LikedNFTs")}
-          />
-          <CircleButton
-            imgUrl={assets.addtocart}
-            handlePress={() => navigation.navigate("ShopCart")}
           />
         </View>
       </View>

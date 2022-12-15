@@ -1,16 +1,5 @@
 import assets from "./assets";
 
-const userInfo = {
-  username: "Lizy Terry",
-  picture: assets.user,
-  email: "lizyterry03@mail.com",
-  biography:
-    "Cupidatat ea qui nostrud aliquip magna mollit et quis anim exercitation dolor voluptate sit. Incididunt reprehenderit officia adipisicing incididunt in ad ullamco Lorem minim enim minim sint quis adipisicing. Consequat dolore cupidatat nostrud ullamco eiusmod eu sint enim mollit est duis mollit eiusmod. Sit tempor sint nostrud deserunt sit irure reprehenderit exercitation duis qui anim aliqua ipsum exercitation. Id ex qui ea eu velit velit ad. Cillum deserunt ipsum proident laboris reprehenderit quis sunt.",
-  createdNFTs: userNFT,
-  likedNFTs: NFTData.filter((nft) => nft.like),
-  bids: NFTData.filter((nft) => nft.bids),
-};
-
 const userNFT = [
   {
     like: true,
@@ -349,5 +338,16 @@ const NFTData = [
     ],
   },
 ];
+
+const userInfo = {
+  username: "Lizy Terry",
+  picture: assets.user,
+  email: "lizyterry03@mail.com",
+  biography:
+    "Cupidatat ea qui nostrud aliquip magna mollit et quis anim exercitation dolor voluptate sit. Incididunt reprehenderit officia adipisicing incididunt in ad ullamco Lorem minim enim minim sint quis adipisicing. Consequat dolore cupidatat nostrud ullamco eiusmod eu sint enim mollit est duis mollit eiusmod. Sit tempor sint nostrud deserunt sit irure reprehenderit exercitation duis qui anim aliqua ipsum exercitation. Id ex qui ea eu velit velit ad. Cillum deserunt ipsum proident laboris reprehenderit quis sunt.",
+  createdNFTs: userNFT,
+  likedNFTs: NFTData.filter((nft) => nft.like),
+  bids: NFTData.filter((nft) => nft.bids),
+};
 
 export { NFTData, userNFT, userInfo };

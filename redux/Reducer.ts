@@ -1,5 +1,4 @@
-import { userNFT } from "../constants/dummy";
-import { ActionTypes, ADD_SHOP_CART, CREATE_NFT, GET_CURRENT_NFTS, GET_USER, LIKE_NFT, NFTDataType, StateType } from "../types";
+import { ActionTypes, CREATE_NFT, GET_CURRENT_NFTS, GET_USER, LIKE_NFT, NFTDataType, StateType } from "../types";
 
 const initialState: StateType = {
     user: {
@@ -9,7 +8,6 @@ const initialState: StateType = {
         biography: '',
         createdNFTs: [],
         likedNFTs: [],
-        shopCart: [],
     },
     currentNFTs: []    
 }
@@ -34,14 +32,6 @@ export const reducer = (state = initialState, { type, payload }: ActionTypes ): 
         case LIKE_NFT: 
             return {
                 ...state
-            }
-        case ADD_SHOP_CART: 
-            return {
-                ...state,
-                user: {
-                    ...state.user,
-                    shopCart: [...state.user.shopCart, payload]
-                }
             }
         default: 
             return state

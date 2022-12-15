@@ -70,7 +70,7 @@ const NFTCard: React.FC<{ data: NFTDataType; navigation?: any }> = ({
           <RectButton
             props={{ minWidth: 120, fontSize: SIZES.font }}
             handlePress={() => navigation.navigate("Details", { data })}
-            text="Get more detail"
+            text="Place a bid"
           />
         </View>
       </View>

@@ -2,7 +2,7 @@ import { View, Text, Image, FlatList, TouchableOpacity } from "react-native";
 import React from "react";
 import { assets, COLORS, SIZES } from "../constants";
 import { CircleButton, FocusStatusBar, NFTCard, UserInfo } from "../components";
-import { NFTData, userNFT } from "../constants/dummy";
+import { NFTData, userInfo, userNFT } from "../constants/dummy";
 import { useNavigation } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { NavigateProps, UserNavigationTypes } from "../types";
@@ -49,7 +49,7 @@ const User = () => {
           </Text>
         </TouchableOpacity>
       </View>
-      <UserInfo />
+      <UserInfo userInfo={userInfo} />
       <View
         style={{
           flex: 2,
@@ -60,7 +60,6 @@ const User = () => {
           <Stack.Navigator initialRouteName="UserNFTs">
             <Stack.Screen name="UserNFTs" component={UserNFTs} />
             <Stack.Screen name="LikedNFTs" component={LikedNFTs} />
-            <Stack.Screen name="ShopCart" component={ShopCart} />
           </Stack.Navigator>
         </NavigationContainer>
       </View>
@@ -69,19 +68,15 @@ const User = () => {
 };
 
 const UserNFTs = () => (
-  <FlatList data={userNFT} renderItem={({ item }) => <NFTCard data={item} />} />
-);
-
-const LikedNFTs = () => (
   <FlatList
-    data={userNFT.filter((nft) => nft.like)}
+    data={userInfo.createdNFTs}
     renderItem={({ item }) => <NFTCard data={item} />}
   />
 );
 
-const ShopCart = () => (
+const LikedNFTs = () => (
   <FlatList
-    data={NFTData.slice(4)}
+    data={userInfo.likedNFTs}
     renderItem={({ item }) => <NFTCard data={item} />}
   />
 );
