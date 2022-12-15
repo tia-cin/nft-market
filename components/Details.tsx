@@ -3,7 +3,8 @@ import React, { useState } from "react";
 import { CircleButton, EthPrice, NFTTitle } from "../components";
 import { assets, COLORS, SIZES } from "../constants";
 import { BidType, DetailsDescProps, NFTDataType } from "../types";
-import { addShopCartAction } from "../redux/Actions";
+import { addShopCartAction, likeNFTAction } from "../redux/Actions";
+import { useDispatch } from "react-redux";
 
 export const DetailsDesc: React.FC<DetailsDescProps> = ({ data }) => {
   const [text, setText] = useState<string>(data.description.slice(0, 100));
@@ -105,6 +106,8 @@ export const DetailsHeader: React.FC<{
   data: NFTDataType;
   navigation: any;
 }> = ({ data, navigation }) => {
+  const dispatch = useDispatch();
+
   return (
     <View style={{ width: "100%", height: 373 }}>
       <Image
@@ -122,6 +125,7 @@ export const DetailsHeader: React.FC<{
       />
       <CircleButton
         imgUrl={assets.heart}
+        handlePress={() => dispatch<any>(likeNFTAction(data))}
         props={{
           right: 15,
           top: StatusBar.currentHeight && StatusBar.currentHeight - 373,
@@ -129,6 +133,7 @@ export const DetailsHeader: React.FC<{
       />
       <CircleButton
         imgUrl={assets.addtocart}
+        handlePress={() => dispatch<any>(addShopCartAction(data))}
         props={{
           right: 65,
           top: StatusBar.currentHeight && StatusBar.currentHeight - 373,

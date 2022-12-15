@@ -78,13 +78,11 @@ export type NavigateProps = {
   };
   User: undefined;
   CreateNFT: undefined,
-  ShopCart: undefined,
 };
 
 export type UserNavigationTypes = {
   UserNFTs: undefined,
   LikedNFTs: undefined,
-  ShopCart: undefined
 }
 
 // COMPONENTS
