@@ -1,6 +1,6 @@
-import { View, SafeAreaView, FlatList } from "react-native";
+import { View, SafeAreaView, FlatList, Image, Text } from "react-native";
 import React, { useState } from "react";
-import { COLORS } from "../constants";
+import { assets, COLORS, SIZES } from "../constants";
 import { useNavigation } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { NFTCard, HomeHeader, FocusStatusBar } from "../components";
@@ -34,12 +34,22 @@ const Home = () => {
   }, []);
 
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.primary }}>
       <FocusStatusBar background={COLORS.primary} />
       <View style={{ flex: 1 }}>
         <View style={{ zIndex: 0 }}>
           <FlatList
             data={search}
+            ListEmptyComponent={
+              <View
+                style={{ alignItems: "center", marginTop: SIZES.extraLarge }}
+              >
+                <Image
+                  source={assets.loadingholo}
+                  style={{ width: 250, height: 250 }}
+                />
+              </View>
+            }
             renderItem={({ item }) => (
               <NFTCard navigation={navigation} data={item} />
             )}
@@ -47,19 +57,6 @@ const Home = () => {
             showsVerticalScrollIndicator={false}
             ListHeaderComponent={<HomeHeader onSearch={onSearch} />}
           />
-        </View>
-        <View
-          style={{
-            position: "absolute",
-            top: 0,
-            bottom: 0,
-            right: 0,
-            left: 0,
-            zIndex: -1,
-          }}
-        >
-          <View style={{ height: 300, backgroundColor: COLORS.primary }} />
-          <View style={{ flex: 1, backgroundColor: COLORS.white }} />
         </View>
       </View>
     </SafeAreaView>

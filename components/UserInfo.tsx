@@ -78,18 +78,9 @@ export const UserInfo: React.FC<{ userInfo: UserType }> = ({ userInfo }) => {
             flexDirection: "row",
           }}
         >
-          <CircleButton
-            imgUrl={assets.nft}
-            handlePress={() => navigation.navigate("UserNFTs")}
-          />
-          <CircleButton
-            imgUrl={assets.heart}
-            handlePress={() => navigation.navigate("LikedNFTs")}
-          />
-          <CircleButton
-            imgUrl={assets.eth}
-            handlePress={() => navigation.navigate("Bids")}
-          />
+          <CircleButton imgUrl={assets.nft} />
+          <CircleButton imgUrl={assets.heart} />
+          <CircleButton imgUrl={assets.eth} />
         </View>
       </View>
     </View>

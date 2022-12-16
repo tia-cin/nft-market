@@ -13,6 +13,8 @@ import home from "../assets/icons/home.png";
 import plus from "../assets/icons/plus.png";
 import boxes from "../assets/icons/boxes.png";
 import addtocart from "../assets/icons/addtocart.png";
+import loading from "../assets/icons/loading.gif";
+import loadingholo from "../assets/icons/loadingholo.gif";
 
 import logo from "../assets/images/logo.png";
 import nft01 from "../assets/images/nft01.png";
@@ -49,6 +51,8 @@ export default {
   home,
   plus,
   addtocart,
+  loading,
+  loadingholo,
 
   logo,
   nft01,
