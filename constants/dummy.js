@@ -1,5 +1,20 @@
 import assets from "./assets";
 
+const months = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+
 const userNFT = [
   {
     like: true,
@@ -393,4 +408,4 @@ const userInfo = {
   ],
 };
 
-export { NFTData, userNFT, userInfo };
+export { NFTData, userNFT, userInfo, months };

@@ -48,7 +48,7 @@ export interface NFTDataType {
   creator: string;
   price: number;
   description: string;
-  image: string;
+  image: any;
   bids: BidType[];
   like: boolean;
 }
