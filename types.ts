@@ -70,7 +70,9 @@ export type NavigateProps = {
     data: NFTDataType | any;
     navigate: any;
   };
-  User: undefined;
+  User: {
+    typeScreen: string
+  };
   CreateNFT: undefined;
 };
 

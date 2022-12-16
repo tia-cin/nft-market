@@ -7,8 +7,10 @@ import { useNavigation } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { NavigateProps } from "../types";
 
-const User = () => {
-  const navigation = useNavigation<StackNavigationProp<NavigateProps>>();
+const User = ({ route, navigation }: any) => {
+  const navigate = useNavigation<StackNavigationProp<NavigateProps>>();
+
+  console.log(route.params);
 
   return (
     <View style={{ flex: 1, backgroundColor: COLORS.primary }}>
@@ -24,11 +26,11 @@ const User = () => {
       >
         <CircleButton
           imgUrl={assets.left}
-          handlePress={() => navigation.goBack()}
+          handlePress={() => navigate.goBack()}
         />
         <TouchableOpacity
           style={{ right: SIZES.large * 2 }}
-          onPress={() => navigation.navigate("CreateNFT")}
+          onPress={() => navigate.navigate("CreateNFT")}
         >
           <Text
             style={{
@@ -48,7 +50,9 @@ const User = () => {
           flex: 2,
           alignItems: "center",
         }}
-      ></View>
+      >
+        {["createdUser", "likedUser", "bidsUser"]}
+      </View>
     </View>
   );
 };

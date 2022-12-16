@@ -78,9 +78,24 @@ export const UserInfo: React.FC<{ userInfo: UserType }> = ({ userInfo }) => {
             flexDirection: "row",
           }}
         >
-          <CircleButton imgUrl={assets.nft} />
-          <CircleButton imgUrl={assets.heart} />
-          <CircleButton imgUrl={assets.eth} />
+          <CircleButton
+            imgUrl={assets.nft}
+            handlePress={() =>
+              navigation.navigate("User", { typeScreen: "createdUser" })
+            }
+          />
+          <CircleButton
+            imgUrl={assets.heart}
+            handlePress={() =>
+              navigation.navigate("User", { typeScreen: "likedUser" })
+            }
+          />
+          <CircleButton
+            imgUrl={assets.eth}
+            handlePress={() =>
+              navigation.navigate("User", { typeScreen: "bidsUser" })
+            }
+          />
         </View>
       </View>
     </View>
