@@ -58,21 +58,6 @@ const CreateNFT = () => {
           imgUrl={assets.left}
           handlePress={() => navigate.goBack()}
         />
-        <TouchableOpacity
-          style={{ right: SIZES.large * 2 }}
-          onPress={() => navigate.navigate("CreateNFT")}
-        >
-          <Text
-            style={{
-              backgroundColor: COLORS.white,
-              padding: SIZES.small - 4,
-              borderRadius: SIZES.small,
-              position: "absolute",
-            }}
-          >
-            Create NFT
-          </Text>
-        </TouchableOpacity>
       </View>
       <FocusStatusBar background={COLORS.primary} />
       <View style={{ flex: 1.5 }}>
