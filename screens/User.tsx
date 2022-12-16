@@ -1,20 +1,11 @@
-import { View, Text, FlatList, TouchableOpacity } from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
 import React from "react";
 import { assets, COLORS, SIZES } from "../constants";
-import {
-  CircleButton,
-  DetailsBid,
-  FocusStatusBar,
-  NFTCard,
-  UserInfo,
-} from "../components";
+import { CircleButton, FocusStatusBar, UserInfo } from "../components";
 import { userInfo } from "../constants/dummy";
 import { useNavigation } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { NavigateProps } from "../types";
-import { createStackNavigator } from "@react-navigation/stack";
-
-const Stack = createStackNavigator<NavigateProps>();
 
 const User = () => {
   const navigation = useNavigation<StackNavigationProp<NavigateProps>>();

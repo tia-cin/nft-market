@@ -72,9 +72,6 @@ export type NavigateProps = {
   };
   User: undefined;
   CreateNFT: undefined;
-  UserNFTs: undefined;
-  LikedNFTs: undefined;
-  Bids: undefined;
 };
 
 // COMPONENTS

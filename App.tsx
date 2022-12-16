@@ -43,9 +43,6 @@ const AppWrapper = () => (
       <Stack.Screen name="Details" component={Details} />
       <Stack.Screen name="User" component={User} />
       <Stack.Screen name="CreateNFT" component={CreateNFT} />
-      <Stack.Screen name="UserNFTs" component={UserNFTs} />
-      <Stack.Screen name="LikedNFTs" component={LikedNFTs} />
-      <Stack.Screen name="Bids" component={Bids} />
     </Stack.Navigator>
   </NavigationContainer>
 );
