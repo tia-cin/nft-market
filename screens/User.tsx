@@ -6,11 +6,16 @@ import { userInfo } from "../constants/dummy";
 import { useNavigation } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { NavigateProps } from "../types";
+import { Bids, LikedNFTs, UserNFTs } from ".";
 
-const User = ({ route, navigation }: any) => {
+const User = ({ route }: any) => {
   const navigate = useNavigation<StackNavigationProp<NavigateProps>>();
-
-  console.log(route.params);
+  const { typeScreen } = route.params ? route.params : "createdUser";
+  const screens: { [key: string]: JSX.Element } = {
+    createdUser: <UserNFTs />,
+    likedUser: <LikedNFTs />,
+    bidsUser: <Bids />,
+  };
 
   return (
     <View style={{ flex: 1, backgroundColor: COLORS.primary }}>
@@ -51,7 +56,7 @@ const User = ({ route, navigation }: any) => {
           alignItems: "center",
         }}
       >
-        {["createdUser", "likedUser", "bidsUser"]}
+        {screens[typeScreen] || screens["createdUser"]}
       </View>
     </View>
   );

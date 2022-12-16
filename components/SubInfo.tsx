@@ -27,9 +27,15 @@ export const EthPrice: React.FC<EthPriceProps> = ({ price }) => {
       <Image
         source={assets.eth}
         resizeMode="contain"
-        style={{ width: 20, height: 20, marginRight: 2 }}
+        style={{
+          width: 20,
+          height: 20,
+          marginRight: 2,
+          backgroundColor: COLORS.light,
+          borderRadius: SIZES.base * 2,
+        }}
       />
-      <Text style={{ fontSize: SIZES.font, color: COLORS.primary }}>
+      <Text style={{ fontSize: SIZES.font, color: COLORS.secondary }}>
         {price}
       </Text>
     </View>

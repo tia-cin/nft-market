@@ -84,7 +84,7 @@ export const DetailsBid: React.FC<{ bid: BidType }> = ({ bid }) => {
         style={{ width: 48, height: 48 }}
       />
       <View>
-        <Text style={{ fontSize: SIZES.small, color: COLORS.primary }}>
+        <Text style={{ fontSize: SIZES.small, color: COLORS.secondary }}>
           Bid placed by {bid.name}
         </Text>
         <Text

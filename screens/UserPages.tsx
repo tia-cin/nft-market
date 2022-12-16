@@ -4,6 +4,7 @@ import { userInfo } from "../constants/dummy";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { NFTCard, DetailsBid } from "../components";
 import { NavigateProps } from "../types";
+import { COLORS, SIZES } from "../constants";
 
 export const UserNFTs = () => {
   const navigation = useNavigation<StackNavigationProp<NavigateProps>>();
@@ -11,6 +12,11 @@ export const UserNFTs = () => {
   return (
     <FlatList
       data={userInfo.createdNFTs}
+      showsVerticalScrollIndicator={false}
+      keyExtractor={(item) => item.id}
+      contentContainerStyle={{
+        width: 400,
+      }}
       renderItem={({ item }) => <NFTCard navigation={navigation} data={item} />}
     />
   );
@@ -22,6 +28,11 @@ export const LikedNFTs = () => {
   return (
     <FlatList
       data={userInfo.likedNFTs}
+      showsVerticalScrollIndicator={false}
+      keyExtractor={(item) => item.id}
+      contentContainerStyle={{
+        width: 400,
+      }}
       renderItem={({ item }) => <NFTCard navigation={navigation} data={item} />}
     />
   );
@@ -30,6 +41,11 @@ export const LikedNFTs = () => {
 export const Bids = () => (
   <FlatList
     data={userInfo.bids}
+    showsVerticalScrollIndicator={false}
+    keyExtractor={(item) => item.id}
+    contentContainerStyle={{
+      width: 400,
+    }}
     renderItem={({ item }) => <DetailsBid bid={item} />}
   />
 );
