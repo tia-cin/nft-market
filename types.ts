@@ -48,7 +48,7 @@ export interface NFTDataType {
   creator: string;
   price: number;
   description: string;
-  image: any;
+  image: string;
   bids: BidType[];
   like: boolean;
 }
@@ -96,6 +96,7 @@ export interface ImageCmpProps {
 export interface InputsProps {
   value: string;
   onChange: (input: string) => void;
+  props?: any
 }
 
 export interface IconInputProps {

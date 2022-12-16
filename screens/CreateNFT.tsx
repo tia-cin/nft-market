@@ -1,14 +1,29 @@
 import React from "react";
-import { Text, View, SafeAreaView, Alert } from "react-native";
-import { FocusStatusBar, Inputs, RectButton } from "../components";
-import { COLORS, NFTData, SIZES } from "../constants";
+import {
+  Text,
+  View,
+  SafeAreaView,
+  TouchableOpacity,
+  Alert,
+} from "react-native";
+import {
+  CircleButton,
+  FocusStatusBar,
+  Inputs,
+  RectButton,
+} from "../components";
+import { assets, COLORS, NFTData, SIZES } from "../constants";
 import { DocumentDirectoryPath, writeFile } from "react-native-fs";
+import { useNavigation } from "@react-navigation/native";
+import { StackNavigationProp } from "@react-navigation/stack";
+import { NavigateProps } from "../types";
 
 const CreateNFT = () => {
+  const navigate = useNavigation<StackNavigationProp<NavigateProps>>();
   const [nftName, setNftName] = React.useState<string>("Name");
   const [nftPrice, setNftPrice] = React.useState<string>("Price");
   const [nftDesc, setNftDesc] = React.useState<string>("Description");
-  const [nftFile, setNftFile] = React.useState<string>("NFT");
+  const [nftFile, setNftFile] = React.useState<string>("NFT Image");
 
   // const saveFile = async () => {
   //   const path = `${DocumentDirectoryPath}/${Date.now()}.txt`;
@@ -30,7 +45,37 @@ const CreateNFT = () => {
       }}
     >
       <FocusStatusBar background={COLORS.primary} />
-      <View style={{}}>
+      <View
+        style={{
+          flex: 0.5,
+          margin: SIZES.medium,
+          flexDirection: "row",
+          width: "80%",
+          justifyContent: "space-between",
+        }}
+      >
+        <CircleButton
+          imgUrl={assets.left}
+          handlePress={() => navigate.goBack()}
+        />
+        <TouchableOpacity
+          style={{ right: SIZES.large * 2 }}
+          onPress={() => navigate.navigate("CreateNFT")}
+        >
+          <Text
+            style={{
+              backgroundColor: COLORS.white,
+              padding: SIZES.small - 4,
+              borderRadius: SIZES.small,
+              position: "absolute",
+            }}
+          >
+            Create NFT
+          </Text>
+        </TouchableOpacity>
+      </View>
+      <FocusStatusBar background={COLORS.primary} />
+      <View style={{ flex: 1.5 }}>
         <Text
           style={{
             color: COLORS.white,
@@ -53,11 +98,21 @@ const CreateNFT = () => {
           products attractive to the audience
         </Text>
       </View>
-      <View style={{ flex: 1, justifyContent: "space-evenly" }}>
+      <View style={{ flex: 5, justifyContent: "space-evenly" }}>
         <Inputs value={nftName} onChange={setNftName} />
         <Inputs value={nftPrice} onChange={setNftPrice} />
-        <Inputs value={nftDesc} onChange={setNftDesc} />
-        <Inputs value={nftFile} onChange={setNftFile} />
+        <Inputs
+          value={nftDesc}
+          onChange={setNftDesc}
+          props={{ multiline: true, numberOfLines: 5 }}
+        />
+        <Inputs
+          value={nftFile}
+          onChange={setNftFile}
+          props={{ multiline: true, numberOfLines: 5 }}
+        />
+      </View>
+      <View style={{ flex: 1.5 }}>
         <RectButton
           text="Submit"
           props={{ backgroundColor: COLORS.secondary }}
@@ -76,7 +131,6 @@ const CreateNFT = () => {
           }}
         />
       </View>
-      <View style={{ flex: 1 }}></View>
     </SafeAreaView>
   );
 };
