@@ -23,7 +23,15 @@ export const NFTTitle: React.FC<NFTTitleProps> = ({
 
 export const EthPrice: React.FC<EthPriceProps> = ({ price }) => {
   return (
-    <View style={{ flexDirection: "row", alignItems: "center" }}>
+    <View
+      style={{
+        flexDirection: "row",
+        alignItems: "center",
+        backgroundColor: COLORS.light,
+        borderRadius: SIZES.base * 2,
+        padding: 5,
+      }}
+    >
       <Image
         source={assets.eth}
         resizeMode="contain"
@@ -31,8 +39,6 @@ export const EthPrice: React.FC<EthPriceProps> = ({ price }) => {
           width: 20,
           height: 20,
           marginRight: 2,
-          backgroundColor: COLORS.light,
-          borderRadius: SIZES.base * 2,
         }}
       />
       <Text style={{ fontSize: SIZES.font, color: COLORS.secondary }}>
