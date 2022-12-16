@@ -8,7 +8,13 @@ const AddBid = () => {
 
   const date = new Date();
 
-  console.log(months[date.getMonth()]);
+  console.log(
+    `${
+      months[date.getMonth()]
+    } ${date.getDay()}, ${date.getFullYear()} at ${date.getHours()}:${
+      date.getMinutes() < 9 ? `0${date.getMinutes()}` : date.getMinutes()
+    } ${date.getHours() < 12 ? "AM" : "PM"}`
+  );
 
   return (
     <View>
