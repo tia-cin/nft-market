@@ -10,6 +10,7 @@ import {
   Bids,
   LikedNFTs,
   UserNFTs,
+  AddBid,
 } from "./screens";
 import { NavigateProps } from "./types";
 import { Provider } from "react-redux";
@@ -43,6 +44,7 @@ const AppWrapper = () => (
       <Stack.Screen name="Details" component={Details} />
       <Stack.Screen name="User" component={User} />
       <Stack.Screen name="CreateNFT" component={CreateNFT} />
+      <Stack.Screen name="AddBid" component={AddBid} />
     </Stack.Navigator>
   </NavigationContainer>
 );

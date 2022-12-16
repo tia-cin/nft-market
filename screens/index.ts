@@ -5,5 +5,6 @@ import Auth from "./Auth";
 import User from "./User";
 import CreateNFT from "./CreateNFT";
 import { Bids, LikedNFTs, UserNFTs } from "./UserPages";
+import AddBid from "./AddBid";
 
-export { Home, Landing, Auth, User, Details, CreateNFT, Bids, LikedNFTs, UserNFTs };
+export { Home, Landing, Auth, User, Details, CreateNFT, Bids, LikedNFTs, UserNFTs, AddBid };

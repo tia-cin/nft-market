@@ -74,6 +74,7 @@ export type NavigateProps = {
     typeScreen: string
   };
   CreateNFT: undefined;
+  AddBid: undefined
 };
 
 // COMPONENTS
