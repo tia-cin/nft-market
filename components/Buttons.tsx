@@ -19,7 +19,6 @@ export const CircleButton: React.FC<CircleButtonProps> = ({
           borderRadius: SIZES.extraLarge,
           alignItems: "center",
           justifyContent: "center",
-          ...SHADOWS.light,
           ...props,
         }}
         onPress={handlePress}

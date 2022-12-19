@@ -68,7 +68,7 @@ export const BottomBar = () => {
         }}
       />
       <CircleButton
-        imgUrl={assets.person01}
+        imgUrl={assets.user}
         props={{
           minWidth: 40,
           bottom: -20,
