@@ -17,6 +17,7 @@ import { Provider, useDispatch } from "react-redux";
 import store from "./redux/Store";
 import React from "react";
 import { getCurrentNFTs } from "./redux/Actions";
+import { BottomBar } from "./components";
 
 const Stack = createStackNavigator<NavigateProps>();
 
@@ -29,6 +30,7 @@ const App: React.FC = () => {
   return (
     <Provider store={store}>
       <AppWrapper />
+      <BottomBar />
     </Provider>
   );
 };
