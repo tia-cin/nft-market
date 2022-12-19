@@ -7,17 +7,15 @@ import {
   User,
   Details,
   CreateNFT,
-  Bids,
-  LikedNFTs,
-  UserNFTs,
   AddBid,
 } from "./screens";
 import { NavigateProps } from "./types";
 import { Provider, useDispatch } from "react-redux";
 import store from "./redux/Store";
-import React from "react";
+import React, { JSXElementConstructor } from "react";
 import { getCurrentNFTs } from "./redux/Actions";
 import { BottomBar } from "./components";
+import { View } from "react-native";
 
 const Stack = createStackNavigator<NavigateProps>();
 
@@ -29,33 +27,35 @@ const theme = {
 const App: React.FC = () => {
   return (
     <Provider store={store}>
-      <AppWrapper />
+      <Navigation />
       <BottomBar />
     </Provider>
   );
 };
 
-const AppWrapper = () => {
+const Navigation = () => {
   const dispatch = useDispatch();
   React.useEffect(() => {
     dispatch<any>(getCurrentNFTs());
   }, [dispatch]);
 
   return (
-    <NavigationContainer theme={theme}>
-      <Stack.Navigator
-        screenOptions={{ headerShown: false }}
-        initialRouteName="Landing"
-      >
-        <Stack.Screen name="Landing" component={Landing} />
-        <Stack.Screen name="Auth" component={Auth} />
-        <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen name="Details" component={Details} />
-        <Stack.Screen name="User" component={User} />
-        <Stack.Screen name="CreateNFT" component={CreateNFT} />
-        <Stack.Screen name="AddBid" component={AddBid} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <View>
+      <NavigationContainer theme={theme}>
+        <Stack.Navigator
+          screenOptions={{ headerShown: false }}
+          initialRouteName="Landing"
+        >
+          <Stack.Screen name="Landing" component={Landing} />
+          <Stack.Screen name="Auth" component={Auth} />
+          <Stack.Screen name="Home" component={Home} />
+          <Stack.Screen name="Details" component={Details} />
+          <Stack.Screen name="User" component={User} />
+          <Stack.Screen name="CreateNFT" component={CreateNFT} />
+          <Stack.Screen name="AddBid" component={AddBid} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </View>
   );
 };
 

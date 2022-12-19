@@ -1,9 +1,11 @@
 import { StatusBar, View } from "react-native";
 import React from "react";
+import { useNavigation } from "@react-navigation/native";
+import { StackNavigationProp } from "@react-navigation/stack";
 import { useIsFocused } from "@react-navigation/core";
 import { CircleButton } from "./Buttons";
-import { assets, COLORS, SHADOWS, SIZES } from "../constants";
-import { FocusStatusBarProps } from "../types";
+import { assets, COLORS, SIZES } from "../constants";
+import { FocusStatusBarProps, NavigateProps } from "../types";
 
 export const FocusStatusBar: React.FC<FocusStatusBarProps> = ({
   background,
@@ -17,6 +19,8 @@ export const FocusStatusBar: React.FC<FocusStatusBarProps> = ({
 };
 
 export const BottomBar = () => {
+  const navigation = useNavigation<StackNavigationProp<NavigateProps>>();
+
   return (
     <View
       style={{
@@ -41,6 +45,7 @@ export const BottomBar = () => {
             fontSize: SIZES.large,
           }}
           imgUrl={assets.home}
+          handlePress={() => {}}
         />
         <CircleButton
           imgUrl={assets.searchblack}
