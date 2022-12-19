@@ -20,62 +20,58 @@ export const BottomBar = () => {
   return (
     <View
       style={{
-        width: "100%",
-        height: 70,
-        position: "absolute",
+        flex: 0.1,
+        position: "relative",
         bottom: 0,
-        paddingVertical: SIZES.font,
-        justifyContent: "center",
-        alignItems: "center",
         backgroundColor: COLORS.white,
       }}
     >
-      <CircleButton
-        props={{
-          minWidth: 40,
-          bottom: -20,
-          right: 120,
-          fontSize: SIZES.large,
+      <View
+        style={{
+          flex: 1,
+          flexDirection: "row",
+          justifyContent: "space-around",
+          top: 15,
+          right: 17,
         }}
-        imgUrl={assets.home}
-      />
-      <CircleButton
-        imgUrl={assets.searchblack}
-        props={{
-          minWidth: 40,
-          bottom: -20,
-          right: 50,
-          color: COLORS.black,
-          fontSize: SIZES.large,
-        }}
-      />
-      <CircleButton
-        imgUrl={assets.plus}
-        props={{
-          minWidth: 40,
-          bottom: -20,
-          left: -20,
-          fontSize: SIZES.large,
-        }}
-      />
-      <CircleButton
-        imgUrl={assets.notification}
-        props={{
-          minWidth: 40,
-          bottom: -20,
-          left: 50,
-          fontSize: SIZES.large,
-        }}
-      />
-      <CircleButton
-        imgUrl={assets.user}
-        props={{
-          minWidth: 40,
-          bottom: -20,
-          left: 120,
-          fontSize: SIZES.large,
-        }}
-      />
+      >
+        <CircleButton
+          props={{
+            minWidth: 40,
+            fontSize: SIZES.large,
+          }}
+          imgUrl={assets.home}
+        />
+        <CircleButton
+          imgUrl={assets.searchblack}
+          props={{
+            minWidth: 40,
+            color: COLORS.black,
+            fontSize: SIZES.large,
+          }}
+        />
+        <CircleButton
+          imgUrl={assets.plus}
+          props={{
+            minWidth: 40,
+            fontSize: SIZES.large,
+          }}
+        />
+        <CircleButton
+          imgUrl={assets.notification}
+          props={{
+            minWidth: 40,
+            fontSize: SIZES.large,
+          }}
+        />
+        <CircleButton
+          imgUrl={assets.user}
+          props={{
+            minWidth: 40,
+            fontSize: SIZES.large,
+          }}
+        />
+      </View>
     </View>
   );
 };
