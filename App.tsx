@@ -36,7 +36,22 @@ const App: React.FC = () => {
   );
 };
 
-const Navigation = () => {
+const Navigation = () => (
+  <Stack.Navigator
+    screenOptions={{ headerShown: false }}
+    initialRouteName="Landing"
+  >
+    <Stack.Screen name="Landing" component={Landing} />
+    <Stack.Screen name="Auth" component={Auth} />
+    <Stack.Screen name="Home" component={Home} />
+    <Stack.Screen name="Details" component={Details} />
+    <Stack.Screen name="User" component={User} />
+    <Stack.Screen name="CreateNFT" component={CreateNFT} />
+    <Stack.Screen name="AddBid" component={AddBid} />
+  </Stack.Navigator>
+);
+
+const NavigationTest = () => {
   const dispatch = useDispatch();
   React.useEffect(() => {
     dispatch<any>(getCurrentNFTs());
@@ -47,8 +62,6 @@ const Navigation = () => {
       screenOptions={{ headerShown: false }}
       initialRouteName="Landing"
     >
-      <Stack.Screen name="Landing" component={Landing} />
-      <Stack.Screen name="Auth" component={Auth} />
       <Stack.Screen name="Home" component={Home} />
       <Stack.Screen name="Details" component={Details} />
       <Stack.Screen name="User" component={User} />
@@ -67,8 +80,12 @@ const Navigation = () => {
   return (
     <View>
       <NavigationContainer theme={theme}>
+        <Stack.Navigator>
+          <Tab.Screen name="Landing" component={Landing} />
+          <Tab.Screen name="Auth" component={Auth} />
+        </Stack.Navigator>
         <Tab.Navigator>
-          <Tab.Screen name="Screen 1" component={mainScreens} />
+          <Tab.Screen name="Home" component={Home} />
         </Tab.Navigator>
       </NavigationContainer>
     </View>
