@@ -30,8 +30,8 @@ const Home = () => {
   };
 
   React.useEffect(() => {
-    dispatch<any>(getCurrentNFTs());
-  }, []);
+    if (!search.length) dispatch<any>(getCurrentNFTs());
+  }, [dispatch]);
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.primary }}>
