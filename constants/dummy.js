@@ -357,7 +357,7 @@ const NFTData = [
 const userInfo = {
   username: "Lizy Terry",
   picture: assets.user,
-  email: "lizyterry03@mail.com",
+  email: "lizyterry@email.com",
   biography:
     "Cupidatat ea qui nostrud aliquip magna mollit et quis anim exercitation dolor voluptate sit. Incididunt reprehenderit officia adipisicing incididunt in ad ullamco Lorem minim enim minim sint quis adipisicing.",
   createdNFTs: userNFT,
