@@ -62,9 +62,12 @@ export interface BidType {
 }
 
 // NAVIGATION
-export type NavigateProps = {
+export type NavigateLandingProps = {
   Landing: undefined;
   Auth: undefined;
+};
+
+export type NavigateMainProps = {
   Home: undefined;
   Details: {
     data: NFTDataType | any;
@@ -75,7 +78,7 @@ export type NavigateProps = {
   };
   CreateNFT: undefined;
   AddBid: undefined
-};
+}
 
 // COMPONENTS
 export interface NFTTitleProps {

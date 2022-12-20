@@ -9,7 +9,7 @@ import {
   CreateNFT,
   AddBid,
 } from "./screens";
-import { NavigateProps } from "./types";
+import { NavigateLandingProps, NavigateMainProps } from "./types";
 import { Provider, useDispatch } from "react-redux";
 import store from "./redux/Store";
 import React from "react";
@@ -20,7 +20,8 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 const Tab = createBottomTabNavigator();
 
-const Stack = createStackNavigator<NavigateProps>();
+const StackLanding = createStackNavigator<NavigateLandingProps>();
+const StackMain = createStackNavigator<NavigateMainProps>();
 
 const theme = {
   ...DefaultTheme,
@@ -30,72 +31,35 @@ const theme = {
 const App: React.FC = () => {
   return (
     <Provider store={store}>
-      <Navigation />
-      {/* <BottomBar /> */}
+      <NavigationContainer theme={theme}>
+        <LandingNavigation />
+        <MainNavigation />
+      </NavigationContainer>
     </Provider>
   );
 };
 
-const Navigation = () => (
-  <NavigationContainer theme={theme}>
-    <Stack.Navigator
-      screenOptions={{ headerShown: false }}
-      initialRouteName="Landing"
-    >
-      <Stack.Screen name="Landing" component={Landing} />
-      <Stack.Screen name="Auth" component={Auth} />
-      <Stack.Screen name="Home" component={Home} />
-      <Stack.Screen name="Details" component={Details} />
-      <Stack.Screen name="User" component={User} />
-      <Stack.Screen name="CreateNFT" component={CreateNFT} />
-      <Stack.Screen name="AddBid" component={AddBid} />
-    </Stack.Navigator>
-  </NavigationContainer>
+const LandingNavigation = () => (
+  <StackLanding.Navigator
+    screenOptions={{ headerShown: false }}
+    initialRouteName="Landing"
+  >
+    <StackLanding.Screen name="Landing" component={Landing} />
+    <StackLanding.Screen name="Auth" component={Auth} />
+  </StackLanding.Navigator>
 );
 
-const NavigationTest = () => {
-  const dispatch = useDispatch();
-  React.useEffect(() => {
-    dispatch<any>(getCurrentNFTs());
-  }, [dispatch]);
-
-  const MainScreens = () => (
-    <Stack.Navigator
-      screenOptions={{ headerShown: false }}
-      initialRouteName="Landing"
-    >
-      <Stack.Screen name="Home" component={Home} />
-      <Stack.Screen name="Details" component={Details} />
-      <Stack.Screen name="User" component={User} />
-      <Stack.Screen name="CreateNFT" component={CreateNFT} />
-      <Stack.Screen name="AddBid" component={AddBid} />
-    </Stack.Navigator>
-  );
-
-  const bottomScreens = () => (
-    <Stack.Navigator>
-      <Stack.Screen name="Home" component={Home} />
-      <Stack.Screen name="User" component={User} />
-    </Stack.Navigator>
-  );
-
-  const LandingScreens = () => (
-    <Stack.Navigator>
-      <Tab.Screen name="Landing" component={Landing} />
-      <Tab.Screen name="Auth" component={Auth} />
-    </Stack.Navigator>
-  );
-
-  return (
-    <View>
-      <NavigationContainer theme={theme}>
-        <Tab.Navigator>
-          <Tab.Screen name="Landing" component={LandingScreens} />
-          <Tab.Screen name="Main" component={MainScreens} />
-        </Tab.Navigator>
-      </NavigationContainer>
-    </View>
-  );
-};
+const MainNavigation = () => (
+  <>
+    <StackMain.Navigator>
+      <StackMain.Screen name="Home" component={Home} />
+      <StackMain.Screen name="Details" component={Details} />
+      <StackMain.Screen name="CreateNFT" component={CreateNFT} />
+      <StackMain.Screen name="AddBid" component={AddBid} />
+      <StackMain.Screen name="User" component={User} />
+    </StackMain.Navigator>
+    <BottomBar />
+  </>
+);
 
 export default App;
