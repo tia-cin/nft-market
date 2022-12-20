@@ -59,7 +59,7 @@ const NavigationTest = () => {
     dispatch<any>(getCurrentNFTs());
   }, [dispatch]);
 
-  const mainScreens = () => (
+  const MainScreens = () => (
     <Stack.Navigator
       screenOptions={{ headerShown: false }}
       initialRouteName="Landing"
@@ -79,15 +79,19 @@ const NavigationTest = () => {
     </Stack.Navigator>
   );
 
+  const LandingScreens = () => (
+    <Stack.Navigator>
+      <Tab.Screen name="Landing" component={Landing} />
+      <Tab.Screen name="Auth" component={Auth} />
+    </Stack.Navigator>
+  );
+
   return (
     <View>
       <NavigationContainer theme={theme}>
-        <Stack.Navigator>
-          <Tab.Screen name="Landing" component={Landing} />
-          <Tab.Screen name="Auth" component={Auth} />
-        </Stack.Navigator>
         <Tab.Navigator>
-          <Tab.Screen name="Home" component={Home} />
+          <Tab.Screen name="Landing" component={LandingScreens} />
+          <Tab.Screen name="Main" component={MainScreens} />
         </Tab.Navigator>
       </NavigationContainer>
     </View>
