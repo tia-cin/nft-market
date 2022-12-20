@@ -4,7 +4,6 @@ import { userInfo } from "../constants/dummy";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { NFTCard, DetailsBid } from "../components";
 import { NavigateProps } from "../types";
-import { COLORS, SIZES } from "../constants";
 
 export const UserNFTs = () => {
   const navigation = useNavigation<StackNavigationProp<NavigateProps>>();

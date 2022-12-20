@@ -9,7 +9,6 @@ import {
   CreateNFT,
   AddBid,
 } from "./screens";
-import { NavigateLandingProps, NavigateMainProps } from "./types";
 import { Provider } from "react-redux";
 import store from "./redux/Store";
 import React from "react";
