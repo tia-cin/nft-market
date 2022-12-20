@@ -10,18 +10,14 @@ import {
   AddBid,
 } from "./screens";
 import { NavigateLandingProps, NavigateMainProps } from "./types";
-import { Provider, useDispatch } from "react-redux";
+import { Provider } from "react-redux";
 import store from "./redux/Store";
 import React from "react";
-import { getCurrentNFTs } from "./redux/Actions";
-import { BottomBar } from "./components";
-import { View } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 const Tab = createBottomTabNavigator();
 
-const StackLanding = createStackNavigator<NavigateLandingProps>();
-const StackMain = createStackNavigator<NavigateMainProps>();
+const Stack = createStackNavigator();
 
 const theme = {
   ...DefaultTheme,
@@ -32,35 +28,27 @@ const App: React.FC = () => {
   return (
     <Provider store={store}>
       <NavigationContainer theme={theme}>
-        <LandingNavigation />
-        <MainNavigation />
-        <BottomNavigation />
+        <Stack.Navigator
+          screenOptions={{ headerShown: false }}
+          initialRouteName="Landing"
+        >
+          <Stack.Screen name="Landing" component={Landing} />
+          <Stack.Screen name="Auth" component={Auth} />
+          <Stack.Screen name="Home" component={MainNavigation} />
+        </Stack.Navigator>
       </NavigationContainer>
     </Provider>
   );
 };
 
-const LandingNavigation = () => (
-  <StackLanding.Navigator
-    screenOptions={{ headerShown: false }}
-    initialRouteName="Landing"
-  >
-    <StackLanding.Screen name="Landing" component={Landing} />
-    <StackLanding.Screen name="Auth" component={Auth} />
-  </StackLanding.Navigator>
-);
-
 const MainNavigation = () => (
-  <>
-    <StackMain.Navigator>
-      <StackMain.Screen name="Home" component={Home} />
-      <StackMain.Screen name="Details" component={Details} />
-      <StackMain.Screen name="CreateNFT" component={CreateNFT} />
-      <StackMain.Screen name="AddBid" component={AddBid} />
-      <StackMain.Screen name="User" component={User} />
-    </StackMain.Navigator>
-    <BottomBar />
-  </>
+  <Tab.Navigator screenOptions={{ headerShown: false }}>
+    <Tab.Screen name="Home" component={Home} />
+    <Tab.Screen name="Details" component={Details} />
+    <Tab.Screen name="CreateNFT" component={CreateNFT} />
+    <Tab.Screen name="AddBid" component={AddBid} />
+    <Tab.Screen name="User" component={User} />
+  </Tab.Navigator>
 );
 
 const BottomNavigation = () => (
