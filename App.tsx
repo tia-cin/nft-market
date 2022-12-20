@@ -34,6 +34,7 @@ const App: React.FC = () => {
       <NavigationContainer theme={theme}>
         <LandingNavigation />
         <MainNavigation />
+        <BottomNavigation />
       </NavigationContainer>
     </Provider>
   );
@@ -60,6 +61,14 @@ const MainNavigation = () => (
     </StackMain.Navigator>
     <BottomBar />
   </>
+);
+
+const BottomNavigation = () => (
+  <Tab.Navigator>
+    <Tab.Screen name="Home" component={Home} />
+    <Tab.Screen name="CreateNFT" component={CreateNFT} />
+    <Tab.Screen name="User" component={User} />
+  </Tab.Navigator>
 );
 
 export default App;
