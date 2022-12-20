@@ -5,8 +5,10 @@ import {
   Landing,
   Auth,
   User,
-  Details,
   CreateNFT,
+  Trendings,
+  Notification,
+  Details,
   AddBid,
 } from "./screens";
 import { Provider } from "react-redux";
@@ -33,6 +35,8 @@ const App: React.FC = () => {
         >
           <Stack.Screen name="Landing" component={Landing} />
           <Stack.Screen name="Auth" component={Auth} />
+          <Stack.Screen name="Details" component={Details} />
+          <Stack.Screen name="AddBid" component={AddBid} />
           <Stack.Screen name="Home" component={MainNavigation} />
         </Stack.Navigator>
       </NavigationContainer>
@@ -43,9 +47,9 @@ const App: React.FC = () => {
 const MainNavigation = () => (
   <Tab.Navigator screenOptions={{ headerShown: false }}>
     <Tab.Screen name="Home" component={Home} />
-    <Tab.Screen name="Details" component={Details} />
+    <Tab.Screen name="Trendings" component={Trendings} />
     <Tab.Screen name="CreateNFT" component={CreateNFT} />
-    <Tab.Screen name="AddBid" component={AddBid} />
+    <Tab.Screen name="Notification" component={Notification} />
     <Tab.Screen name="User" component={User} />
   </Tab.Navigator>
 );
