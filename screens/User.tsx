@@ -25,6 +25,7 @@ const User = ({ route }: any) => {
         style={{
           flex: 2.5,
           alignItems: "center",
+          marginTop: SIZES.medium,
         }}
       >
         {screens[typeScreen] || screens["createdUser"]}

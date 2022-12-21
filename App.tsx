@@ -15,6 +15,9 @@ import { Provider } from "react-redux";
 import store from "./redux/Store";
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { assets, COLORS, SIZES } from "./constants";
+import { Image } from "react-native";
+import Ionicons from "@expo/vector-icons/Ionicons";
 
 const Tab = createBottomTabNavigator();
 
@@ -45,12 +48,68 @@ const App: React.FC = () => {
 };
 
 const MainNavigation = () => (
-  <Tab.Navigator screenOptions={{ headerShown: false }}>
-    <Tab.Screen name="Home" component={Home} />
-    <Tab.Screen name="Trendings" component={Trendings} />
-    <Tab.Screen name="CreateNFT" component={CreateNFT} />
-    <Tab.Screen name="Notification" component={Notification} />
-    <Tab.Screen name="User" component={User} />
+  <Tab.Navigator
+    initialRouteName="Home"
+    screenOptions={{
+      headerShown: false,
+      tabBarShowLabel: false,
+      tabBarActiveTintColor: COLORS.white,
+      tabBarStyle: {
+        height: SIZES.extraLarge * 3,
+        backgroundColor: COLORS.primary,
+        borderTopColor: COLORS.primary,
+      },
+    }}
+  >
+    <Tab.Screen
+      name="Home"
+      component={Home}
+      options={{
+        tabBarIcon: ({ color, size }) => (
+          <Ionicons name="home-sharp" size={size} color={color} />
+        ),
+      }}
+    />
+    <Tab.Screen
+      name="Trendings"
+      component={Trendings}
+      options={{
+        tabBarIcon: ({ color, size }) => (
+          <Ionicons name="search" size={size} color={color} />
+        ),
+      }}
+    />
+    <Tab.Screen
+      name="CreateNFT"
+      component={CreateNFT}
+      options={{
+        tabBarIcon: ({ size }) => (
+          <Ionicons
+            name="add-circle-sharp"
+            size={size * 2.4}
+            color={COLORS.blue}
+          />
+        ),
+      }}
+    />
+    <Tab.Screen
+      name="Notification"
+      component={Notification}
+      options={{
+        tabBarIcon: ({ color, size }) => (
+          <Ionicons name="notifications" size={size} color={color} />
+        ),
+      }}
+    />
+    <Tab.Screen
+      name="User"
+      component={User}
+      options={{
+        tabBarIcon: ({ color, size }) => (
+          <Ionicons name="person" size={size} color={color} />
+        ),
+      }}
+    />
   </Tab.Navigator>
 );
 
