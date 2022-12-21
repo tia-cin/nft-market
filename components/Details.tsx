@@ -66,7 +66,10 @@ export const DetailsDesc: React.FC<DetailsDescProps> = ({ data }) => {
   );
 };
 
-export const DetailsBid: React.FC<{ bid: BidType }> = ({ bid }) => {
+export const DetailsBid: React.FC<{ bid: BidType; dark?: boolean }> = ({
+  bid,
+  dark,
+}) => {
   return (
     <View
       style={{
@@ -84,20 +87,25 @@ export const DetailsBid: React.FC<{ bid: BidType }> = ({ bid }) => {
         style={{ width: 48, height: 48 }}
       />
       <View>
-        <Text style={{ fontSize: SIZES.small, color: COLORS.secondary }}>
+        <Text
+          style={{
+            fontSize: SIZES.small,
+            color: dark ? COLORS.white : COLORS.secondary,
+          }}
+        >
           Bid placed by {bid.name}
         </Text>
         <Text
           style={{
             fontSize: SIZES.small - 2,
-            color: COLORS.secondary,
+            color: dark ? COLORS.white : COLORS.secondary,
             marginTop: 3,
           }}
         >
           {bid.date}
         </Text>
       </View>
-      <EthPrice price={bid.price} />
+      <EthPrice price={bid.price} dark={dark} />
     </View>
   );
 };

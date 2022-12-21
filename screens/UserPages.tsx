@@ -45,6 +45,6 @@ export const Bids = () => (
     contentContainerStyle={{
       width: 400,
     }}
-    renderItem={({ item }) => <DetailsBid bid={item} />}
+    renderItem={({ item }) => <DetailsBid bid={item} dark />}
   />
 );
