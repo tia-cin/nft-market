@@ -1,4 +1,4 @@
-import Home from "./Home";
+import Search from "./Search";
 import Landing from "./Landing";
 import Details from "./Details";
 import Auth from "./Auth";
@@ -9,4 +9,4 @@ import AddBid from "./AddBid";
 import Notification from "./Notification";
 import Trendings from "./Trendings";
 
-export { Home, Landing, Auth, User, Details, CreateNFT, Bids, LikedNFTs, UserNFTs, AddBid, Notification, Trendings };
+export { Search, Landing, Auth, User, Details, CreateNFT, Bids, LikedNFTs, UserNFTs, AddBid, Notification, Trendings };

@@ -1,4 +1,4 @@
-import {HomeHeader} from "./Headers";
+import {HomeHeader, TrendingsHeader} from "./Headers";
 import { FocusStatusBar, BottomBar } from "./Bars";
 import NFTCard from "./NFTCard";
 import { CircleButton, RectButton, IconButton } from "./Buttons";
@@ -16,6 +16,7 @@ import {UserInfo} from "./UserInfo";
 
 export {
   HomeHeader,
+  TrendingsHeader,
   FocusStatusBar,
   NFTCard,
   CircleButton,

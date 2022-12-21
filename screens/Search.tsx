@@ -3,14 +3,18 @@ import React, { useState } from "react";
 import { assets, COLORS, SIZES } from "../constants";
 import { useNavigation } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
-import { NFTCard, HomeHeader, FocusStatusBar, RectButton } from "../components";
+import {
+  NFTCard,
+  TrendingsHeader,
+  FocusStatusBar,
+  RectButton,
+} from "../components";
 import { NFTDataType, NavigateProps } from "../types";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../redux/Store";
 import { getCurrentNFTs } from "../redux/Actions";
-import { TrendingsHeather } from "../components/Headers";
 
-const Home = () => {
+const Search = () => {
   const dispatch = useDispatch();
   const navigation = useNavigation<StackNavigationProp<NavigateProps>>();
   const { currentNFTs } = useSelector((state: RootState) => state);
@@ -75,7 +79,7 @@ const Home = () => {
             keyExtractor={(item) => item.id}
             showsVerticalScrollIndicator={false}
             ListHeaderComponent={
-              <TrendingsHeather onSearch={onSearch} text="Trending" />
+              <TrendingsHeader onSearch={onSearch} text="Trending" />
             }
           />
         </View>
@@ -84,4 +88,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Search;

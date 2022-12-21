@@ -70,7 +70,7 @@ export const HomeHeader: React.FC<HeaderProps> = ({ onSearch, text }) => {
   );
 };
 
-export const TrendingsHeather: React.FC<HeaderProps> = ({ text, onSearch }) => {
+export const TrendingsHeader: React.FC<HeaderProps> = ({ text, onSearch }) => {
   const navigation = useNavigation<StackNavigationProp<{ User: any }>>();
 
   return (
@@ -114,21 +114,16 @@ export const TrendingsHeather: React.FC<HeaderProps> = ({ text, onSearch }) => {
         </View>
       </View>
       <View style={{ marginVertical: SIZES.font }}>
-        <Text style={{ fontSize: SIZES.small, color: COLORS.white }}>
-          Hello, there!
-        </Text>
         <Text
           style={{
-            fontSize: SIZES.large,
+            fontSize: SIZES.extraLarge + 6,
+            fontWeight: "600",
             color: COLORS.white,
             marginTop: SIZES.base / 2,
           }}
         >
           {text}
         </Text>
-      </View>
-      <View style={{ marginTop: SIZES.font }}>
-        <IconInput onChange={onSearch} />
       </View>
     </View>
   );

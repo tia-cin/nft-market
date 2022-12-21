@@ -1,7 +1,7 @@
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
 import {
-  Home,
+  Search,
   Landing,
   Auth,
   User,
@@ -39,7 +39,7 @@ const App: React.FC = () => {
           <Stack.Screen name="Auth" component={Auth} />
           <Stack.Screen name="Details" component={Details} />
           <Stack.Screen name="AddBid" component={AddBid} />
-          <Stack.Screen name="Home" component={MainNavigation} />
+          <Stack.Screen name="Search" component={MainNavigation} />
         </Stack.Navigator>
       </NavigationContainer>
     </Provider>
@@ -48,7 +48,7 @@ const App: React.FC = () => {
 
 const MainNavigation = () => (
   <Tab.Navigator
-    initialRouteName="Home"
+    initialRouteName="Search"
     screenOptions={{
       headerShown: false,
       tabBarShowLabel: false,
@@ -61,8 +61,8 @@ const MainNavigation = () => (
     }}
   >
     <Tab.Screen
-      name="Home"
-      component={Home}
+      name="Search"
+      component={Search}
       options={{
         tabBarIcon: ({ color, size }) => (
           <Ionicons name="home-sharp" size={size} color={color} />
