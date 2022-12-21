@@ -105,8 +105,9 @@ export interface IconInputProps {
   onChange: (input: string) => void;
 }
 
-export interface HomeHeaderProps {
+export interface HeaderProps {
   onSearch: (input: string) => void;
+  text: string
 }
 
 export interface DetailsDescProps {

@@ -8,6 +8,7 @@ import { NFTDataType, NavigateProps } from "../types";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../redux/Store";
 import { getCurrentNFTs } from "../redux/Actions";
+import { TrendingsHeather } from "../components/Headers";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -73,7 +74,9 @@ const Home = () => {
             )}
             keyExtractor={(item) => item.id}
             showsVerticalScrollIndicator={false}
-            ListHeaderComponent={<HomeHeader onSearch={onSearch} />}
+            ListHeaderComponent={
+              <TrendingsHeather onSearch={onSearch} text="Trending" />
+            }
           />
         </View>
       </View>
