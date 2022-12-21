@@ -352,6 +352,25 @@ const NFTData = [
       },
     ],
   },
+  {
+    like: false,
+    id: "NFT-13",
+    name: "Graffitti",
+    creator: "Noah Senki",
+    price: 38.43,
+    description:
+      "The action painter abstract expressionists were directly influenced by automatism. Pollock channelled this into producing gestural. Nulla sed velit erat vitae leo sem inceptos diam fames arcu hendrerit, quis ultrices in eleifend posuere ipsum conubia porttitor felis.",
+    image: assets.nft13,
+    bids: [
+      {
+        id: "BID-64",
+        name: "Siti Nurhaliza",
+        price: 21.25,
+        image: assets.person02,
+        date: "December 31, 2019 at 3:50 PM",
+      },
+    ],
+  },
 ];
 
 const userInfo = {

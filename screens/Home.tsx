@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { assets, COLORS, SIZES } from "../constants";
 import { useNavigation } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
-import { NFTCard, HomeHeader, FocusStatusBar } from "../components";
+import { NFTCard, HomeHeader, FocusStatusBar, RectButton } from "../components";
 import { NFTDataType, NavigateProps } from "../types";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../redux/Store";
@@ -30,7 +30,7 @@ const Home = () => {
   };
 
   React.useEffect(() => {
-    if (!search.length) dispatch<any>(getCurrentNFTs());
+    dispatch<any>(getCurrentNFTs());
   }, [dispatch]);
 
   return (
@@ -39,7 +39,7 @@ const Home = () => {
       <View style={{ flex: 1 }}>
         <View style={{ zIndex: 0 }}>
           <FlatList
-            data={search}
+            data={currentNFTs}
             ListEmptyComponent={
               <View
                 style={{ alignItems: "center", marginTop: SIZES.extraLarge }}
@@ -47,6 +47,24 @@ const Home = () => {
                 <Image
                   source={assets.loadingholo}
                   style={{ width: 250, height: 250 }}
+                />
+                <Text
+                  style={{
+                    color: COLORS.white,
+                    fontSize: SIZES.extraLarge,
+                    fontWeight: "500",
+                    marginBottom: SIZES.medium,
+                  }}
+                >
+                  Loading
+                </Text>
+                <RectButton
+                  text="Try Again"
+                  props={{
+                    backgroundColor: COLORS.secondary,
+                    paddingHorizontal: SIZES.extraLarge,
+                  }}
+                  handlePress={() => dispatch<any>(getCurrentNFTs())}
                 />
               </View>
             }
