@@ -20,39 +20,10 @@ const User = ({ route }: any) => {
   return (
     <View style={{ flex: 1, backgroundColor: COLORS.primary }}>
       <FocusStatusBar background={COLORS.primary} />
-      <View
-        style={{
-          flex: 0.5,
-          margin: SIZES.medium,
-          flexDirection: "row",
-          width: "80%",
-          justifyContent: "space-between",
-        }}
-      >
-        <CircleButton
-          imgUrl={assets.left}
-          handlePress={() => navigate.goBack()}
-        />
-        <TouchableOpacity
-          style={{ right: SIZES.large * 2 }}
-          onPress={() => navigate.navigate("CreateNFT")}
-        >
-          <Text
-            style={{
-              backgroundColor: COLORS.white,
-              padding: SIZES.small - 4,
-              borderRadius: SIZES.small,
-              position: "absolute",
-            }}
-          >
-            Create NFT
-          </Text>
-        </TouchableOpacity>
-      </View>
       <UserInfo userInfo={userInfo} />
       <View
         style={{
-          flex: 2,
+          flex: 2.5,
           alignItems: "center",
         }}
       >

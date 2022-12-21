@@ -11,7 +11,9 @@ export const UserInfo: React.FC<{ userInfo: UserType }> = ({ userInfo }) => {
   const navigation = useNavigation<StackNavigationProp<NavigateProps>>();
 
   return (
-    <View style={{ flex: 2, alignItems: "center" }}>
+    <View
+      style={{ flex: 2, alignItems: "center", marginTop: SIZES.extraLarge * 2 }}
+    >
       <View>
         <Image source={assets.person01} />
         <Image
