@@ -15,8 +15,7 @@ import { Provider } from "react-redux";
 import store from "./redux/Store";
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { assets, COLORS, SIZES } from "./constants";
-import { Image } from "react-native";
+import { COLORS, SIZES } from "./constants";
 import Ionicons from "@expo/vector-icons/Ionicons";
 
 const Tab = createBottomTabNavigator();

@@ -8,14 +8,7 @@ import facebook from "../assets/icons/facebook-icon.png";
 import options from "../assets/icons/options.png";
 import heartIcon from "../assets/icons/heart-icon.png";
 import nft from "../assets/icons/nft.png";
-import user from "../assets/icons/user.png";
-import home from "../assets/icons/home.png";
-import plus from "../assets/icons/plus.png";
-import boxes from "../assets/icons/boxes.png";
-import addtocart from "../assets/icons/addtocart.png";
-import loading from "../assets/icons/loading.gif";
 import loadingholo from "../assets/icons/loadingholo.gif";
-import notification from "../assets/icons/notification.png";
 import searchblack from "../assets/icons/searchblack.png";
 
 import logo from "../assets/images/logo.png";
@@ -48,14 +41,7 @@ export default {
   options,
   nft,
   heartIcon,
-  user,
-  boxes,
-  home,
-  plus,
-  addtocart,
-  loading,
   loadingholo,
-  notification,
   searchblack,
 
   logo,
