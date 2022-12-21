@@ -45,21 +45,6 @@ const CreateNFT = () => {
       }}
     >
       <FocusStatusBar background={COLORS.primary} />
-      <View
-        style={{
-          flex: 0.5,
-          margin: SIZES.medium,
-          flexDirection: "row",
-          width: "80%",
-          justifyContent: "space-between",
-        }}
-      >
-        <CircleButton
-          imgUrl={assets.left}
-          handlePress={() => navigate.goBack()}
-        />
-      </View>
-      <FocusStatusBar background={COLORS.primary} />
       <View style={{ flex: 1.5 }}>
         <Text
           style={{
@@ -76,11 +61,10 @@ const CreateNFT = () => {
             color: COLORS.white,
             fontSize: SIZES.font,
             marginHorizontal: SIZES.base,
-            textAlign: "justify",
           }}
         >
           Share your NFTs on the market by filling these information, make your
-          products attractive to the audience
+          products attractive to the audience.
         </Text>
       </View>
       <View style={{ flex: 5, justifyContent: "space-evenly" }}>
