@@ -6,7 +6,7 @@ import { useNavigation } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { HeaderProps } from "../types";
 
-export const HomeHeader: React.FC<HeaderProps> = ({ onSearch, text }) => {
+export const SearchHeader: React.FC<HeaderProps> = ({ onSearch, text }) => {
   const navigation = useNavigation<StackNavigationProp<{ User: any }>>();
 
   return (
@@ -70,7 +70,7 @@ export const HomeHeader: React.FC<HeaderProps> = ({ onSearch, text }) => {
   );
 };
 
-export const TrendingsHeader: React.FC<HeaderProps> = ({ text, onSearch }) => {
+export const TrendingsHeader: React.FC<HeaderProps> = ({ text }) => {
   const navigation = useNavigation<StackNavigationProp<{ User: any }>>();
 
   return (

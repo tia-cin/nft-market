@@ -5,9 +5,9 @@ import { useNavigation } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
 import {
   NFTCard,
-  TrendingsHeader,
   FocusStatusBar,
   RectButton,
+  SearchHeader,
 } from "../components";
 import { NFTDataType, NavigateProps } from "../types";
 import { useDispatch, useSelector } from "react-redux";
@@ -79,7 +79,7 @@ const Search = () => {
             keyExtractor={(item) => item.id}
             showsVerticalScrollIndicator={false}
             ListHeaderComponent={
-              <TrendingsHeader onSearch={onSearch} text="Trending" />
+              <SearchHeader onSearch={onSearch} text="Trending" />
             }
           />
         </View>

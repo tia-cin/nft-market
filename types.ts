@@ -41,6 +41,7 @@ interface likeNFTAction {
 }
 
 export type ActionTypes = getCurrentNFTsAction | getUserAction | createNFTAction | likeNFTAction 
+
 // DATA
 export interface NFTDataType {
   id: string;
