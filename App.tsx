@@ -54,12 +54,4 @@ const MainNavigation = () => (
   </Tab.Navigator>
 );
 
-const BottomNavigation = () => (
-  <Tab.Navigator>
-    <Tab.Screen name="Home" component={Home} />
-    <Tab.Screen name="CreateNFT" component={CreateNFT} />
-    <Tab.Screen name="User" component={User} />
-  </Tab.Navigator>
-);
-
 export default App;
