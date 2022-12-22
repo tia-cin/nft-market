@@ -393,9 +393,9 @@ const NFTData = [
   {
     like: true,
     id: "NFT-05",
-    name: "Nifty NFT",
-    creator: "Putri Intan",
-    price: 54.25,
+    name: "Abstract #454",
+    creator: "David Poe",
+    price: 49.95,
     description:
       "The action painter abstract expressionists were directly influenced by automatism. Pollock channelled this into producing gestural.Lorem ipsum dolor sit amet consectetur adipiscing elit consequat accumsan sapien, lectus convallis malesuada odio curae habitasse dignissim nascetur.",
     image: assets.nft15,
@@ -406,20 +406,6 @@ const NFTData = [
         price: 56.25,
         image: assets.person02,
         date: "December 12, 2019 at 12:10 PM",
-      },
-      {
-        id: "BID-42",
-        name: "Jennifer Sia",
-        price: 54.25,
-        image: assets.person03,
-        date: "December 27, 2019 at 1:50 PM",
-      },
-      {
-        id: "BID-43",
-        name: "Rosie Wong",
-        price: 55.15,
-        image: assets.person04,
-        date: "December 31, 2019 at 3:50 PM",
       },
       {
         id: "BID-44",
