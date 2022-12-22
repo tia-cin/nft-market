@@ -84,7 +84,7 @@ const Auth = ({ route, navigation }: any) => {
               text={createUser ? "Sign Up" : "Sign In"}
               handlePress={() => {
                 dispatch<any>(getUserAction(userInfo));
-                navigation.navigate("Home");
+                navigation.navigate("Trendings");
               }}
             />
           </View>
