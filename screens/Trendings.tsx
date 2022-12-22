@@ -8,12 +8,12 @@ import { StackNavigationProp } from "@react-navigation/stack";
 import { useSelector } from "react-redux";
 import { RootState } from "../redux/Store";
 import { NFTDataType, NavigateProps } from "../types";
+import { getCurrentNFTs } from "../redux/Actions";
 
 const Trendings = () => {
   const dispatch = useDispatch();
   const navigation = useNavigation<StackNavigationProp<NavigateProps>>();
   const { currentNFTs } = useSelector((state: RootState) => state);
-  const [search, setSearch] = useState<NFTDataType[]>(currentNFTs);
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.primary }}>
       <FocusStatusBar background={COLORS.primary} />
@@ -45,7 +45,7 @@ const Trendings = () => {
                     backgroundColor: COLORS.secondary,
                     paddingHorizontal: SIZES.extraLarge,
                   }}
-                  handlePress={() => {}}
+                  handlePress={() => dispatch<any>(getCurrentNFTs())}
                 />
               </View>
             }

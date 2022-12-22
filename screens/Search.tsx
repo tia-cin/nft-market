@@ -64,7 +64,7 @@ const Search = () => {
                     backgroundColor: COLORS.secondary,
                     paddingHorizontal: SIZES.extraLarge,
                   }}
-                  handlePress={() => dispatch<any>(getCurrentNFTs())}
+                  handlePress={() => setSearch(currentNFTs)}
                 />
               </View>
             }
