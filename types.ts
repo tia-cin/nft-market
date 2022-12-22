@@ -107,7 +107,7 @@ export interface IconInputProps {
 }
 
 export interface HeaderProps {
-  onSearch: (input: string) => void;
+  onSearch?: (input: string) => void;
   text: string
 }
 

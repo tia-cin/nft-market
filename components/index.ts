@@ -1,4 +1,4 @@
-import {SearchHeader, TrendingsHeader} from "./Headers";
+import { Header} from "./Headers";
 import { FocusStatusBar, BottomBar } from "./Bars";
 import NFTCard from "./NFTCard";
 import { CircleButton, RectButton, IconButton } from "./Buttons";
@@ -15,8 +15,7 @@ import { Inputs, IconInput } from "./Inputs";
 import {UserInfo} from "./UserInfo";
 
 export {
-  SearchHeader,
-  TrendingsHeader,
+  Header,
   FocusStatusBar,
   NFTCard,
   CircleButton,

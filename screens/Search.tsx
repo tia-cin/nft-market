@@ -3,12 +3,7 @@ import React, { useState } from "react";
 import { assets, COLORS, SIZES } from "../constants";
 import { useNavigation } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
-import {
-  NFTCard,
-  FocusStatusBar,
-  RectButton,
-  SearchHeader,
-} from "../components";
+import { NFTCard, FocusStatusBar, RectButton, Header } from "../components";
 import { NFTDataType, NavigateProps } from "../types";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../redux/Store";
@@ -78,9 +73,7 @@ const Search = () => {
             )}
             keyExtractor={(item) => item.id}
             showsVerticalScrollIndicator={false}
-            ListHeaderComponent={
-              <SearchHeader onSearch={onSearch} text="Search" />
-            }
+            ListHeaderComponent={<Header onSearch={onSearch} text="Search" />}
           />
         </View>
       </View>

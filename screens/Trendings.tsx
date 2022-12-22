@@ -1,11 +1,6 @@
 import { View, Text, SafeAreaView, Image, FlatList } from "react-native";
 import React, { useState } from "react";
-import {
-  FocusStatusBar,
-  RectButton,
-  NFTCard,
-  TrendingsHeader,
-} from "../components";
+import { FocusStatusBar, RectButton, NFTCard, Header } from "../components";
 import { COLORS, assets, SIZES } from "../constants";
 import { useDispatch } from "react-redux";
 import { useNavigation } from "@react-navigation/core";
@@ -59,9 +54,7 @@ const Trendings = () => {
             )}
             keyExtractor={(item) => item.id}
             showsVerticalScrollIndicator={false}
-            ListHeaderComponent={
-              <TrendingsHeader text="Trendings" onSearch={() => {}} />
-            }
+            ListHeaderComponent={<Header text="Trendings" />}
           />
         </View>
       </View>
