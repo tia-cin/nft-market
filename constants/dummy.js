@@ -773,6 +773,49 @@ const NFTData = [
   },
 ];
 
+const notifications = [
+  {
+    readed: false,
+    notificationImg: assets.person04,
+    title: "Lia Fier",
+    subtitle: "followed you",
+    dateTime: "7 Jun 2022, 11:34 AM",
+    buttonText: "Follow",
+  },
+  {
+    readed: false,
+    notificationImg: assets.person04,
+    title: "Lia Fier",
+    subtitle: "Liked your NFT",
+    dateTime: "7 Jun 2022, 11:34 AM",
+    nftImg: assets.nft07,
+  },
+  {
+    readed: false,
+    notificationImg: assets.person02,
+    title: "Mei Key",
+    subtitle: "followed you",
+    dateTime: "7 Jun 2022, 11:34 AM",
+    buttonText: "Follow",
+  },
+  {
+    readed: true,
+    notificationImg: assets.person03,
+    title: "Mimi Fer",
+    subtitle: "followed you",
+    dateTime: "7 Jun 2022, 11:34 AM",
+    buttonText: "Follow",
+  },
+  {
+    readed: true,
+    notificationImg: assets.person03,
+    title: "Mimi Fer",
+    subtitle: "Liked your NFT",
+    dateTime: "7 Jun 2022, 11:34 AM",
+    nftImg: assets.nft27,
+  },
+];
+
 const userInfo = {
   username: "Lizy Terry",
   picture: assets.user,
