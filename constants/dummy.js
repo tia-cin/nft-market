@@ -773,7 +773,7 @@ const NFTData = [
   },
 ];
 
-const notifications = [
+const notificationsData = [
   {
     readed: false,
     notificationImg: assets.person04,
@@ -797,6 +797,14 @@ const notifications = [
     subtitle: "followed you",
     dateTime: "7 Jun 2022, 11:34 AM",
     buttonText: "Follow",
+  },
+  {
+    readed: true,
+    notificationImg: assets.eth,
+    title: "ETH Recieved",
+    subtitle: "0.00032 ETH recieved",
+    dateTime: "7 Jun 2022, 11:34 AM",
+    buttonText: "My balance",
   },
   {
     readed: true,
