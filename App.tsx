@@ -39,7 +39,7 @@ const App: React.FC = () => {
           <Stack.Screen name="Auth" component={Auth} />
           <Stack.Screen name="Details" component={Details} />
           <Stack.Screen name="AddBid" component={AddBid} />
-          <Stack.Screen name="Home" component={MainNavigation} />
+          <Stack.Screen name="Trendings" component={MainNavigation} />
         </Stack.Navigator>
       </NavigationContainer>
     </Provider>
