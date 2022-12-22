@@ -878,4 +878,4 @@ const userInfo = {
   ],
 };
 
-export { NFTData, userNFT, userInfo, months };
+export { NFTData, userNFT, userInfo, months, notificationsData };
