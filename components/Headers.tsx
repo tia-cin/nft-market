@@ -50,12 +50,10 @@ export const SearchHeader: React.FC<HeaderProps> = ({ onSearch, text }) => {
         </View>
       </View>
       <View style={{ marginVertical: SIZES.font }}>
-        <Text style={{ fontSize: SIZES.small, color: COLORS.white }}>
-          Hello, there!
-        </Text>
         <Text
           style={{
-            fontSize: SIZES.large,
+            fontSize: SIZES.extraLarge + 6,
+            fontWeight: "600",
             color: COLORS.white,
             marginTop: SIZES.base / 2,
           }}

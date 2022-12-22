@@ -44,7 +44,7 @@ const Search = () => {
       <View style={{ flex: 1 }}>
         <View style={{ zIndex: 0 }}>
           <FlatList
-            data={currentNFTs}
+            data={search}
             ListEmptyComponent={
               <View
                 style={{ alignItems: "center", marginTop: SIZES.extraLarge }}
@@ -79,7 +79,7 @@ const Search = () => {
             keyExtractor={(item) => item.id}
             showsVerticalScrollIndicator={false}
             ListHeaderComponent={
-              <SearchHeader onSearch={onSearch} text="Trending" />
+              <SearchHeader onSearch={onSearch} text="Search" />
             }
           />
         </View>

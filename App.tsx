@@ -61,8 +61,8 @@ const MainNavigation = () => (
     }}
   >
     <Tab.Screen
-      name="Search"
-      component={Search}
+      name="Trendings"
+      component={Trendings}
       options={{
         tabBarIcon: ({ color, size }) => (
           <Ionicons name="home-sharp" size={size} color={color} />
@@ -70,8 +70,8 @@ const MainNavigation = () => (
       }}
     />
     <Tab.Screen
-      name="Trendings"
-      component={Trendings}
+      name="Search"
+      component={Search}
       options={{
         tabBarIcon: ({ color, size }) => (
           <Ionicons name="search" size={size} color={color} />
