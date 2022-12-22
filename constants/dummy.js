@@ -371,6 +371,420 @@ const NFTData = [
       },
     ],
   },
+  {
+    like: false,
+    id: "NFT-14",
+    name: "New Nature on Earth",
+    creator: "Tora Sana",
+    price: 38.43,
+    description:
+      "The action painter abstract expressionists were directly influenced by automatism. Pollock channelled this into producing gestural. Nulla sed velit erat vitae leo sem inceptos diam fames arcu hendrerit, quis ultrices in eleifend posuere ipsum conubia porttitor felis.",
+    image: assets.nft14,
+    bids: [
+      {
+        id: "BID-64",
+        name: "Siti Nurhaliza",
+        price: 21.25,
+        image: assets.person02,
+        date: "December 31, 2019 at 3:50 PM",
+      },
+    ],
+  },
+  {
+    like: true,
+    id: "NFT-05",
+    name: "Nifty NFT",
+    creator: "Putri Intan",
+    price: 54.25,
+    description:
+      "The action painter abstract expressionists were directly influenced by automatism. Pollock channelled this into producing gestural.Lorem ipsum dolor sit amet consectetur adipiscing elit consequat accumsan sapien, lectus convallis malesuada odio curae habitasse dignissim nascetur.",
+    image: assets.nft15,
+    bids: [
+      {
+        id: "BID-41",
+        name: "Jessica Tan",
+        price: 56.25,
+        image: assets.person02,
+        date: "December 12, 2019 at 12:10 PM",
+      },
+      {
+        id: "BID-42",
+        name: "Jennifer Sia",
+        price: 54.25,
+        image: assets.person03,
+        date: "December 27, 2019 at 1:50 PM",
+      },
+      {
+        id: "BID-43",
+        name: "Rosie Wong",
+        price: 55.15,
+        image: assets.person04,
+        date: "December 31, 2019 at 3:50 PM",
+      },
+      {
+        id: "BID-44",
+        name: "Vincent Swift",
+        price: 54.15,
+        image: assets.person02,
+        date: "December 31, 2019 at 3:50 PM",
+      },
+    ],
+  },
+  {
+    like: true,
+    id: "NFT-68",
+    name: "Facing Watefall",
+    creator: "Putri Intan",
+    price: 54.25,
+    description:
+      "The action painter abstract expressionists were directly influenced by automatism. Pollock channelled this into producing gestural.Lorem ipsum dolor sit amet consectetur adipiscing elit consequat accumsan sapien, lectus convallis malesuada odio curae habitasse dignissim nascetur.",
+    image: assets.nft16,
+    bids: [
+      {
+        id: "BID-41",
+        name: "Jessica Tan",
+        price: 56.25,
+        image: assets.person02,
+        date: "December 12, 2019 at 12:10 PM",
+      },
+      {
+        id: "BID-42",
+        name: "Jennifer Sia",
+        price: 54.25,
+        image: assets.person03,
+        date: "December 27, 2019 at 1:50 PM",
+      },
+      {
+        id: "BID-43",
+        name: "Rosie Wong",
+        price: 55.15,
+        image: assets.person04,
+        date: "December 31, 2019 at 3:50 PM",
+      },
+      {
+        id: "BID-44",
+        name: "Vincent Swift",
+        price: 54.15,
+        image: assets.person02,
+        date: "December 31, 2019 at 3:50 PM",
+      },
+    ],
+  },
+  {
+    like: true,
+    id: "NFT-66",
+    name: "ETH Domination",
+    creator: "Eathan Rin",
+    price: 51.53,
+    description:
+      "The action painter abstract expressionists were directly influenced by automatism. Pollock channelled this into producing gestural.Lorem ipsum dolor sit amet consectetur adipiscing elit consequat accumsan sapien, lectus convallis malesuada odio curae habitasse dignissim nascetur.",
+    image: assets.nft17,
+    bids: [
+      {
+        id: "BID-41",
+        name: "Jessica Tan",
+        price: 56.25,
+        image: assets.person02,
+        date: "December 12, 2019 at 12:10 PM",
+      },
+      {
+        id: "BID-42",
+        name: "Jennifer Sia",
+        price: 54.25,
+        image: assets.person03,
+        date: "December 27, 2019 at 1:50 PM",
+      },
+      {
+        id: "BID-43",
+        name: "Rosie Wong",
+        price: 55.15,
+        image: assets.person04,
+        date: "December 31, 2019 at 3:50 PM",
+      },
+      {
+        id: "BID-44",
+        name: "Vincent Swift",
+        price: 54.15,
+        image: assets.person02,
+        date: "December 31, 2019 at 3:50 PM",
+      },
+    ],
+  },
+  {
+    like: false,
+    id: "NFT-18",
+    name: "Abstract #545",
+    creator: "David doe",
+    price: 18.25,
+    description:
+      "The action painter abstract expressionists were directly influenced by automatism. Pollock channelled this into producing gestural.",
+    image: assets.nft18,
+    bids: [
+      {
+        id: "BID-51",
+        name: "Jessica Tan",
+        price: 20.25,
+        image: assets.person02,
+        date: "December 12, 2019 at 10:10 PM",
+      },
+    ],
+  },
+  {
+    like: true,
+    id: "NFT-19",
+    name: "Mermaid",
+    creator: "David doe",
+    price: 26.65,
+    description:
+      "The action painter abstract expressionists were directly influenced by automatism. Pollock channelled this into producing gestural.",
+    image: assets.nft19,
+    bids: [
+      {
+        id: "BID-15",
+        name: "Jessica Den",
+        price: 30.25,
+        image: assets.person02,
+        date: "December 12, 2019 at 12:10 AM",
+      },
+    ],
+  },
+  {
+    like: false,
+    id: "NFT-35",
+    name: "Face",
+    creator: "David Kylyan",
+    price: 10.25,
+    description:
+      "The action painter abstract expressionists were directly influenced by automatism. Pollock channelled this into producing gestural.",
+    image: assets.nft20,
+    bids: [
+      {
+        id: "BID-92",
+        name: "Jessica Tan",
+        price: 10.35,
+        image: assets.person02,
+        date: "December 12, 2019 at 11:10 AM",
+      },
+    ],
+  },
+  {
+    like: true,
+    id: "NFT-53",
+    name: "Baby War",
+    creator: "KidEight",
+    price: 16.53,
+    description:
+      "The action painter abstract expressionists were directly influenced by automatism. Pollock channelled this into producing gestural.",
+    image: assets.nft21,
+    bids: [
+      {
+        id: "BID-51",
+        name: "Jessica Tan",
+        price: 18.25,
+        image: assets.person02,
+        date: "December 12, 2019 at 01:16 PM",
+      },
+    ],
+  },
+  {
+    like: true,
+    id: "NFT-67",
+    name: "Tech Knit",
+    creator: "David doe",
+    price: 11.75,
+    description:
+      "The action painter abstract expressionists were directly influenced by automatism. Pollock channelled this into producing gestural.",
+    image: assets.nft22,
+    bids: [
+      {
+        id: "BID-51",
+        name: "Revecca Tan",
+        price: 13.25,
+        image: assets.person02,
+        date: "December 12, 2019 at 12:10 PM",
+      },
+    ],
+  },
+  {
+    like: false,
+    id: "NFT-52",
+    name: "Eve & The Snake",
+    creator: "Adams Ky",
+    price: 10.25,
+    description:
+      "The action painter abstract expressionists were directly influenced by automatism. Pollock channelled this into producing gestural.",
+    image: assets.nft23,
+    bids: [
+      {
+        id: "BID-72",
+        name: "Jessica Tan",
+        price: 10.25,
+        image: assets.person02,
+        date: "December 12, 2019 at 02:10 PM",
+      },
+    ],
+  },
+  {
+    like: false,
+    id: "NFT-95",
+    name: "Astronaunt Eye",
+    creator: "David doe",
+    price: 28.54,
+    description:
+      "The action painter abstract expressionists were directly influenced by automatism. Pollock channelled this into producing gestural.",
+    image: assets.nft24,
+    bids: [
+      {
+        id: "BID-16",
+        name: "Rotation Kim",
+        price: 30.25,
+        image: assets.person02,
+        date: "December 12, 2019 at 12:10 PM",
+      },
+    ],
+  },
+  {
+    like: false,
+    id: "NFT-66",
+    name: "Arcangels",
+    creator: "Pedro Rems",
+    price: 12.5,
+    description:
+      "The action painter abstract expressionists were directly influenced by automatism. Pollock channelled this into producing gestural.",
+    image: assets.nft25,
+    bids: [
+      {
+        id: "BID-51",
+        name: "Jessica Tan",
+        price: 10.25,
+        image: assets.person02,
+        date: "December 12, 2019 at 05:10 AM",
+      },
+    ],
+  },
+  {
+    like: false,
+    id: "NFT-05",
+    name: "Faceless",
+    creator: "Karen Diaz",
+    price: 10.25,
+    description:
+      "The action painter abstract expressionists were directly influenced by automatism. Pollock channelled this into producing gestural.",
+    image: assets.nft26,
+    bids: [
+      {
+        id: "BID-71",
+        name: "Liam Weber",
+        price: 10.75,
+        image: assets.person02,
+        date: "December 12, 2019 at 08:10 PM",
+      },
+    ],
+  },
+  {
+    like: false,
+    id: "NFT-05",
+    name: "Abstract #756",
+    creator: "David doe",
+    price: 20.65,
+    description:
+      "The action painter abstract expressionists were directly influenced by automatism. Pollock channelled this into producing gestural.",
+    image: assets.nft27,
+    bids: [
+      {
+        id: "BID-17",
+        name: "Jessica Tan",
+        price: 20.75,
+        image: assets.person02,
+        date: "December 12, 2019 at 12:10 AM",
+      },
+    ],
+  },
+  {
+    like: true,
+    id: "NFT-84",
+    name: "Cat ETH",
+    creator: "Katy Liams",
+    price: 31.65,
+    description:
+      "The action painter abstract expressionists were directly influenced by automatism. Pollock channelled this into producing gestural.",
+    image: assets.nft28,
+    bids: [
+      {
+        id: "BID-51",
+        name: "Jessica Tan",
+        price: 40.25,
+        image: assets.person02,
+        date: "December 12, 2019 at 12:10 PM",
+      },
+      {
+        id: "BID-51",
+        name: "Jessica Tan",
+        price: 35.65,
+        image: assets.person02,
+        date: "December 12, 2019 at 10:10 AM",
+      },
+    ],
+  },
+  {
+    like: false,
+    id: "NFT-77",
+    name: "Abstract #326",
+    creator: "David doe",
+    price: 50.25,
+    description:
+      "The action painter abstract expressionists were directly influenced by automatism. Pollock channelled this into producing gestural.",
+    image: assets.nft29,
+    bids: [
+      {
+        id: "BID-05",
+        name: "Jessica Tan",
+        price: 70.25,
+        image: assets.person02,
+        date: "December 12, 2019 at 12:10 PM",
+      },
+      {
+        id: "BID-12",
+        name: "Jeniffer Willen",
+        price: 60.15,
+        image: assets.person02,
+        date: "December 13, 2019 at 12:15 AM",
+      },
+    ],
+  },
+  {
+    like: false,
+    id: "NFT-32",
+    name: "Donut",
+    creator: "Dave Poe",
+    price: 19.25,
+    description:
+      "The action painter abstract expressionists were directly influenced by automatism. Pollock channelled this into producing gestural.",
+    image: assets.nft30,
+    bids: [
+      {
+        id: "BID-21",
+        name: "Tamara Rid",
+        price: 27.25,
+        image: assets.person02,
+        date: "December 12, 2019 at 12:10 PM",
+      },
+      {
+        id: "BID-61",
+        name: "Kim Limanda",
+        price: 20.55,
+        image: assets.person02,
+        date: "December 12, 2019 at 19:10 PM",
+      },
+      {
+        id: "BID-18",
+        name: "Jessy Recca",
+        price: 19.25,
+        image: assets.person02,
+        date: "December 12, 2019 at 10:10 PM",
+      },
+    ],
+  },
 ];
 
 const userInfo = {
