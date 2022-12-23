@@ -876,6 +876,7 @@ const userInfo = {
       date: "December 12, 2019 at 12:15 PM",
     },
   ],
+  notifications: notificationsData,
 };
 
 export { NFTData, userNFT, userInfo, months, notificationsData };

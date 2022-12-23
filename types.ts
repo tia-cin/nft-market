@@ -51,7 +51,7 @@ export interface NotificationsType {
   subtitle: string,
   dateTime: string,
   buttonText?: string;
-  nftImg: any,
+  nftImg?: any,
 }
 
 
