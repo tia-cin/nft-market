@@ -100,7 +100,6 @@ export interface NFTTitleProps {
 
 export interface EthPriceProps {
   price: number;
-  dark?: boolean
 }
 
 export interface ImageCmpProps {

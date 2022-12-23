@@ -4,6 +4,8 @@ import { userInfo } from "../constants/dummy";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { NFTCard, DetailsBid } from "../components";
 import { NavigateProps } from "../types";
+import { COLORS, SIZES } from "../constants";
+import { View } from "react-native";
 
 export const UserNFTs = () => {
   const navigation = useNavigation<StackNavigationProp<NavigateProps>>();
@@ -45,6 +47,16 @@ export const Bids = () => (
     contentContainerStyle={{
       width: 400,
     }}
-    renderItem={({ item }) => <DetailsBid bid={item} dark />}
+    renderItem={({ item }) => (
+      <View
+        style={{
+          backgroundColor: COLORS.white,
+          margin: SIZES.base,
+          borderRadius: SIZES.base,
+        }}
+      >
+        <DetailsBid bid={item} />
+      </View>
+    )}
   />
 );

@@ -21,7 +21,7 @@ export const NFTTitle: React.FC<NFTTitleProps> = ({
   );
 };
 
-export const EthPrice: React.FC<EthPriceProps> = ({ price, dark }) => {
+export const EthPrice: React.FC<EthPriceProps> = ({ price }) => {
   return (
     <View
       style={{
@@ -35,9 +35,7 @@ export const EthPrice: React.FC<EthPriceProps> = ({ price, dark }) => {
         source={assets.eth}
         resizeMode="contain"
         style={{
-          backgroundColor: dark ? COLORS.light : "transparent",
           borderRadius: SIZES.base,
-          marginEnd: dark ? SIZES.base : 0,
           width: 20,
           height: 20,
           marginRight: 2,
@@ -46,7 +44,7 @@ export const EthPrice: React.FC<EthPriceProps> = ({ price, dark }) => {
       <Text
         style={{
           fontSize: SIZES.large,
-          color: dark ? COLORS.white : COLORS.black,
+          color: COLORS.black,
           fontWeight: "500",
         }}
       >
