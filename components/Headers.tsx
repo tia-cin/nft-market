@@ -5,6 +5,7 @@ import { IconInput } from ".";
 import { useNavigation } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { HeaderProps } from "../types";
+import Ionicons from "@expo/vector-icons/Ionicons";
 
 export const Header: React.FC<HeaderProps> = ({ onSearch, text }) => {
   const navigation = useNavigation<StackNavigationProp<{ User: any }>>();
@@ -16,40 +17,34 @@ export const Header: React.FC<HeaderProps> = ({ onSearch, text }) => {
         padding: SIZES.font,
       }}
     >
+      {text === "Trendings" && (
+        <View
+          style={{
+            flexDirection: "row",
+            justifyContent: "space-between",
+            alignItems: "center",
+          }}
+        >
+          <Image
+            source={assets.logo}
+            resizeMode="contain"
+            style={{ width: 90, height: 25 }}
+          />
+          <View style={{ width: 45, height: 45 }}>
+            <TouchableOpacity onPress={() => {}}>
+              <Ionicons name="md-menu-outline" color={COLORS.white} size={40} />
+            </TouchableOpacity>
+          </View>
+        </View>
+      )}
       <View
         style={{
+          marginVertical: SIZES.font,
           flexDirection: "row",
           justifyContent: "space-between",
           alignItems: "center",
         }}
       >
-        <Image
-          source={assets.logo}
-          resizeMode="contain"
-          style={{ width: 90, height: 25 }}
-        />
-        <View style={{ width: 45, height: 45 }}>
-          <TouchableOpacity onPress={() => navigation.navigate("User")}>
-            <Image
-              source={assets.person01}
-              resizeMode="contain"
-              style={{ width: "100%", height: "100%" }}
-            />
-            <Image
-              source={assets.badge}
-              resizeMode="contain"
-              style={{
-                position: "absolute",
-                width: 15,
-                height: 15,
-                bottom: 0,
-                right: 0,
-              }}
-            />
-          </TouchableOpacity>
-        </View>
-      </View>
-      <View style={{ marginVertical: SIZES.font }}>
         <Text
           style={{
             fontSize: SIZES.extraLarge + 6,
@@ -60,6 +55,13 @@ export const Header: React.FC<HeaderProps> = ({ onSearch, text }) => {
         >
           {text}
         </Text>
+        {text !== "Trendings" && (
+          <View style={{ width: 45, height: 45 }}>
+            <TouchableOpacity onPress={() => {}}>
+              <Ionicons name="md-menu-outline" color={COLORS.white} size={40} />
+            </TouchableOpacity>
+          </View>
+        )}
       </View>
       {onSearch && (
         <View style={{ marginTop: SIZES.font }}>
