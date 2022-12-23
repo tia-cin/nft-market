@@ -801,8 +801,8 @@ const notificationsData = [
   {
     readed: true,
     notificationImg: assets.ethcoin,
-    title: "ETH Recieved",
-    subtitle: "0.00032 ETH recieved",
+    title: "Recieved",
+    subtitle: "0.00032 ETH",
     dateTime: "7 Jun 2022, 11:34 AM",
     buttonText: "My balance",
   },

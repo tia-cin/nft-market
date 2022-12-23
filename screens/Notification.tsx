@@ -14,7 +14,7 @@ const Notification = () => {
           renderItem={({ item }) => (
             <View
               style={{
-                padding: SIZES.base,
+                padding: SIZES.medium,
                 flexDirection: "row",
                 alignItems: "center",
                 justifyContent: "space-between",
@@ -33,19 +33,40 @@ const Notification = () => {
                   source={item.notificationImg}
                   style={{ width: 50, height: 50 }}
                 />
+                {!item.subtitle.includes("ETH") && (
+                  <Image
+                    source={assets.badge}
+                    style={{
+                      width: 20,
+                      height: 20,
+                      bottom: 0,
+                      right: 0,
+                      position: "absolute",
+                    }}
+                  />
+                )}
               </View>
-              <View style={{ width: SIZES.extraLarge * 8 }}>
-                <Text style={{ color: COLORS.white, fontWeight: "600" }}>
+              <View style={{ width: 150 }}>
+                <Text style={{ color: COLORS.white, fontWeight: "700" }}>
                   {item.title}
+                  <Text
+                    style={{
+                      color: COLORS.white,
+                      fontSize: SIZES.small,
+                      fontWeight: "normal",
+                    }}
+                  >
+                    {" " + item.subtitle}
+                  </Text>
                 </Text>
-                <Text style={{ color: COLORS.white }}>{item.subtitle}</Text>
+
                 <Text
                   style={{ color: COLORS.white, fontSize: SIZES.small - 2 }}
                 >
                   {item.dateTime}
                 </Text>
               </View>
-              <View style={{}}>
+              <View style={{ width: 110, alignItems: "center" }}>
                 {item.nftImg && (
                   <Image
                     source={item.nftImg}
