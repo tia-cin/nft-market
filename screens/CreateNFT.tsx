@@ -9,6 +9,7 @@ import {
 import {
   CircleButton,
   FocusStatusBar,
+  Header,
   Inputs,
   RectButton,
 } from "../components";
@@ -45,28 +46,7 @@ const CreateNFT = () => {
       }}
     >
       <FocusStatusBar background={COLORS.primary} />
-      <View style={{ flex: 1.5 }}>
-        <Text
-          style={{
-            color: COLORS.white,
-            fontSize: SIZES.extraLarge,
-            fontWeight: "500",
-            margin: SIZES.base,
-          }}
-        >
-          Create your NFT
-        </Text>
-        <Text
-          style={{
-            color: COLORS.white,
-            fontSize: SIZES.font,
-            marginHorizontal: SIZES.base,
-          }}
-        >
-          Share your NFTs on the market by filling these information, make your
-          products attractive to the audience.
-        </Text>
-      </View>
+      <Header text="Create your NFT" />
       <View style={{ flex: 5, justifyContent: "space-evenly" }}>
         <Inputs value={nftName} onChange={setNftName} />
         <Inputs value={nftPrice} onChange={setNftPrice} />

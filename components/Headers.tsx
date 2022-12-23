@@ -1,7 +1,7 @@
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import React from "react";
 import { COLORS, SIZES, assets } from "../constants";
-import { IconInput } from ".";
+import { CircleButton, IconInput } from ".";
 import { useNavigation } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { HeaderProps } from "../types";
@@ -39,7 +39,7 @@ export const Header: React.FC<HeaderProps> = ({ onSearch, text }) => {
       )}
       <View
         style={{
-          marginVertical: SIZES.font,
+          marginVertical: SIZES.base,
           flexDirection: "row",
           justifyContent: "space-between",
           alignItems: "center",
