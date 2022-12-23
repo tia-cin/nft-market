@@ -10,6 +10,7 @@ import heartIcon from "../assets/icons/heart-icon.png";
 import nft from "../assets/icons/nft.png";
 import loadingholo from "../assets/icons/loadingholo.gif";
 import searchblack from "../assets/icons/searchblack.png";
+import ethcoin from "../assets/icons/ethcoin.png";
 
 import logo from "../assets/images/logo.png";
 import nft01 from "../assets/images/nft01.png";
@@ -61,6 +62,7 @@ export default {
   heartIcon,
   loadingholo,
   searchblack,
+  ethcoin,
 
   logo,
   nft01,

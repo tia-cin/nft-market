@@ -11,7 +11,8 @@ export interface UserType {
     biography: string,
     createdNFTs: NFTDataType[],
     likedNFTs: NFTDataType[]
-    bids: BidType[]
+    bids: BidType[],
+    notifications: NotificationsType[]
 }
 
 export interface StateType {
@@ -43,6 +44,17 @@ interface likeNFTAction {
 export type ActionTypes = getCurrentNFTsAction | getUserAction | createNFTAction | likeNFTAction 
 
 // DATA
+export interface NotificationsType {
+  readed: boolean,
+  notificationImg?: any,
+  title: string,
+  subtitle: string,
+  dateTime: string,
+  buttonText?: string;
+  nftImg: any,
+}
+
+
 export interface NFTDataType {
   id: string;
   name: string;

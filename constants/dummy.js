@@ -800,7 +800,7 @@ const notificationsData = [
   },
   {
     readed: true,
-    notificationImg: assets.eth,
+    notificationImg: assets.ethcoin,
     title: "ETH Recieved",
     subtitle: "0.00032 ETH recieved",
     dateTime: "7 Jun 2022, 11:34 AM",
