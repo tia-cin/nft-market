@@ -36,46 +36,42 @@ const Search = () => {
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.primary }}>
       <FocusStatusBar background={COLORS.primary} />
-      <View style={{ flex: 1 }}>
-        <View style={{ zIndex: 0 }}>
-          <FlatList
-            data={search}
-            ListEmptyComponent={
-              <View
-                style={{ alignItems: "center", marginTop: SIZES.extraLarge }}
+      <View style={{ flex: 1, zIndex: 0 }}>
+        <FlatList
+          data={search}
+          ListEmptyComponent={
+            <View style={{ alignItems: "center", marginTop: SIZES.extraLarge }}>
+              <Image
+                source={assets.loadingholo}
+                style={{ width: 250, height: 250 }}
+              />
+              <Text
+                style={{
+                  color: COLORS.white,
+                  fontSize: SIZES.extraLarge,
+                  fontWeight: "500",
+                  marginBottom: SIZES.medium,
+                }}
               >
-                <Image
-                  source={assets.loadingholo}
-                  style={{ width: 250, height: 250 }}
-                />
-                <Text
-                  style={{
-                    color: COLORS.white,
-                    fontSize: SIZES.extraLarge,
-                    fontWeight: "500",
-                    marginBottom: SIZES.medium,
-                  }}
-                >
-                  Loading
-                </Text>
-                <RectButton
-                  text="Try Again"
-                  props={{
-                    backgroundColor: COLORS.secondary,
-                    paddingHorizontal: SIZES.extraLarge,
-                  }}
-                  handlePress={() => setSearch(currentNFTs)}
-                />
-              </View>
-            }
-            renderItem={({ item }) => (
-              <NFTCard navigation={navigation} data={item} />
-            )}
-            keyExtractor={(item) => item.id}
-            showsVerticalScrollIndicator={false}
-            ListHeaderComponent={<Header onSearch={onSearch} text="Search" />}
-          />
-        </View>
+                Loading
+              </Text>
+              <RectButton
+                text="Try Again"
+                props={{
+                  backgroundColor: COLORS.secondary,
+                  paddingHorizontal: SIZES.extraLarge,
+                }}
+                handlePress={() => setSearch(currentNFTs)}
+              />
+            </View>
+          }
+          renderItem={({ item }) => (
+            <NFTCard navigation={navigation} data={item} />
+          )}
+          keyExtractor={(item) => item.id}
+          showsVerticalScrollIndicator={false}
+          ListHeaderComponent={<Header onSearch={onSearch} text="Search" />}
+        />
       </View>
     </SafeAreaView>
   );

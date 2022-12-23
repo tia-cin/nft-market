@@ -1,11 +1,14 @@
-import { View, Text } from "react-native";
+import { View, Text, SafeAreaView, FlatList } from "react-native";
 import React from "react";
+import { FocusStatusBar } from "../components";
+import { COLORS } from "../constants";
 
 const Notification = () => {
   return (
-    <View>
-      <Text>Notification</Text>
-    </View>
+    <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.primary }}>
+      <FocusStatusBar background={COLORS.primary} />
+      <View style={{ flex: 1, zIndex: 0 }}></View>
+    </SafeAreaView>
   );
 };
 
