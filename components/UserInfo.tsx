@@ -14,6 +14,7 @@ export const UserInfo: React.FC<{ userInfo: UserType }> = ({ userInfo }) => {
     <View
       style={{ flex: 2, alignItems: "center", marginTop: SIZES.extraLarge * 2 }}
     >
+      <CircleButton imgUrl={assets.options} props={{ left: 150, bottom: 0 }} />
       <View>
         <Image source={assets.person01} />
         <Image
