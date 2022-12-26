@@ -16,7 +16,7 @@ export const UserInfo: React.FC<{ userInfo: UserType }> = ({ userInfo }) => {
     >
       <CircleButton
         imgUrl={assets.options}
-        handlePress={() => navigation.navigate("UserSettings")}
+        handlePress={() => {}}
         props={{ left: 150, bottom: 0 }}
       />
       <View>

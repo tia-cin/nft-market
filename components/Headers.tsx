@@ -57,7 +57,7 @@ export const Header: React.FC<HeaderProps> = ({ onSearch, text }) => {
         </Text>
         {text !== "Trendings" && (
           <View style={{ width: 45, height: 45 }}>
-            <TouchableOpacity onPress={() => navigation.navigate("Menu")}>
+            <TouchableOpacity onPress={() => {}}>
               <Ionicons name="md-menu-outline" color={COLORS.white} size={40} />
             </TouchableOpacity>
           </View>
