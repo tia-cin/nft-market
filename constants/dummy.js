@@ -392,7 +392,7 @@ const NFTData = [
   },
   {
     like: true,
-    id: "NFT-05",
+    id: "NFT-51",
     name: "Abstract #454",
     creator: "David Poe",
     price: 49.95,
@@ -624,7 +624,7 @@ const NFTData = [
         id: "BID-16",
         name: "Rotation Kim",
         price: 30.25,
-        image: assets.person07,
+        image: assets.person04,
         date: "December 12, 2019 at 12:10 PM",
       },
     ],
@@ -650,7 +650,7 @@ const NFTData = [
   },
   {
     like: false,
-    id: "NFT-05",
+    id: "NFT-45",
     name: "Faceless",
     creator: "Karen Diaz",
     price: 10.25,
@@ -669,7 +669,7 @@ const NFTData = [
   },
   {
     like: false,
-    id: "NFT-05",
+    id: "NFT-46",
     name: "Abstract #756",
     creator: "David doe",
     price: 20.65,
@@ -707,7 +707,7 @@ const NFTData = [
         id: "BID-51",
         name: "Jessica Tan",
         price: 35.65,
-        image: assets.person05,
+        image: assets.person02,
         date: "December 12, 2019 at 10:10 AM",
       },
     ],
@@ -726,7 +726,7 @@ const NFTData = [
         id: "BID-05",
         name: "Jessica Tan",
         price: 70.25,
-        image: assets.person06,
+        image: assets.person03,
         date: "December 12, 2019 at 12:10 PM",
       },
       {
@@ -759,7 +759,7 @@ const NFTData = [
         id: "BID-61",
         name: "Kim Limanda",
         price: 20.55,
-        image: assets.person07,
+        image: assets.person04,
         date: "December 12, 2019 at 19:10 PM",
       },
       {
@@ -784,7 +784,7 @@ const notificationsData = [
   },
   {
     readed: false,
-    notificationImg: assets.person06,
+    notificationImg: assets.person03,
     title: "Lia Fier",
     subtitle: "Liked your NFT",
     dateTime: "7 Jun 2022, 11:34 AM",
