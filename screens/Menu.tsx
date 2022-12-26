@@ -1,12 +1,20 @@
-import { View, Text, SafeAreaView, Image } from "react-native";
+import {
+  View,
+  Text,
+  SafeAreaView,
+  Image,
+  TouchableOpacity,
+} from "react-native";
 import React from "react";
 import { FocusStatusBar, Header, RectButton } from "../components";
 import { assets, COLORS } from "../constants";
 import { useSelector } from "react-redux";
 import { RootState } from "../redux/Store";
+import Ionicons from "@expo/vector-icons/Ionicons";
 
 const Menu = () => {
   const { user } = useSelector((state: RootState) => state);
+
   return (
     <SafeAreaView>
       <FocusStatusBar background={COLORS.primary} />
@@ -25,6 +33,21 @@ const Menu = () => {
         </View>
         <RectButton text="Open User Settings" />
       </View>
+      <View>
+        <View>
+          <Ionicons name="lock-closed-outline" />
+          <Text>My item</Text>
+        </View>
+        <View>
+          <Ionicons name="pencil-outline" />
+          <Text>Edit profile</Text>
+        </View>
+        <View>
+          <Ionicons name="card-outline" />
+          <Text>Manage funds</Text>
+        </View>
+      </View>
+      <RectButton text="Log Out" />
     </SafeAreaView>
   );
 };
