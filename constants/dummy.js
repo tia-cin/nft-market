@@ -826,7 +826,7 @@ const notificationsData = [
 
 const userInfo = {
   username: "Lizy Terry",
-  picture: assets.user,
+  picture: assets.person01,
   email: "lizyterry@email.com",
   biography:
     "Cupidatat ea qui nostrud aliquip magna mollit et quis anim exercitation dolor voluptate sit. Incididunt reprehenderit officia adipisicing incididunt in ad ullamco Lorem minim enim minim sint quis adipisicing.",
