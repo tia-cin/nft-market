@@ -8,6 +8,8 @@ const initialState: StateType = {
         biography: '',
         createdNFTs: [],
         likedNFTs: [],
+        notifications: [],
+        bids: []
     },
     currentNFTs: []    
 }
