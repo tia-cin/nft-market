@@ -8,5 +8,7 @@ import { Bids, LikedNFTs, UserNFTs } from "./UserPages";
 import AddBid from "./AddBid";
 import Notification from "./Notification";
 import Trendings from "./Trendings";
+import Menu from "./Menu";
+import UserSettings from "./UserSettings";
 
-export { Search, Landing, Auth, User, Details, CreateNFT, Bids, LikedNFTs, UserNFTs, AddBid, Notification, Trendings };
+export { Menu, UserSettings, Search, Landing, Auth, User, Details, CreateNFT, Bids, LikedNFTs, UserNFTs, AddBid, Notification, Trendings };
