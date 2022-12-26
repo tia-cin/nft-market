@@ -4,11 +4,11 @@ import { COLORS, SIZES, assets } from "../constants";
 import { CircleButton, IconInput } from ".";
 import { useNavigation } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
-import { HeaderProps } from "../types";
+import { HeaderProps, NavigateProps } from "../types";
 import Ionicons from "@expo/vector-icons/Ionicons";
 
 export const Header: React.FC<HeaderProps> = ({ onSearch, text }) => {
-  const navigation = useNavigation<StackNavigationProp<{ User: any }>>();
+  const navigation = useNavigation<StackNavigationProp<NavigateProps>>();
 
   return (
     <View
@@ -57,7 +57,7 @@ export const Header: React.FC<HeaderProps> = ({ onSearch, text }) => {
         </Text>
         {text !== "Trendings" && (
           <View style={{ width: 45, height: 45 }}>
-            <TouchableOpacity onPress={() => {}}>
+            <TouchableOpacity onPress={() => navigation.navigate("Menu")}>
               <Ionicons name="md-menu-outline" color={COLORS.white} size={40} />
             </TouchableOpacity>
           </View>
