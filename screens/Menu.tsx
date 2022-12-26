@@ -94,7 +94,18 @@ const Menu = () => {
           <Text>Manage funds</Text>
         </View>
       </View>
-      <RectButton text="Log Out" />
+      <RectButton
+        text="Log Out"
+        props={{
+          bottom: 0,
+          position: "absolute",
+          left: 0,
+          right: 0,
+          borderColor: COLORS.light,
+          borderWidth: 1.5,
+          margin: SIZES.medium,
+        }}
+      />
     </SafeAreaView>
   );
 };
