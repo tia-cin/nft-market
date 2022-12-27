@@ -70,7 +70,9 @@ const Search = () => {
           )}
           keyExtractor={(item) => item.id}
           showsVerticalScrollIndicator={false}
-          ListHeaderComponent={<Header onSearch={onSearch} text="Search" />}
+          ListHeaderComponent={
+            <Header menu onSearch={onSearch} text="Search" />
+          }
         />
       </View>
     </SafeAreaView>

@@ -84,7 +84,7 @@ const Notification = () => {
           )}
           keyExtractor={(item) => item.dateTime}
           showsVerticalScrollIndicator={false}
-          ListHeaderComponent={<Header text="Notifications" />}
+          ListHeaderComponent={<Header menu text="Notifications" />}
         />
       </View>
     </SafeAreaView>

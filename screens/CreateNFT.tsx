@@ -46,8 +46,14 @@ const CreateNFT = () => {
       }}
     >
       <FocusStatusBar background={COLORS.primary} />
-      <Header text="Create your NFT" />
-      <View style={{ flex: 5, justifyContent: "space-evenly" }}>
+      <Header text="Create your NFT" menu />
+      <View
+        style={{
+          flex: 5,
+          paddingHorizontal: SIZES.medium,
+          justifyContent: "space-evenly",
+        }}
+      >
         <Inputs value={nftName} onChange={setNftName} />
         <Inputs value={nftPrice} onChange={setNftPrice} />
         <Inputs
@@ -64,7 +70,10 @@ const CreateNFT = () => {
       <View style={{ flex: 1.5 }}>
         <RectButton
           text="Submit"
-          props={{ backgroundColor: COLORS.secondary }}
+          props={{
+            backgroundColor: COLORS.secondary,
+            marginHorizontal: SIZES.medium,
+          }}
           handlePress={() => {
             // saveFile();
             NFTData.push({
