@@ -1,13 +1,13 @@
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import React from "react";
 import { COLORS, SIZES, assets } from "../constants";
-import { IconInput } from ".";
+import { CircleButton, IconInput } from ".";
 import { useNavigation } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { HeaderProps, NavigateProps } from "../types";
 import Ionicons from "@expo/vector-icons/Ionicons";
 
-export const Header: React.FC<HeaderProps> = ({ onSearch, text }) => {
+export const Header: React.FC<HeaderProps> = ({ menu, onSearch, text }) => {
   const navigation = useNavigation<StackNavigationProp<NavigateProps>>();
 
   const MenuButton = () => (
@@ -59,7 +59,16 @@ export const Header: React.FC<HeaderProps> = ({ onSearch, text }) => {
         >
           {text}
         </Text>
-        {text !== "Trendings" && <MenuButton />}
+        {text !== "Trendings" &&
+          (menu ? (
+            <MenuButton />
+          ) : (
+            <CircleButton
+              imgUrl={assets.left}
+              handlePress={() => navigation.goBack()}
+              props={{ right: 10, top: -20 }}
+            />
+          ))}
       </View>
       {onSearch && (
         <View style={{ marginTop: SIZES.font }}>
