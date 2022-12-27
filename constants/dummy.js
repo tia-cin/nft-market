@@ -631,7 +631,7 @@ const NFTData = [
   },
   {
     like: false,
-    id: "NFT-66",
+    id: "NFT-65",
     name: "Arcangels",
     creator: "Pedro Rems",
     price: 12.5,
