@@ -55,13 +55,13 @@ const UserSettings = () => {
             />
           </View>
         </View>
-        <View style={{ justifyContent: "space-between", flex: 0.7 }}>
+        <View style={{ justifyContent: "space-between" }}>
           <View style={{ paddingVertical: SIZES.base }}>
             <Text
               style={{
                 color: COLORS.light,
                 fontWeight: "500",
-                marginBottom: SIZES.base,
+                marginVertical: SIZES.medium,
               }}
             >
               DISPLAY NAME
@@ -73,7 +73,7 @@ const UserSettings = () => {
               style={{
                 color: COLORS.light,
                 fontWeight: "500",
-                marginBottom: SIZES.base,
+                marginVertical: SIZES.medium,
               }}
             >
               EMAIL
@@ -85,7 +85,7 @@ const UserSettings = () => {
               style={{
                 color: COLORS.light,
                 fontWeight: "500",
-                marginBottom: SIZES.base,
+                marginVertical: SIZES.medium,
               }}
             >
               BIO
@@ -93,9 +93,9 @@ const UserSettings = () => {
             <Inputs value={userInfo.biography} onChange={() => {}} />
           </View>
         </View>
-        <View>
-          <RectButton text="Save" />
-          <RectButton text="Done" />
+        <View style={{ marginTop: SIZES.base * 6 }}>
+          <RectButton text="Save" props={{ marginVertical: SIZES.base }} />
+          <RectButton text="Done" props={{ marginVertical: SIZES.base }} />
         </View>
       </View>
     </SafeAreaView>
