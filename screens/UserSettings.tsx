@@ -55,17 +55,41 @@ const UserSettings = () => {
             />
           </View>
         </View>
-        <View style={{ justifyContent: "space-between", flex: 0.5 }}>
-          <View>
-            <Text>DISPLAY NAME</Text>
+        <View style={{ justifyContent: "space-between", flex: 0.7 }}>
+          <View style={{ paddingVertical: SIZES.base }}>
+            <Text
+              style={{
+                color: COLORS.light,
+                fontWeight: "500",
+                marginBottom: SIZES.base,
+              }}
+            >
+              DISPLAY NAME
+            </Text>
             <Inputs value={userInfo.username} onChange={() => {}} />
           </View>
-          <View>
-            <Text>EMAIL</Text>
+          <View style={{ paddingVertical: SIZES.base }}>
+            <Text
+              style={{
+                color: COLORS.light,
+                fontWeight: "500",
+                marginBottom: SIZES.base,
+              }}
+            >
+              EMAIL
+            </Text>
             <Inputs value={userInfo.email} onChange={() => {}} />
           </View>
-          <View>
-            <Text>BIO</Text>
+          <View style={{ paddingVertical: SIZES.base }}>
+            <Text
+              style={{
+                color: COLORS.light,
+                fontWeight: "500",
+                marginBottom: SIZES.base,
+              }}
+            >
+              BIO
+            </Text>
             <Inputs value={userInfo.biography} onChange={() => {}} />
           </View>
         </View>
