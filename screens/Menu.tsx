@@ -8,13 +8,14 @@ import {
 import React from "react";
 import { FocusStatusBar, Header, RectButton } from "../components";
 import { assets, COLORS, SIZES } from "../constants";
-import { useSelector } from "react-redux";
-import { RootState } from "../redux/Store";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { userInfo } from "../constants/dummy";
+import { useNavigation } from "@react-navigation/native";
+import { StackNavigationProp } from "@react-navigation/stack";
+import { NavigateProps } from "../types";
 
 const Menu = () => {
-  const { user } = useSelector((state: RootState) => state);
+  const navigate = useNavigation<StackNavigationProp<NavigateProps>>();
 
   return (
     <SafeAreaView style={{ backgroundColor: COLORS.primary, flex: 1 }}>
@@ -77,6 +78,7 @@ const Menu = () => {
         </View>
         <RectButton
           text="Open User Settings"
+          handlePress={() => navigate.navigate("UserSettings")}
           props={{ backgroundColor: COLORS.blue, marginTop: SIZES.medium }}
         />
       </View>
@@ -142,6 +144,7 @@ const Menu = () => {
       </View>
       <RectButton
         text="Log Out"
+        handlePress={() => navigate.navigate("Landing")}
         props={{
           bottom: 0,
           position: "absolute",
