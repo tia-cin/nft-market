@@ -55,10 +55,19 @@ const UserSettings = () => {
             />
           </View>
         </View>
-        <View>
-          <Inputs value={userInfo.username} onChange={() => {}} />
-          <Inputs value={userInfo.email} onChange={() => {}} />
-          <Inputs value={userInfo.biography} onChange={() => {}} />
+        <View style={{ justifyContent: "space-between", flex: 0.5 }}>
+          <View>
+            <Text>DISPLAY NAME</Text>
+            <Inputs value={userInfo.username} onChange={() => {}} />
+          </View>
+          <View>
+            <Text>EMAIL</Text>
+            <Inputs value={userInfo.email} onChange={() => {}} />
+          </View>
+          <View>
+            <Text>BIO</Text>
+            <Inputs value={userInfo.biography} onChange={() => {}} />
+          </View>
         </View>
         <View>
           <RectButton text="Save" />
