@@ -81,17 +81,63 @@ const Menu = () => {
         />
       </View>
       <View>
-        <View>
-          <Ionicons name="lock-closed-outline" />
-          <Text>My item</Text>
+        <View
+          style={{
+            flexDirection: "row",
+            alignItems: "center",
+            borderBottomColor: COLORS.light,
+            borderBottomWidth: 0.5,
+            padding: SIZES.medium,
+          }}
+        >
+          <Ionicons name="lock-closed-outline" size={40} color={COLORS.white} />
+          <Text
+            style={{
+              marginLeft: SIZES.medium,
+              color: COLORS.white,
+              fontSize: SIZES.medium,
+            }}
+          >
+            My item
+          </Text>
         </View>
-        <View>
-          <Ionicons name="pencil-outline" />
-          <Text>Edit profile</Text>
+        <View
+          style={{
+            flexDirection: "row",
+            alignItems: "center",
+            borderBottomColor: COLORS.light,
+            borderBottomWidth: 0.5,
+            padding: SIZES.medium,
+          }}
+        >
+          <Ionicons name="pencil-outline" size={40} color={COLORS.white} />
+          <Text
+            style={{
+              marginLeft: SIZES.medium,
+              color: COLORS.white,
+              fontSize: SIZES.medium,
+            }}
+          >
+            Edit profile
+          </Text>
         </View>
-        <View>
-          <Ionicons name="card-outline" />
-          <Text>Manage funds</Text>
+        <View
+          style={{
+            flexDirection: "row",
+            alignItems: "center",
+            padding: SIZES.medium,
+          }}
+        >
+          <Ionicons name="card-outline" size={40} color={COLORS.white} />
+          <Text
+            style={{
+              marginLeft: SIZES.medium,
+              color: COLORS.white,
+              fontSize: SIZES.medium,
+            }}
+          >
+            Manage funds
+          </Text>
         </View>
       </View>
       <RectButton
