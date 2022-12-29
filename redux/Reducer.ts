@@ -24,7 +24,16 @@ export const reducer = (state = initialState, { type, payload }: ActionTypes ): 
         case GET_USER: 
             return {
                 ...state,
-                user: payload
+                user: {
+                    username: payload.username,
+                    picture: payload.picture,
+                    email: payload.email,
+                    biography: payload.biography,
+                    createdNFTs: payload.createdNFTs,
+                    likedNFTs: payload.likedNFTs,
+                    notifications: payload.notifications,
+                    bids: payload.bids
+                }
             }
         case CREATE_NFT: 
             return {

@@ -14,6 +14,7 @@ const Trendings = () => {
   const dispatch = useDispatch();
   const navigation = useNavigation<StackNavigationProp<NavigateProps>>();
   const { currentNFTs } = useSelector((state: RootState) => state);
+
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.primary }}>
       <FocusStatusBar background={COLORS.primary} />

@@ -4,8 +4,12 @@ import { FocusStatusBar, Header, Inputs, RectButton } from "../components";
 import { assets, COLORS, SIZES } from "../constants";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { userInfo } from "../constants/dummy";
+import { useSelector } from "react-redux";
+import { RootState } from "../redux/Store";
 
 const UserSettings = () => {
+  const { user } = useSelector((state: RootState) => state);
+
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.primary }}>
       <FocusStatusBar background={COLORS.primary} />
@@ -20,10 +24,7 @@ const UserSettings = () => {
       >
         <View style={{ flexDirection: "row", marginVertical: SIZES.medium }}>
           <View>
-            <Image
-              source={assets.person01}
-              style={{ width: 100, height: 100 }}
-            />
+            <Image source={user.picture} style={{ width: 100, height: 100 }} />
             <Ionicons
               size={50}
               color={COLORS.white}
@@ -66,7 +67,7 @@ const UserSettings = () => {
             >
               DISPLAY NAME
             </Text>
-            <Inputs value={userInfo.username} onChange={() => {}} />
+            <Inputs value={user.username} onChange={() => {}} />
           </View>
           <View style={{ paddingVertical: SIZES.base }}>
             <Text
@@ -78,7 +79,7 @@ const UserSettings = () => {
             >
               EMAIL
             </Text>
-            <Inputs value={userInfo.email} onChange={() => {}} />
+            <Inputs value={user.email} onChange={() => {}} />
           </View>
           <View style={{ paddingVertical: SIZES.base }}>
             <Text
@@ -90,7 +91,7 @@ const UserSettings = () => {
             >
               BIO
             </Text>
-            <Inputs value={userInfo.biography} onChange={() => {}} />
+            <Inputs value={user.biography} onChange={() => {}} />
           </View>
         </View>
         <View style={{ marginTop: SIZES.base * 6 }}>
