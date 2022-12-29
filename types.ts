@@ -5,7 +5,7 @@ export const LIKE_NFT = 'LIKE_NFT'
 
 // REDUX
 export interface UserType {
-    picture: string,
+    picture: any,
     username: string,
     email: string,
     biography: string,
