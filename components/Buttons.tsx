@@ -1,6 +1,6 @@
 import { View, Text, TouchableOpacity, Image } from "react-native";
 import React from "react";
-import { COLORS, SHADOWS, SIZES } from "../constants";
+import { COLORS, SIZES } from "../constants";
 import { CircleButtonProps, RectButtonProps } from "../types";
 
 export const CircleButton: React.FC<CircleButtonProps> = ({

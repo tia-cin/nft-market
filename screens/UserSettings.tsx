@@ -1,16 +1,13 @@
 import { View, Text, SafeAreaView, Image } from "react-native";
 import React from "react";
 import { FocusStatusBar, Header, Inputs, RectButton } from "../components";
-import { assets, COLORS, SIZES } from "../constants";
+import { COLORS, SIZES } from "../constants";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import { userInfo } from "../constants/dummy";
 import { useSelector } from "react-redux";
 import { RootState } from "../redux/Store";
 
 const UserSettings = () => {
   const { user } = useSelector((state: RootState) => state);
-
-  console.log(user);
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.primary }}>

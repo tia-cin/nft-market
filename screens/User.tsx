@@ -1,8 +1,7 @@
 import { View, Text, TouchableOpacity } from "react-native";
 import React from "react";
 import { assets, COLORS, SIZES } from "../constants";
-import { CircleButton, FocusStatusBar, UserInfo } from "../components";
-import { userInfo } from "../constants/dummy";
+import { FocusStatusBar, UserInfo } from "../components";
 import { useNavigation } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { NavigateProps } from "../types";
