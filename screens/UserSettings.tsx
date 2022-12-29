@@ -10,6 +10,8 @@ import { RootState } from "../redux/Store";
 const UserSettings = () => {
   const { user } = useSelector((state: RootState) => state);
 
+  console.log(user);
+
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.primary }}>
       <FocusStatusBar background={COLORS.primary} />

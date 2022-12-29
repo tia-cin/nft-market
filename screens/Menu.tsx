@@ -1,10 +1,4 @@
-import {
-  View,
-  Text,
-  SafeAreaView,
-  Image,
-  TouchableOpacity,
-} from "react-native";
+import { View, Text, SafeAreaView, Image } from "react-native";
 import React from "react";
 import { FocusStatusBar, Header, RectButton } from "../components";
 import { assets, COLORS, SIZES } from "../constants";
