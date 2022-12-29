@@ -20,6 +20,7 @@ const User = ({ route }: any) => {
     bidsUser: <Bids />,
   };
 
+  console.log(user);
   return (
     <View style={{ flex: 1, backgroundColor: COLORS.primary }}>
       <FocusStatusBar background={COLORS.primary} />

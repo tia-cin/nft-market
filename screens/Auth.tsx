@@ -11,7 +11,7 @@ import { useNavigation } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { NavigateProps } from "../types";
 import { useDispatch } from "react-redux";
-import { getUserAction } from "../redux/Actions";
+import { getCurrentNFTs, getUserAction } from "../redux/Actions";
 import { userInfo } from "../constants/dummy";
 
 const Auth = ({ route, navigation }: any) => {
@@ -84,6 +84,7 @@ const Auth = ({ route, navigation }: any) => {
               text={createUser ? "Sign Up" : "Sign In"}
               handlePress={() => {
                 dispatch<any>(getUserAction(userInfo));
+                dispatch<any>(getCurrentNFTs());
                 navigation.navigate("Trendings");
               }}
             />
