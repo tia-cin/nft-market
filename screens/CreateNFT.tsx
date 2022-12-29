@@ -5,6 +5,7 @@ import {
   SafeAreaView,
   TouchableOpacity,
   Alert,
+  Image,
 } from "react-native";
 import {
   CircleButton,
@@ -14,10 +15,10 @@ import {
   RectButton,
 } from "../components";
 import { assets, COLORS, NFTData, SIZES } from "../constants";
-import { DocumentDirectoryPath, writeFile } from "react-native-fs";
 import { useNavigation } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { NavigateProps } from "../types";
+import * as ImagePicker from "expo-image-picker";
 
 const CreateNFT = () => {
   const navigate = useNavigation<StackNavigationProp<NavigateProps>>();
@@ -26,17 +27,34 @@ const CreateNFT = () => {
   const [nftDesc, setNftDesc] = React.useState<string>("Description");
   const [nftFile, setNftFile] = React.useState<string>("NFT Image");
 
-  // const saveFile = async () => {
-  //   const path = `${DocumentDirectoryPath}/${Date.now()}.txt`;
+  const Gallery = () => {
+    const [image, setImage] = React.useState<any>(null);
 
-  //   try {
-  //     await writeFile(path, nftFile, "utf8");
-  //     Alert.alert("File Saved", null, [{ text: "Ok" }]);
-  //   } catch (error) {
-  //     console.log("error", error);
-  //   }
-  // };
+    const pickImage = async () => {
+      // No permissions request is necessary for launching the image library
+      let result = await ImagePicker.launchImageLibraryAsync({
+        mediaTypes: ImagePicker.MediaTypeOptions.All,
+        allowsEditing: true,
+        aspect: [4, 3],
+        quality: 1,
+      });
 
+      console.log(result);
+
+      if (!result.canceled) {
+        setImage(result.assets[0].uri);
+      }
+    };
+
+    return (
+      <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+        <TouchableOpacity onPress={pickImage}>
+          <Text>"Pick an image from camera roll"</Text>
+        </TouchableOpacity>
+        {image && <Image source={image} style={{ width: 200, height: 200 }} />}
+      </View>
+    );
+  };
   return (
     <SafeAreaView
       style={{
