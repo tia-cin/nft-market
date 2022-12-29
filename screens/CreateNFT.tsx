@@ -27,35 +27,7 @@ const CreateNFT = () => {
   const [nftDesc, setNftDesc] = React.useState<string>("Description");
   const [nftFile, setNftFile] = React.useState<string>("NFT Image");
 
-  const Gallery = () => {
-    const [image, setImage] = React.useState<any>(null);
-
-    const pickImage = async () => {
-      let result = await ImagePicker.launchImageLibraryAsync({
-        mediaTypes: ImagePicker.MediaTypeOptions.All,
-        allowsEditing: true,
-        aspect: [4, 3],
-        quality: 1,
-      });
-
-      console.log(result);
-
-      if (!result.canceled) {
-        setImage(result.assets[0].uri);
-      }
-    };
-
-    return (
-      <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-        <TouchableOpacity onPress={pickImage}>
-          <Text>"Pick an image from camera roll"</Text>
-        </TouchableOpacity>
-        {image && <Image source={image} style={{ width: 200, height: 200 }} />}
-      </View>
-    );
-  };
   return (
-    // <Gallery />
     <SafeAreaView
       style={{
         flex: 1,
