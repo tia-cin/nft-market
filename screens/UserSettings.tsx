@@ -90,11 +90,14 @@ const UserSettings = () => {
             >
               BIO
             </Text>
-            <Inputs value={user.biography} onChange={() => {}} />
+            <Inputs
+              value={user.biography}
+              props={{ multiline: true, numberOfLines: 5 }}
+              onChange={() => {}}
+            />
           </View>
         </View>
         <View style={{ marginTop: SIZES.base * 6 }}>
-          <RectButton text="Save" props={{ marginVertical: SIZES.base }} />
           <RectButton text="Done" props={{ marginVertical: SIZES.base }} />
         </View>
       </View>
