@@ -1,59 +1,76 @@
-export const GET_CURRENT_NFTS = 'GET_CURRENT_NFTS';
-export const GET_USER = 'GET_USER'
-export const CREATE_NFT = 'CREATE_NFT'
-export const LIKE_NFT = 'LIKE_NFT'
+export const GET_CURRENT_NFTS = "GET_CURRENT_NFTS";
+export const GET_USER = "GET_USER";
+export const CREATE_NFT = "CREATE_NFT";
+export const LIKE_NFT = "LIKE_NFT";
+export const EDIT_USER = "EDIT_USER";
 
 // REDUX
 export interface UserType {
-    picture: any,
-    username: string,
-    email: string,
-    biography: string,
-    createdNFTs: NFTDataType[],
-    likedNFTs: NFTDataType[]
-    bids: BidType[],
-    notifications: NotificationsType[]
+  picture: any;
+  username: string;
+  email: string;
+  biography: string;
+  createdNFTs: NFTDataType[];
+  likedNFTs: NFTDataType[];
+  bids: BidType[];
+  notifications: NotificationsType[];
 }
 
 export interface StateType {
-  user: UserType,
-  currentNFTs: NFTDataType[]
+  user: UserType;
+  currentNFTs: NFTDataType[];
+}
+
+export interface NewUserType {
+  username: string;
+  biography: string;
+  email: string;
+  picture: any;
 }
 
 // ACTIONS
 interface getCurrentNFTsAction {
-  type: typeof GET_CURRENT_NFTS,
-  payload: NFTDataType[]
+  type: typeof GET_CURRENT_NFTS;
+  payload: NFTDataType[];
 }
 
 interface getUserAction {
-  type: typeof GET_USER,
-  payload: UserType
+  type: typeof GET_USER;
+  payload: UserType;
 }
 
 interface createNFTAction {
-  type: typeof CREATE_NFT,
-  payload: NFTDataType
+  type: typeof CREATE_NFT;
+  payload: NFTDataType;
 }
 
 interface likeNFTAction {
-  type: typeof LIKE_NFT,
-  payload: NFTDataType
+  type: typeof LIKE_NFT;
+  payload: NFTDataType;
 }
 
-export type ActionTypes = getCurrentNFTsAction | getUserAction | createNFTAction | likeNFTAction 
+interface editUser {
+  type: typeof EDIT_USER;
+  payload: NewUserType;
+}
+
+export type ActionTypes =
+  | getCurrentNFTsAction
+  | getUserAction
+  | createNFTAction
+  | likeNFTAction
+  | editUser;
 
 // DATA
 export interface NotificationsType {
-  readed: boolean,
-  notificationImg?: any,
-  title: string,
-  subtitle: string,
-  dateTime: string,
+  readed: boolean;
+  notificationImg?: any;
+  title: string;
+  subtitle: string;
+  dateTime: string;
   buttonText?: string;
-  nftImg?: any,
+  nftImg?: any;
 }
-
 
 export interface NFTDataType {
   id: string;
@@ -85,13 +102,13 @@ export type NavigateProps = {
     navigate: any;
   };
   User: {
-    typeScreen: string
+    typeScreen: string;
   };
   CreateNFT: undefined;
   AddBid: undefined;
   UserSettings: undefined;
-  Menu: undefined
-  Notifications: undefined 
+  Menu: undefined;
+  Notifications: undefined;
 };
 
 // COMPONENTS
@@ -114,7 +131,7 @@ export interface ImageCmpProps {
 export interface InputsProps {
   value: string;
   onChange: (input: string) => void;
-  props?: any
+  props?: any;
 }
 
 export interface IconInputProps {
@@ -123,8 +140,8 @@ export interface IconInputProps {
 
 export interface HeaderProps {
   onSearch?: (input: string) => void;
-  text: string,
-  menu?: boolean
+  text: string;
+  menu?: boolean;
 }
 
 export interface DetailsDescProps {
