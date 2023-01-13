@@ -7,14 +7,15 @@ import {
   Image,
 } from "react-native";
 import { FocusStatusBar, Header, Inputs, RectButton } from "../components";
-import { assets, COLORS, NFTData, SIZES } from "../constants";
-import { useNavigation } from "@react-navigation/native";
-import { StackNavigationProp } from "@react-navigation/stack";
-import { NavigateProps } from "../types";
+import { COLORS, SIZES } from "../constants";
 import * as ImagePicker from "expo-image-picker";
+import { useDispatch, useSelector } from "react-redux";
+import { createNFTAction } from "../redux/Actions";
+import { RootState } from "../redux/Store";
 
 const CreateNFT: React.FC = () => {
-  const navigate = useNavigation<StackNavigationProp<NavigateProps>>();
+  const dispatch = useDispatch();
+  const { user } = useSelector((state: RootState) => state);
   const [nftName, setNftName] = React.useState<string>("Name");
   const [nftPrice, setNftPrice] = React.useState<string>("Price");
   const [nftDesc, setNftDesc] = React.useState<string>("Description");
@@ -117,7 +118,20 @@ const CreateNFT: React.FC = () => {
             backgroundColor: COLORS.secondary,
             margin: SIZES.medium,
           }}
-          handlePress={() => {}}
+          handlePress={() =>
+            dispatch<any>(
+              createNFTAction({
+                id: `NFT-${Math.floor(Math.random() * 500)}`,
+                bids: [],
+                creator: user.username,
+                description: nftDesc,
+                image: nftFile,
+                like: false,
+                name: nftName,
+                price: Number(nftPrice),
+              })
+            )
+          }
         />
       </View>
     </SafeAreaView>
