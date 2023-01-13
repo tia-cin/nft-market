@@ -42,7 +42,6 @@ const Details = ({ route, navigation }: any) => {
             ...SHADOWS.dark,
           }}
           text="Place a bid"
-          handlePress={() => navigation.navigate("AddBid")}
         />
       </View>
 

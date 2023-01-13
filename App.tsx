@@ -9,7 +9,6 @@ import {
   Trendings,
   Notification,
   Details,
-  AddBid,
   Menu,
   UserSettings,
 } from "./screens";
@@ -19,7 +18,6 @@ import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { COLORS, SIZES } from "./constants";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import { View } from "react-native";
 
 const Tab = createBottomTabNavigator();
 
@@ -41,7 +39,6 @@ const App: React.FC = () => {
           <Stack.Screen name="Landing" component={Landing} />
           <Stack.Screen name="Auth" component={Auth} />
           <Stack.Screen name="Details" component={Details} />
-          <Stack.Screen name="AddBid" component={AddBid} />
           <Stack.Screen name="Menu" component={Menu} />
           <Stack.Screen name="UserSettings" component={UserSettings} />
           <Stack.Screen name="Trendings" component={MainNavigation} />
