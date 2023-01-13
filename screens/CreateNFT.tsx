@@ -23,14 +23,6 @@ const CreateNFT: React.FC = () => {
   const [hasGalleryPermition, setHasGalleryPermition] =
     React.useState<boolean>();
 
-  React.useEffect(() => {
-    async () => {
-      const galleryStatus =
-        await ImagePicker.requestMediaLibraryPermissionsAsync();
-      setHasGalleryPermition(galleryStatus.status === "granted");
-    };
-  }, []);
-
   const pickerImage = async () => {
     let res = await ImagePicker.launchImageLibraryAsync({
       mediaTypes: ImagePicker.MediaTypeOptions.Images,
@@ -38,12 +30,18 @@ const CreateNFT: React.FC = () => {
       quality: 1,
     });
 
-    console.log(res);
-
     if (!res.cancelled) {
       setNftFile(res.uri);
     }
   };
+
+  React.useEffect(() => {
+    async () => {
+      const galleryStatus =
+        await ImagePicker.requestMediaLibraryPermissionsAsync();
+      setHasGalleryPermition(galleryStatus.status === "granted");
+    };
+  }, []);
 
   return (
     <SafeAreaView
