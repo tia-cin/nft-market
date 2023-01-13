@@ -5,7 +5,6 @@ import {
   GET_CURRENT_NFTS,
   GET_USER,
   LIKE_NFT,
-  NFTDataType,
   StateType,
 } from "../types";
 

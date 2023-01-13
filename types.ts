@@ -21,6 +21,13 @@ export interface StateType {
   currentNFTs: NFTDataType[];
 }
 
+export interface NewUserType {
+  username: string;
+  biography: string;
+  email: string;
+  picture: any;
+}
+
 // ACTIONS
 interface getCurrentNFTsAction {
   type: typeof GET_CURRENT_NFTS;
@@ -44,7 +51,7 @@ interface likeNFTAction {
 
 interface editUser {
   type: typeof EDIT_USER;
-  payload: UserType;
+  payload: NewUserType;
 }
 
 export type ActionTypes =

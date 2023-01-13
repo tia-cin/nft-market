@@ -5,10 +5,11 @@ import { assets, COLORS, SIZES } from "../constants";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import * as ImagePicker from "expo-image-picker";
 import { useDispatch, useSelector } from "react-redux";
-import { createNFTAction } from "../redux/Actions";
+import { createNFTAction, editUserAction } from "../redux/Actions";
 import { RootState } from "../redux/Store";
 
 const UserSettings = () => {
+  const dispatch = useDispatch();
   const { user } = useSelector((state: RootState) => state);
   const [userUsername, setUserUsername] = React.useState(user.username);
   const [userPicture, setUserPicture] = React.useState(user.picture);
@@ -123,7 +124,20 @@ const UserSettings = () => {
           </View>
         </View>
         <View style={{ marginTop: SIZES.base * 6 }}>
-          <RectButton text="Done" props={{ marginVertical: SIZES.base }} />
+          <RectButton
+            text="Done"
+            props={{ marginVertical: SIZES.base }}
+            handlePress={() =>
+              dispatch<any>(
+                editUserAction({
+                  username: userUsername,
+                  biography: userBiography,
+                  email: userEmail,
+                  picture: userPicture,
+                })
+              )
+            }
+          />
         </View>
       </View>
     </SafeAreaView>

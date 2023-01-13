@@ -7,6 +7,7 @@ import {
   GET_CURRENT_NFTS,
   GET_USER,
   LIKE_NFT,
+  NewUserType,
   NFTDataType,
   UserType,
 } from "../types";
@@ -44,7 +45,7 @@ export const likeNFTAction =
     });
 
 export const editUserAction =
-  (newUserData: UserType): ThunkAction<void, RootState, null, ActionTypes> =>
+  (newUserData: NewUserType): ThunkAction<void, RootState, null, ActionTypes> =>
   async (dispatch) =>
     dispatch({
       type: EDIT_USER,
