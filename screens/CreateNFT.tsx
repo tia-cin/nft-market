@@ -4,17 +4,9 @@ import {
   View,
   SafeAreaView,
   TouchableOpacity,
-  Alert,
   Image,
-  Button,
 } from "react-native";
-import {
-  CircleButton,
-  FocusStatusBar,
-  Header,
-  Inputs,
-  RectButton,
-} from "../components";
+import { FocusStatusBar, Header, Inputs, RectButton } from "../components";
 import { assets, COLORS, NFTData, SIZES } from "../constants";
 import { useNavigation } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
@@ -27,10 +19,8 @@ const CreateNFT: React.FC = () => {
   const [nftPrice, setNftPrice] = React.useState<string>("Price");
   const [nftDesc, setNftDesc] = React.useState<string>("Description");
   const [nftFile, setNftFile] = React.useState<any>();
-
   const [hasGalleryPermition, setHasGalleryPermition] =
     React.useState<boolean>();
-  const [image, setImage] = React.useState<any>("");
 
   React.useEffect(() => {
     async () => {
@@ -50,78 +40,88 @@ const CreateNFT: React.FC = () => {
     console.log(res);
 
     if (!res.cancelled) {
-      setImage(res.uri);
+      setNftFile(res.uri);
     }
   };
 
   return (
-    <View>
-      <TouchableOpacity onPress={() => pickerImage()}>
-        <Text>Pick Image</Text>
-      </TouchableOpacity>
-      {image && (
-        <Image source={{ uri: image }} style={{ width: 200, height: 200 }} />
-      )}
-    </View>
+    <SafeAreaView
+      style={{
+        height: "100%",
+        padding: SIZES.base,
+        backgroundColor: COLORS.primary,
+      }}
+    >
+      <FocusStatusBar background={COLORS.primary} />
+      <Header text="Create your NFT" menu />
+      <View
+        style={{
+          paddingHorizontal: SIZES.medium,
+          justifyContent: "space-evenly",
+        }}
+      >
+        <View style={{ marginVertical: SIZES.base }}>
+          <Inputs value={nftName} onChange={setNftName} />
+        </View>
+        <View style={{ marginVertical: SIZES.base }}>
+          <Inputs value={nftPrice} onChange={setNftPrice} />
+        </View>
+        <View style={{ marginVertical: SIZES.base }}>
+          <Inputs
+            value={nftDesc}
+            onChange={setNftDesc}
+            props={{ multiline: true, numberOfLines: 5 }}
+          />
+        </View>
+        <View
+          style={{
+            marginVertical: SIZES.base,
+          }}
+        >
+          <View style={{}}>
+            {nftFile ? (
+              <Image
+                source={{ uri: nftFile }}
+                style={{
+                  width: 250,
+                  height: 250,
+                  borderRadius: SIZES.base,
+                  alignSelf: "center",
+                }}
+              />
+            ) : (
+              <TouchableOpacity
+                onPress={() => pickerImage()}
+                style={{
+                  borderRadius: SIZES.font,
+                  backgroundColor: COLORS.light,
+                  paddingVertical: SIZES.extraLarge * 2,
+                }}
+              >
+                <Text
+                  style={{
+                    padding: SIZES.font,
+                  }}
+                >
+                  Pick NFT
+                </Text>
+              </TouchableOpacity>
+            )}
+          </View>
+        </View>
+      </View>
+      <View>
+        <RectButton
+          text="Submit"
+          props={{
+            backgroundColor: COLORS.secondary,
+            margin: SIZES.medium,
+          }}
+          handlePress={() => {}}
+        />
+      </View>
+    </SafeAreaView>
   );
-
-  // return (
-  //   <SafeAreaView
-  //     style={{
-  //       flex: 1,
-  //       padding: SIZES.base,
-  //       backgroundColor: COLORS.primary,
-  //     }}
-  //   >
-  //     <FocusStatusBar background={COLORS.primary} />
-  //     <Header text="Create your NFT" menu />
-  //     <View
-  //       style={{
-  //         flex: 5,
-  //         paddingHorizontal: SIZES.medium,
-  //         justifyContent: "space-evenly",
-  //       }}
-  //     >
-  //       <Inputs value={nftName} onChange={setNftName} />
-  //       <Inputs value={nftPrice} onChange={setNftPrice} />
-  //       <Inputs
-  //         value={nftDesc}
-  //         onChange={setNftDesc}
-  //         props={{ multiline: true, numberOfLines: 5 }}
-  //       />
-
-  //       {/* <Inputs
-  //         value={nftFile}
-  //         onChange={setNftFile}
-  //         props={{ multiline: true, numberOfLines: 5 }}
-  //       /> */}
-  //       {/* <Gallery /> */}
-
-  //     </View>
-  //     <View style={{ flex: 1.5 }}>
-  //       <RectButton
-  //         text="Submit"
-  //         props={{
-  //           backgroundColor: COLORS.secondary,
-  //           marginHorizontal: SIZES.medium,
-  //         }}
-  //         handlePress={() => {
-  //           // saveFile();
-  //           NFTData.push({
-  //             id: "NFT-20",
-  //             name: nftName,
-  //             creator: "Full Name",
-  //             price: Number(nftPrice),
-  //             description: nftDesc,
-  //             image: "",
-  //             bids: [],
-  //             like: false,
-  //           });
-  //         }}
-  //       />
-  //     </View>
-  //   </SafeAreaView>
-  // );
 };
 
 export default CreateNFT;

@@ -19,6 +19,7 @@ import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { COLORS, SIZES } from "./constants";
 import Ionicons from "@expo/vector-icons/Ionicons";
+import { View } from "react-native";
 
 const Tab = createBottomTabNavigator();
 
