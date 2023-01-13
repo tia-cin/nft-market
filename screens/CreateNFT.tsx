@@ -6,6 +6,7 @@ import {
   TouchableOpacity,
   Alert,
   Image,
+  Button,
 } from "react-native";
 import {
   CircleButton,
@@ -20,95 +21,107 @@ import { StackNavigationProp } from "@react-navigation/stack";
 import { NavigateProps } from "../types";
 import * as ImagePicker from "expo-image-picker";
 
-const CreateNFT = () => {
+const CreateNFT: React.FC = () => {
   const navigate = useNavigation<StackNavigationProp<NavigateProps>>();
   const [nftName, setNftName] = React.useState<string>("Name");
   const [nftPrice, setNftPrice] = React.useState<string>("Price");
   const [nftDesc, setNftDesc] = React.useState<string>("Description");
-  const [nftFile, setNftFile] = React.useState<string>("NFT Image");
+  const [nftFile, setNftFile] = React.useState<any>();
 
-  const Gallery = () => {
-    const [image, setImage] = React.useState<any>(null);
+  const [hasGalleryPermition, setHasGalleryPermition] =
+    React.useState<boolean>();
+  const [image, setImage] = React.useState<any>("");
 
-    const pickImage = async () => {
-      let result = await ImagePicker.launchImageLibraryAsync({
-        mediaTypes: ImagePicker.MediaTypeOptions.All,
-        allowsEditing: true,
-        aspect: [4, 3],
-        quality: 1,
-      });
-
-      console.log(result);
-
-      if (!result.canceled) {
-        setImage(result.assets[0].uri);
-      }
+  React.useEffect(() => {
+    async () => {
+      const galleryStatus =
+        await ImagePicker.requestMediaLibraryPermissionsAsync();
+      setHasGalleryPermition(galleryStatus.status === "granted");
     };
+  }, []);
 
-    return (
-      <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-        <TouchableOpacity onPress={pickImage}>
-          <Text>"Pick an image from camera roll"</Text>
-        </TouchableOpacity>
-        {image && <Image source={image} style={{ width: 200, height: 200 }} />}
-      </View>
-    );
+  const pickerImage = async () => {
+    let res = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ImagePicker.MediaTypeOptions.Images,
+      aspect: [4, 3],
+      quality: 1,
+    });
+
+    console.log(res);
+
+    if (!res.cancelled) {
+      setImage(res.uri);
+    }
   };
+
   return (
-    // <Gallery />
-    <SafeAreaView
-      style={{
-        flex: 1,
-        padding: SIZES.base,
-        backgroundColor: COLORS.primary,
-      }}
-    >
-      <FocusStatusBar background={COLORS.primary} />
-      <Header text="Create your NFT" menu />
-      <View
-        style={{
-          flex: 5,
-          paddingHorizontal: SIZES.medium,
-          justifyContent: "space-evenly",
-        }}
-      >
-        <Inputs value={nftName} onChange={setNftName} />
-        <Inputs value={nftPrice} onChange={setNftPrice} />
-        <Inputs
-          value={nftDesc}
-          onChange={setNftDesc}
-          props={{ multiline: true, numberOfLines: 5 }}
-        />
-        <Inputs
-          value={nftFile}
-          onChange={setNftFile}
-          props={{ multiline: true, numberOfLines: 5 }}
-        />
-      </View>
-      <View style={{ flex: 1.5 }}>
-        <RectButton
-          text="Submit"
-          props={{
-            backgroundColor: COLORS.secondary,
-            marginHorizontal: SIZES.medium,
-          }}
-          handlePress={() => {
-            // saveFile();
-            NFTData.push({
-              id: "NFT-20",
-              name: nftName,
-              creator: "Full Name",
-              price: Number(nftPrice),
-              description: nftDesc,
-              image: "",
-              bids: [],
-              like: false,
-            });
-          }}
-        />
-      </View>
-    </SafeAreaView>
+    <View>
+      <TouchableOpacity onPress={() => pickerImage()}>
+        <Text>Pick Image</Text>
+      </TouchableOpacity>
+      {image && (
+        <Image source={{ uri: image }} style={{ width: 200, height: 200 }} />
+      )}
+    </View>
   );
+
+  // return (
+  //   <SafeAreaView
+  //     style={{
+  //       flex: 1,
+  //       padding: SIZES.base,
+  //       backgroundColor: COLORS.primary,
+  //     }}
+  //   >
+  //     <FocusStatusBar background={COLORS.primary} />
+  //     <Header text="Create your NFT" menu />
+  //     <View
+  //       style={{
+  //         flex: 5,
+  //         paddingHorizontal: SIZES.medium,
+  //         justifyContent: "space-evenly",
+  //       }}
+  //     >
+  //       <Inputs value={nftName} onChange={setNftName} />
+  //       <Inputs value={nftPrice} onChange={setNftPrice} />
+  //       <Inputs
+  //         value={nftDesc}
+  //         onChange={setNftDesc}
+  //         props={{ multiline: true, numberOfLines: 5 }}
+  //       />
+
+  //       {/* <Inputs
+  //         value={nftFile}
+  //         onChange={setNftFile}
+  //         props={{ multiline: true, numberOfLines: 5 }}
+  //       /> */}
+  //       {/* <Gallery /> */}
+
+  //     </View>
+  //     <View style={{ flex: 1.5 }}>
+  //       <RectButton
+  //         text="Submit"
+  //         props={{
+  //           backgroundColor: COLORS.secondary,
+  //           marginHorizontal: SIZES.medium,
+  //         }}
+  //         handlePress={() => {
+  //           // saveFile();
+  //           NFTData.push({
+  //             id: "NFT-20",
+  //             name: nftName,
+  //             creator: "Full Name",
+  //             price: Number(nftPrice),
+  //             description: nftDesc,
+  //             image: "",
+  //             bids: [],
+  //             like: false,
+  //           });
+  //         }}
+  //       />
+  //     </View>
+  //   </SafeAreaView>
+  // );
 };
 
 export default CreateNFT;
